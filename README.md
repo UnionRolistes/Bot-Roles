@@ -12,7 +12,8 @@ For more informations take a look at the discord.js guide which can be found [he
 
 4. Fill out config.js
 - prefix : This will be the prefix for which the bot will listen.
-- token : this is the token from https://discord.com/developers/applications.
+- token : Token from your [application](https://discord.com/developers/applications).
 
 5. Run the bot ```node index.js```.
+
 6. See the magic happen:D
