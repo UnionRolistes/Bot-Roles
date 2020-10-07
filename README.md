@@ -10,9 +10,9 @@ private discord bot for L'Union des Rôlistes
 3. Install the packages ( here just discord.js) ```npm install discord.js```.
 For more informations take a look at the discord.js guide which can be found [here](https://discord.js.org/#/docs/main/stable/general/welcome).
 
-4. Fill out config.js
+4. Fill out config.js and save it.
 - prefix : This will be the prefix for which the bot will listen.
-- token : Token from your [application](https://discord.com/developers/applications).
+- token : Token for your [application](https://discord.com/developers/applications).
 
 5. Run the bot ```node index.js```.
 
