@@ -14,6 +14,10 @@ private discord bot for L'Union des Rôlistes
 6. Run the bot ```node index.js```.
 
 -----------------------------------------
+## Keeping it online
+-----------------------------------------
+
+
 
 ## OLD
 # How to install
