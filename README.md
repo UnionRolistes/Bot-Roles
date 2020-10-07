@@ -7,7 +7,7 @@ private discord bot for L'Union des Rôlistes
 2. Check your node version with ```node -v``` . Node.js 12.0.0 or newer is required.
 3. Go into the folder where you cloned the project. (cd....)
 4. Install the packages with ```npm install```
-5. Run ```npm run install``` to create a configuration file before the first startup of the bot.
+5. Execute ```npm run install``` to create a configuration file before the first startup of the bot.
 - ownerID : Since it's a private bot, use 263022860551847936.
 - prefix : This will be the prefix for which the bot will listen (Since it's private you choose $).
 - token : Token for your [application](https://discord.com/developers/applications).
