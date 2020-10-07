@@ -21,6 +21,8 @@ Dae wants to use systemd and systemctrl so here we go.
 ```js
 sudo nano /lib/systemd/system/rolelist.service
 ```
+(rolelist will be the name of the service)
+
 and copy that inside this new file
 ```
 [Unit]
@@ -39,27 +41,28 @@ Restart=on-failure
 WantedBy=multi-user.target
 ```
 Next step: ```sudo systemctl daemon-reload```
+
 Then: ```sudo systemctl start rolelist```
 
 Done.
 
 ### Useful commands
-sudo systemctl status hello_env
+```sudo systemctl status hello_env```
 
 Now, if you want to stop your app, the command is simply
 
-$ sudo systemctl stop hello_env
+```sudo systemctl stop rolelist```
 
 and unsurprisingly, the following will restart things for us
 
-$ sudo systemctl restart hello_env
+```sudo systemctl restart rolelist```
 
 If you want to make the application start up when the machine boots, you accomplish that by enabling it
 
-$ sudo systemtl enable hello_env
+```sudo systemtl enable rolelist```
 
 and finally, if you previously enabled the app, but you change your mind and want to stop it from coming up when the machine starts, you correspondingly disable it
 
-$ sudo systemctl disable hello_env
+```sudo systemctl disable rolelist```
 
 Reference: https://nodesource.com/blog/running-your-node-js-app-with-systemd-part-1
