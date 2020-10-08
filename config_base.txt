@@ -1,0 +1,6 @@
+{
+  "ownerID": "{{ownerID}}",
+  "token": {{token}},
+  "prefix": {{prefix}},
+  "intents": {{intents}}
+}
