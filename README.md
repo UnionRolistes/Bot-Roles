@@ -10,6 +10,7 @@ private discord bot for L'Union des Rôlistes
 Delete the previous rolelist folder completly. Then go to /usr/local/src/ and clone the project. Otherwise you need to modify the path for the code below.
 
 3. Clone the project with git. 
+```git clone https://github.com/Myst82015/L-Union-des-R-listes rolelistbot```
 
 Go into the folder where you cloned the project. (cd....)
 
