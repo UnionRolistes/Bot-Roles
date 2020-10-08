@@ -57,7 +57,7 @@ Then: ```sudo systemctl start rolelist```
 Done.
 
 ### Useful commands
-```sudo systemctl status hello_env```
+```sudo systemctl status rolelist```
 
 Now, if you want to stop your app, the command is simply
 
