@@ -8,8 +8,10 @@ private discord bot for L'Union des Rôlistes
 3. Clone the project with git. 
 # Especially for Dae#5125
 Delete the previous rolelist folder completly. Then go to /usr/local/src/ and clone the project. Otherwise you need to modify the path for the code below.
-Go into the folder where you cloned the project. (cd....) 
+Go into the folder where you cloned the project. (cd....)
+
 4. Install the packages with ```npm install```
+
 5. Execute ```npm run install``` to create a configuration file **before** the first startup of the bot.
 - ownerID : Since it's a private bot, use 263022860551847936.
 - prefix : This will be the prefix for which the bot will listen (Since it's private you choose $).
