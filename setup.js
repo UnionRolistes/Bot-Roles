@@ -14,11 +14,7 @@ let prompts = [
     name: "token",
     message: "Please enter the bot token from the application page."
   },
-  {
-    type: "input",
-    name: "ownerID",
-    message: "Please enter the bot owner's User ID"
-  },
+
   {
     type: "checkbox",
     name: "intents",
@@ -50,7 +46,6 @@ let prompts = [
   const answers = await inquirer.prompt(prompts);
 
   baseConfig = baseConfig
-    .replace("{{ownerID}}", answers.ownerID)
     .replace("{{token}}", `"${answers.token}"`)
     .replace("{{prefix}}", `"${answers.prefix}"`)
     .replace("{{intents}}", JSON.stringify(answers.intents));
