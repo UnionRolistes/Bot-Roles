@@ -5,9 +5,12 @@ private discord bot for L'Union des Rôlistes
 1. You need node installed on your system, detailled instructions for different operating systems can be found [here](https://nodejs.org/en/download/).
 
 2. Check your node version with ```node -v``` . Node.js 12.0.0 or newer is required.
-3. Clone the project with git. 
+
 # Especially for Dae#5125
 Delete the previous rolelist folder completly. Then go to /usr/local/src/ and clone the project. Otherwise you need to modify the path for the code below.
+
+3. Clone the project with git. 
+
 Go into the folder where you cloned the project. (cd....)
 
 4. Install the packages with ```npm install```
