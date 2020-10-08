@@ -18,7 +18,7 @@ client.user.setActivity('$help', { type: 'WATCHING' }).then(presence => console.
 client.on ('message', async message => {
 	if (message.content === `${prefix}ping`) {
 
-		message.channel.send('Ping?').then(m => m.edit(`Pong!\n:white_small_square: Latency is \`${m.createdTimestamp - message.createdTimestamp}\`ms. \n:white_small_square:API Latency is \`${Math.round(this.client.ws.ping)}\`ms`));
+		message.channel.send('Ping?').then(m => m.edit(`Pong!\n:white_small_square: Latency is \`${m.createdTimestamp - message.createdTimestamp}\`ms. \n:white_small_square:API Latency is \`${Math.round(client.ws.ping)}\`ms`));
 	} else if (message.content === `${prefix}credit`) {
 
     message.channel.send(`${client.user.tag} - Version \`${version}\`\nThis bot was created by \`◢◤Myst◢◤#4217\` (Discord ID: 263022860551847936) for \`Dae#5125\` (Discord ID: 209065408857243648)`);
