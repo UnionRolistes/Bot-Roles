@@ -39,6 +39,7 @@ Before setting up the "real" bot you must check some things:
 -----------------------------------------
 PM2 is an advanced, production process manager for Node.JS
 [Documentation](https://pm2.keymetrics.io/)
+
 Install it globally: 
 ```js
 npm install pm2@latest -g
@@ -96,15 +97,18 @@ pm2 stop app_name
 pm2 delete app_name
 
 ```
+
 Instead of app_name you can pass:
 
-    - `all` to act on all processes
-    - `id` to act on a specific process id
+- all to act on all processes
+- id to act on a specific process id
 
+
+# BROKEN -> DON'T USE IT
 -----------------------------------------
 ## Keeping it online with systemd and systemctrl
 -----------------------------------------
-# BROKEN
+
 
 ```js
 sudo nano /lib/systemd/system/rolelist.service
