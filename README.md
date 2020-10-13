@@ -17,8 +17,8 @@ Go into the folder where you cloned the project. (cd....)
 
 4. Install the packages with ```npm install```
 
-You will now setup the bot but before you must check some things:
- - You need a so called token for your bot.
+Before setting up the "real" bot you must check some things:
+ - You need a so called token for your bot. You need it later.
  -> How to obtain the token? Create an [application](https://discord.com/developers/applications) and follow the steps below:
  ![Bot](https://github.com/Myst82015/L-Union-des-R-listes/blob/main/assets/Screenshot_1.png)
  Now navigate to "Bot"
@@ -32,10 +32,79 @@ You will now setup the bot but before you must check some things:
  
 6. Run the bot ```node index.js```.
 
+
+
 -----------------------------------------
-## Keeping it online
+## Keeping it online with PM2
 -----------------------------------------
-Dae wants to use systemd and systemctrl so here we go.
+PM2 is an advanced, production process manager for Node.JS
+[Documentation](https://pm2.keymetrics.io/)
+Install it globally: 
+```js
+npm install pm2@latest -g
+```
+Now navigate to the folder with the bot. ( cd /.....)
+```js
+ pm2 start index.js
+```
+You can also specify more options:
+
+```js
+# Specify an app name
+--name <app_name>
+
+# Watch and Restart app when files change
+--watch
+
+# Set memory threshold for app reload
+--max-memory-restart <200MB>
+
+# Specify log file
+--log <log_path>
+
+# Pass extra arguments to the script
+-- arg1 arg2 arg3
+
+# Delay between automatic restarts
+--restart-delay <delay in ms>
+
+# Prefix logs with time
+--time
+
+# Do not auto restart app
+--no-autorestart
+
+# Specify cron for forced restart
+--cron <cron_pattern>
+
+# Attach to application log
+--no-daemon
+
+```
+Now everything is done! Check the status of pm2 with
+```js
+$ pm2 status
+```
+
+Managing processes
+
+Managing application state is simple here are the commands:
+```js
+pm2 restart app_name
+pm2 reload app_name
+pm2 stop app_name
+pm2 delete app_name
+
+```
+Instead of app_name you can pass:
+
+    - `all` to act on all processes
+    - `id` to act on a specific process id
+
+-----------------------------------------
+## Keeping it online with systemd and systemctrl
+-----------------------------------------
+# BROKEN
 
 ```js
 sudo nano /lib/systemd/system/rolelist.service
