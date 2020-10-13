@@ -2,6 +2,8 @@ const Discord = require('discord.js');
 const wait = require('util').promisify(setTimeout);
 const { prefix, token , intents} = require('./config.json');
 const { version } = require('./package.json')
+const fs = require("fs");
+const fetch = require('node-fetch');
 const client = new Discord.Client({
   ws: {
     intents: intents
@@ -27,35 +29,77 @@ client.on ('message', async message => {
 		message.channel.send(`Commands:\n:white_small_square: \`${prefix}roles\` - Displays all roles of the server.\n:white_small_square: \`${prefix}credit\` - Informations about the bot developer.\n:white_small_square: \`${prefix}ping\` - Pong!`);
 	} else if (message.content === `${prefix}roles`) {
 
-		const roles = message.guild.roles.cache.filter(role =>
-            // we don't wanna have @everyone role
-            role.name !== '@everyone'
-          )
-          .sort((h,l) => h.position - l.position) // Sorting from low to high
-          .map(role => role = {name: role.name, id: role.id}) // Map all the roles
-          .reverse() // Reverse all Roles 
-              const pageNum = Math.ceil(roles.length/24);
-          
-              let rolePages = []
-              for (let page = 0; page < pageNum; page++) {
-                rolePages.push(roles.splice(0,24));
-              }
-          
-              for (let page = 0; page < pageNum; page++) {
-                await wait(1000);
-                const roleListEmbed = new Discord.MessageEmbed()
-                .setColor('#2C2F33')
-                .setThumbnail(message.guild.iconURL({ dynamic: true, size: 2048 }))
-                .setFooter(`${client.user.tag}`, client.user.displayAvatarURL())
-                .setTimestamp()
-                  .setTitle(`📋 **${message.guild.name} Role List**\nPage ${page + 1}/${pageNum}`)
-                for (const role of rolePages[page]) {
-                  const memberCount = message.guild.roles.cache.get(role.id).members.size;
-                  roleListEmbed.addField(role.name, `Members: \`${memberCount}\``, true)
-                  
-                }
-                await message.channel.send(roleListEmbed);
-              }
+    message.guild.roles.cache.forEach(role => console.log(role.name, role.id, role.members.size))
+
+    function hastebin(input, extension) {
+      return new Promise(function(res, rej) {
+        if (!input) rej('[Error] Missing Input');
+        fetch('https://hasteb.in/documents', { method: 'POST', body: input })
+          .then(res => res.json())
+          .then(body => {
+            res('https://hasteb.in/' + body.key + ((extension) ? '.' + extension : ''));
+          }).catch(e => rej(e));
+      });
+    }
+    let testliste = await message.guild.roles.cache.filter(role => role.name !== '@everyone').sort((h,l) => h.position - l.position).map(role => `▫️ ${role.name} - ${role.members.size} Member(s)`).reverse().join("\n")//.replace(/\s\S+[^>]$/, '') //slice(1).
+    const url = await hastebin(`Role list for ${message.guild.name}\n\nFormat: Role name(Type: String) - Members with role(Type: Number)\n\n${testliste}`, 'txt').catch(err => console.log(err.stack));
+
+    let embed = new Discord.MessageEmbed()
+    .setDescription(`▫✅Uploaded the list to hasteb.in\n[Click here](${url})`)
+    message.channel.send(embed)
+    console.log(testliste)
+
+    const roles = message.guild.roles.cache.sort(
+      (h,l) => h.position - l.position
+      )
+    
+    .map(role => role = {name: role.name, id: role.id, membercount: role.members.size}).reverse()
+    var today = new Date();
+    var dd = today.getDate();
+    
+    var mm = today.getMonth()+1; 
+    var yyyy = today.getFullYear();
+    if(dd<10) 
+    {
+        dd='0'+dd;
+    } 
+    
+    if(mm<10) 
+    {
+        mm='0'+mm;
+    } 
+    today = mm+'-'+dd+'-'+yyyy;
+    console.log(today);
+
+    fs.writeFileSync(`./logs/rolelist_${today}.txt`, JSON.stringify(roles, null, "4")); // Indented with tab);
+    //fs.writeFileSync("./roles.txt", JSON.stringify(testliste, null, "4")); // Indented with tab);
+    const attachment = new Discord.MessageAttachment(`./logs/rolelist_${today}.txt`);
+    // Send the attachment in the message channel with a content
+     message.channel.send(`${message.author} Here is the raw list.`, attachment);
+    
+     let rolesmsg = [];
+        let index = 0;
+        rolesmsg[index] = "";
+
+        message.guild.roles.cache.sort(
+          (h,l) => l.position - h.position
+          ).forEach(role => {
+            rolesmsg[index] += `${role.name} (${role.id})`;
+            for (let i = role.name.length; i < 25; i++) {
+            rolesmsg[index] += " ";
+            }
+            rolesmsg[index] += "::  " + role.members.size + "\n";
+
+            if (rolesmsg[index].length > 1800) {
+                index++;
+                rolesmsg[index] = "";
+            }
+        });
+
+        for (let i = 0; i < rolesmsg.length; i++) {
+          await wait(3000);
+            message.channel.send(rolesmsg[i], { code: "asciidoc" });    
+        }
 	}
 });
 
