@@ -6,9 +6,10 @@ private discord bot for L'Union des Rôlistes
 
 2. Check your node version with ```node -v``` . Node.js 12.0.0 or newer is required.
 
+-----------------------------------------
 ### Only For Dae#5125
 Delete the previous rolelist folder completly. Then go to /usr/local/src/ and clone the project. Otherwise you need to modify the path for the code below.
-----------------------
+-----------------------------------------
 
 3. Clone the project with git. 
 ```git clone https://github.com/Myst82015/L-Union-des-R-listes rolelistbot```
@@ -24,6 +25,7 @@ Before setting up the "real" bot you must check some things:
  Now navigate to "Bot"
  ![Obtain the token](https://github.com/Myst82015/L-Union-des-R-listes/blob/main/assets/obtain_the_token%20-%20Kopie.jpg)
  And click "Copy"
+- A suitable prefix. There is no sense in choosing one which another bot already utilises. So choose a unique one.
 
 5. Execute ```npm run install``` to create a configuration file **before** the first startup of the bot.
 - prefix : This will be the prefix for which the bot will listen(I suggest $).
@@ -37,8 +39,9 @@ Before setting up the "real" bot you must check some things:
 -----------------------------------------
 ## Keeping it online with PM2
 -----------------------------------------
-PM2 is an advanced, production process manager for Node.JS
-[Documentation](https://pm2.keymetrics.io/)
+PM2 is an advanced, production process manager for Node.JS.
+
+[The Documentation can be found here.](https://pm2.keymetrics.io/)
 
 Install it globally: 
 ```js
@@ -86,7 +89,7 @@ Now everything is done! Check the status of pm2 with
 ```js
 $ pm2 status
 ```
-
+-----------------------------------------
 Managing processes
 
 Managing application state is simple here are the commands:
@@ -102,7 +105,10 @@ Instead of app_name you can pass:
 
 - all to act on all processes
 - id to act on a specific process id
+-----------------------------------------
 
+
+For more informations check the documentation -> https://pm2.keymetrics.io/ and the quickstart guide -> https://pm2.keymetrics.io/docs/usage/quick-start/
 
 # BROKEN -> DON'T USE IT
 -----------------------------------------

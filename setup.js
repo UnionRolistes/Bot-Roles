@@ -23,7 +23,7 @@ let prompts = [
       { "name": "Guilds", "value": "GUILDS", "checked": true },
       { "name": "Guild Messages", "value": "GUILD_MESSAGES", "checked": true },
       { "name": "Direct Messages", "value": "DIRECT_MESSAGES", "checked": true },
-      { "name": "Guild Members (privileged)", "value": "GUILD_MEMBERS", "checked": true },
+      { "name": "Guild Members (privileged)", "value": "GUILD_MEMBERS" },
       { "name": "Guild Bans", "value": "GUILD_BANS" },
       { "name": "Guild Emojis", "value": "GUILD_EMOJIS" },
       { "name": "Guild Integrations", "value": "GUILD_INTEGRATIONS" },
