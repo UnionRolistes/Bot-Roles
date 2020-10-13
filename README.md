@@ -104,6 +104,7 @@ Instead of app_name you can pass:
 - all to act on all processes
 - id to act on a specific process id
 
+For more informations check the documentation -> https://pm2.keymetrics.io/ and the quickstart -> https://pm2.keymetrics.io/docs/usage/quick-start/
 
 # BROKEN -> DON'T USE IT
 -----------------------------------------
