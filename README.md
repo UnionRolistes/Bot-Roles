@@ -27,7 +27,7 @@ You will now setup the bot but before you must check some things:
 5. Execute ```npm run install``` to create a configuration file **before** the first startup of the bot.
 - prefix : This will be the prefix for which the bot will listen(I suggest $).
 - token : Token which you obtained earlier.
-- intents : **Don't touch the next options!** If you're interested why check out this ![discord post](https://blog.discord.com/the-future-of-bots-on-discord-4e6e050ab52e).
+- intents : **Don't touch the next options!** If you're interested why check out this [discord post](https://blog.discord.com/the-future-of-bots-on-discord-4e6e050ab52e).
  
 6. Run the bot ```node index.js```.
 
