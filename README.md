@@ -6,9 +6,10 @@ private discord bot for L'Union des Rôlistes
 
 2. Check your node version with ```node -v``` . Node.js 12.0.0 or newer is required.
 
+-----------------------------------------
 ### Only For Dae#5125
 Delete the previous rolelist folder completly. Then go to /usr/local/src/ and clone the project. Otherwise you need to modify the path for the code below.
-----------------------
+-----------------------------------------
 
 3. Clone the project with git. 
 ```git clone https://github.com/Myst82015/L-Union-des-R-listes rolelistbot```
@@ -88,7 +89,7 @@ Now everything is done! Check the status of pm2 with
 ```js
 $ pm2 status
 ```
-
+-----------------------------------------
 Managing processes
 
 Managing application state is simple here are the commands:
@@ -104,6 +105,8 @@ Instead of app_name you can pass:
 
 - all to act on all processes
 - id to act on a specific process id
+-----------------------------------------
+
 
 For more informations check the documentation -> https://pm2.keymetrics.io/ and the quickstart -> https://pm2.keymetrics.io/docs/usage/quick-start/
 
