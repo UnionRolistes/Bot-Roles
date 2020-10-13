@@ -41,7 +41,7 @@ Before setting up the "real" bot you must check some things:
 -----------------------------------------
 PM2 is an advanced, production process manager for Node.JS.
 
-[The Documentation can be found here](https://pm2.keymetrics.io/)
+[The Documentation can be found here.](https://pm2.keymetrics.io/)
 
 Install it globally: 
 ```js
@@ -108,7 +108,7 @@ Instead of app_name you can pass:
 -----------------------------------------
 
 
-For more informations check the documentation -> https://pm2.keymetrics.io/ and the quickstart -> https://pm2.keymetrics.io/docs/usage/quick-start/
+For more informations check the documentation -> https://pm2.keymetrics.io/ and the quickstart guide -> https://pm2.keymetrics.io/docs/usage/quick-start/
 
 # BROKEN -> DON'T USE IT
 -----------------------------------------
