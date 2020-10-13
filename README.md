@@ -16,10 +16,19 @@ Go into the folder where you cloned the project. (cd....)
 
 4. Install the packages with ```npm install```
 
+You will now setup the bot but before you must check some things:
+ - You need a so called token for your bot.
+ -> How to obtain the token? Create an [application](https://discord.com/developers/applications) and follow the steps below:
+ [Bot](https://github.com/Myst82015/L-Union-des-R-listes/blob/main/assets/Screenshot_1.png)
+ Now navigate to "Bot"
+ [Obtain the token](https://github.com/Myst82015/L-Union-des-R-listes/blob/main/assets/obtain_the_token%20-%20Kopie.jpg)
+ And click "Copy"
+
 5. Execute ```npm run install``` to create a configuration file **before** the first startup of the bot.
-~~- ownerID : Since it's a private bot, use 263022860551847936.~~
-- prefix : This will be the prefix for which the bot will listen (Since it's private you choose $).
-- token : Token for your [application](https://discord.com/developers/applications).
+- prefix : This will be the prefix for which the bot will listen(I suggest $).
+- token : Token which you obtained earlier.
+- intents : **Don't touch the next options!** If you're interested why check out this [discord post](https://blog.discord.com/the-future-of-bots-on-discord-4e6e050ab52e).
+ 
 6. Run the bot ```node index.js```.
 
 -----------------------------------------
