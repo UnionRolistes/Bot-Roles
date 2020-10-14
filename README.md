@@ -16,7 +16,7 @@ Delete the previous rolelist folder completly. Then go to /usr/local/src/ and cl
 
 Go into the folder where you cloned the project. (cd....)
 
-4. Install the packages with ```npm install```
+4. Install the packages with ```sudo npm install```
 
 Before setting up the "real" bot you must check some things:
  - You need a so called token for your bot. You need it later.
@@ -27,7 +27,7 @@ Before setting up the "real" bot you must check some things:
  And click "Copy"
 - A suitable prefix. There is no sense in choosing one which another bot already utilises. So choose a unique one.
 
-5. Execute ```npm run install``` to create a configuration file **before** the first startup of the bot.
+5. Execute ```sudo npm run install``` to create a configuration file **before** the first startup of the bot.
 - prefix : This will be the prefix for which the bot will listen(I suggest $).
 - token : Token which you obtained earlier.
 - intents : **Don't touch the next options!** If you're interested why check out this [discord post](https://blog.discord.com/the-future-of-bots-on-discord-4e6e050ab52e).
@@ -45,7 +45,7 @@ PM2 is an advanced, production process manager for Node.JS.
 
 Install it globally: 
 ```js
-npm install pm2@latest -g
+sudo npm install pm2@latest -g
 ```
 Now navigate to the folder with the bot. ( cd /.....)
 ```js

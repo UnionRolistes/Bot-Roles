@@ -29,8 +29,14 @@ client.on ('message', async message => {
 		message.channel.send(`Commands:\n:white_small_square: \`${prefix}roles\` - Displays all roles of the server.\n:white_small_square: \`${prefix}credit\` - Informations about the bot developer.\n:white_small_square: \`${prefix}ping\` - Pong!`);
 	} else if (message.content === `${prefix}roles`) {
 
-    message.guild.roles.cache.forEach(role => console.log(role.name, role.id, role.members.size))
+    // message.guild.roles.cache.forEach(role => console.log(role.name, role.id, role.members.size))
 
+     /**
+     * Posts input to hastebin
+     * @param {(Object|string)} input   Input as object or string
+     * @param {string} extension        File type e.g. js, txt
+     * @returns Hastebin Url
+     */
     function hastebin(input, extension) {
       return new Promise(function(res, rej) {
         if (!input) rej('[Error] Missing Input');
@@ -41,19 +47,23 @@ client.on ('message', async message => {
           }).catch(e => rej(e));
       });
     }
+    
     let testliste = await message.guild.roles.cache.filter(role => role.name !== '@everyone').sort((h,l) => h.position - l.position).map(role => `▫️ ${role.name} - ${role.members.size} Member(s)`).reverse().join("\n")//.replace(/\s\S+[^>]$/, '') //slice(1).
+    // console.log(testliste)
+    //let testliste = await message.guild.roles.cache.filter(role => role.name !== '@everyone').sort((h,l) => h.position - l.position).map(role => `▫️ ${role.name} - ${message.guild.roles.cache.get(role.id).members.size} Member(s)`).reverse().join("\n")//.replace(/\s\S+[^>]$/, '') //slice(1).
     const url = await hastebin(`Role list for ${message.guild.name}\n\nFormat: Role name(Type: String) - Members with role(Type: Number)\n\n${testliste}`, 'txt').catch(err => console.log(err.stack));
 
     let embed = new Discord.MessageEmbed()
     .setDescription(`▫✅Uploaded the list to hasteb.in\n[Click here](${url})`)
     message.channel.send(embed)
-    console.log(testliste)
+    
 
     const roles = message.guild.roles.cache.sort(
       (h,l) => h.position - l.position
       )
     
     .map(role => role = {name: role.name, id: role.id, membercount: role.members.size}).reverse()
+    // Format new Date() to something readable
     var today = new Date();
     var dd = today.getDate();
     
@@ -69,10 +79,10 @@ client.on ('message', async message => {
         mm='0'+mm;
     } 
     today = mm+'-'+dd+'-'+yyyy;
-    console.log(today);
+    // console.log(today);
 
-    fs.writeFileSync(`./logs/rolelist_${today}.txt`, JSON.stringify(roles, null, "4")); // Indented with tab);
-    //fs.writeFileSync("./roles.txt", JSON.stringify(testliste, null, "4")); // Indented with tab);
+    fs.writeFileSync(`./logs/rolelist_${today}.txt`, JSON.stringify(roles, null, '\t')); // Indented with tab);
+    // Attach it to the message
     const attachment = new Discord.MessageAttachment(`./logs/rolelist_${today}.txt`);
     // Send the attachment in the message channel with a content
      message.channel.send(`${message.author} Here is the raw list.`, attachment);
@@ -97,7 +107,7 @@ client.on ('message', async message => {
         });
 
         for (let i = 0; i < rolesmsg.length; i++) {
-          await wait(3000);
+          await wait(3000); // Wait 3 seonds between each message due to specific ratelimits on the server
             message.channel.send(rolesmsg[i], { code: "asciidoc" });    
         }
 	}
