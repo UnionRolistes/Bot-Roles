@@ -47,7 +47,7 @@ client.on ('message', async message => {
       });
     }
     
-    let rolelist = await message.guild.roles.cache.filter(role => role.name !== '@everyone').sort((h,l) => h.position - l.position).map(role => `▫️ ${role.name} - ${role.members.size} Member(s)`).reverse().join("\n")
+    let rolelist = await message.guild.roles.cache.sort((h,l) => h.position - l.position).map(role => `▫️ ${role.name} - ${role.members.size} Member(s)`).reverse().join("\n")
     const url = await hastebin(`Role list for ${message.guild.name}\n\n${message.guild.roles.cache.size} roles in total with ${message.guild.memberCount} members in total.\n\nFormat: Role name(Type: String) - Members with role(Type: Number)\n\n${rolelist}`, 'txt').catch(err => console.log(err.stack));
     
     let embed = new Discord.MessageEmbed()
@@ -71,8 +71,9 @@ client.on ('message', async message => {
     } 
     today = mm+'-'+dd+'-'+yyyy;
     // console.log(today);
+    const roles = message.guild.roles.cache.sort((h,l) => h.position - l.position).map(role => role = {name: role.name, id: role.id, membercount: role.members.size}).reverse()
 
-    fs.writeFileSync(`./logs/rolelist_${today}.txt`, JSON.stringify(rolelist, null, '\t')); // Indented with tab);
+    fs.writeFileSync(`./logs/rolelist_${today}.txt`, JSON.stringify(roles, null, '\t')); // Indented with tab);
     // Attach it to the message
     const attachment = new Discord.MessageAttachment(`./logs/rolelist_${today}.txt`);
     // Send the attachment in the message channel with a content
