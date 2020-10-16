@@ -124,6 +124,10 @@ Now stop the process with ```pm2 stop (name/id)```
 in this case -> ```pm2 stop index```
 
 Now update the code in the respective folder via Git.
+go into the folder: cd....
+```git clone https://github.com/Myst82015/L-Union-des-R-listes.git```
+
+Then ```npm run install```
 
 -----------------------------------------
 Update on 16.10.2020: IMPORTANT: To fix the problems with the incorrect membercounts go to setup guide above and check the intents (below point 4). Then regenerate the config ```npm run install```( in the folder where the code is in), don't change anything at the preselected intents!
