@@ -25,6 +25,9 @@ Before setting up the "real" bot you must check some things:
  Now navigate to "Bot"
  ![Obtain the token](https://github.com/Myst82015/L-Union-des-R-listes/blob/main/assets/obtain_the_token%20-%20Kopie.jpg)
  And click "Copy"
+- Since Discord restricted the access to specific user data, you need to enable the so called Privileged Gateway Intents. To so, scroll down and enable both of them
+
+![Intents](https://github.com/Myst82015/L-Union-des-R-listes/blob/main/assets/PrivelegedGatewayIntents.png)
 - A suitable prefix. There is no sense in choosing one which another bot already utilises. So choose a unique one.
 
 5. Execute ```sudo npm run install``` to create a configuration file **before** the first startup of the bot.
@@ -109,6 +112,31 @@ Instead of app_name you can pass:
 
 
 For more informations check the documentation -> https://pm2.keymetrics.io/ and the quickstart guide -> https://pm2.keymetrics.io/docs/usage/quick-start/
+
+-----------------------------------------
+# Updating the code
+-----------------------------------------
+First of all we have to stop the process manager pm2
+Execute: ```pm2 status``` to get the id or the name of your app
+(Since we only have one here, the id should 0 and the name should be index)
+
+Now stop the process with ```pm2 stop (name/id)```
+in this case -> ```pm2 stop index```
+
+Now update the code in the respective folder via Git.
+
+-----------------------------------------
+Update on 16.10.2020: IMPORTANT: To fix the problems with the incorrect membercounts go to setup guide above and check the intents (below point 4). Then regenerate the config ```npm run install```( in the folder where the code is in), don't change anything at the preselected intents!
+-----------------------------------------
+
+You're nearly done!
+
+Navigate in the folder with the bot (cd ./....)
+and daemonize it with pm2
+```pm2 start index.js```
+
+Finally check the status of the process with ```pm2 status```.
+
 
 # BROKEN -> DON'T USE IT
 -----------------------------------------

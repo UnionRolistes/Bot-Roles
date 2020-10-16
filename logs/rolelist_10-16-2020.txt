@@ -2,27 +2,27 @@
 	{
 		"name": "Upper Management",
 		"id": "575376291168124947",
-		"membercount": 2
+		"membercount": 7
 	},
 	{
 		"name": "Admin",
 		"id": "575375814187548673",
-		"membercount": 0
+		"membercount": 3
 	},
 	{
 		"name": "Guardian",
 		"id": "575375817765421058",
-		"membercount": 0
+		"membercount": 2
 	},
 	{
 		"name": "Azure",
 		"id": "582165704678178826",
-		"membercount": 0
+		"membercount": 1
 	},
 	{
 		"name": "Storm",
 		"id": "626039274608787467",
-		"membercount": 0
+		"membercount": 1
 	},
 	{
 		"name": "tesy",
@@ -32,12 +32,12 @@
 	{
 		"name": "Dustie",
 		"id": "660926772900003840",
-		"membercount": 0
+		"membercount": 1
 	},
 	{
 		"name": "MemberCounter",
 		"id": "721825789200564354",
-		"membercount": 0
+		"membercount": 1
 	},
 	{
 		"name": "__________staff__________",
@@ -45,9 +45,14 @@
 		"membercount": 0
 	},
 	{
+		"name": "Kingsley",
+		"id": "716987087970107422",
+		"membercount": 1
+	},
+	{
 		"name": "Developer",
 		"id": "626047647953846273",
-		"membercount": 0
+		"membercount": 1
 	},
 	{
 		"name": "Staff",
@@ -72,7 +77,7 @@
 	{
 		"name": "orange",
 		"id": "575375830243606528",
-		"membercount": 1
+		"membercount": 2
 	},
 	{
 		"name": "yellow",
@@ -92,7 +97,7 @@
 	{
 		"name": "purple",
 		"id": "575375832751538245",
-		"membercount": 0
+		"membercount": 1
 	},
 	{
 		"name": "gray",
@@ -117,12 +122,12 @@
 	{
 		"name": "Bots",
 		"id": "575375816842674176",
-		"membercount": 0
+		"membercount": 5
 	},
 	{
 		"name": "Logger",
 		"id": "660914292580810840",
-		"membercount": 0
+		"membercount": 1
 	},
 	{
 		"name": "muted",
@@ -132,7 +137,7 @@
 	{
 		"name": "ModCord",
 		"id": "700067600524247132",
-		"membercount": 0
+		"membercount": 1
 	},
 	{
 		"name": "Verified",
@@ -147,37 +152,32 @@
 	{
 		"name": "Server Companion",
 		"id": "707972675850469387",
-		"membercount": 0
+		"membercount": 1
 	},
 	{
 		"name": "Server Captcha Bot",
 		"id": "714841286208651335",
-		"membercount": 0
-	},
-	{
-		"name": "TaigaDev",
-		"id": "716987087970107422",
 		"membercount": 1
 	},
 	{
 		"name": "Wumpi",
 		"id": "722711393190674472",
-		"membercount": 0
+		"membercount": 1
 	},
 	{
 		"name": "COVID-BOT",
 		"id": "730024813405536276",
-		"membercount": 0
+		"membercount": 1
 	},
 	{
 		"name": "Dustie Voice",
 		"id": "737237750616424469",
-		"membercount": 0
+		"membercount": 1
 	},
 	{
 		"name": "Mara",
 		"id": "750775235460071465",
-		"membercount": 0
+		"membercount": 1
 	},
 	{
 		"name": "Modo",
@@ -201,97 +201,12 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484749234307083",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484746939760671",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484748542115862",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484744847458384",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484745748578304",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484747451334668",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484742355648542",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484749783892009",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484744197210123",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484746298687518",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484743399768124",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484750799044680",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484766016110652",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
 		"id": "763484764534603796",
 		"membercount": 0
 	},
 	{
 		"name": "new role",
-		"id": "763484767936315413",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484765155885116",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484768956186694",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
 		"id": "763484766162386965",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484767391055883",
 		"membercount": 0
 	},
 	{
@@ -306,12 +221,12 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484772004659270",
+		"id": "763484770877308929",
 		"membercount": 0
 	},
 	{
 		"name": "new role",
-		"id": "763484773217206283",
+		"id": "763484772004659270",
 		"membercount": 0
 	},
 	{
@@ -321,17 +236,12 @@
 	},
 	{
 		"name": "new role",
+		"id": "763484773217206283",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
 		"id": "763484774127501343",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484775431667723",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484778745167872",
 		"membercount": 0
 	},
 	{
@@ -341,22 +251,7 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484779168923700",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484777969090591",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484770877308929",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484777385820172",
+		"id": "763484775431667723",
 		"membercount": 0
 	},
 	{
@@ -366,7 +261,22 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484788207386654",
+		"id": "763484777385820172",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484777969090591",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484778745167872",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484779168923700",
 		"membercount": 0
 	},
 	{
@@ -376,12 +286,12 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484786613944340",
+		"id": "763484781346029579",
 		"membercount": 0
 	},
 	{
 		"name": "new role",
-		"id": "763484785015259217",
+		"id": "763484781799014412",
 		"membercount": 0
 	},
 	{
@@ -391,12 +301,7 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484781346029579",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484785946394704",
+		"id": "763484783484338208",
 		"membercount": 0
 	},
 	{
@@ -406,17 +311,27 @@
 	},
 	{
 		"name": "new role",
+		"id": "763484785015259217",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484785946394704",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484786613944340",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
 		"id": "763484787658194964",
 		"membercount": 0
 	},
 	{
 		"name": "new role",
-		"id": "763484789680373800",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484783484338208",
+		"id": "763484788207386654",
 		"membercount": 0
 	},
 	{
@@ -426,7 +341,7 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484781799014412",
+		"id": "763484789680373800",
 		"membercount": 0
 	},
 	{
@@ -446,17 +361,7 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484895900729374",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
 		"id": "763484890728628234",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484892729966612",
 		"membercount": 0
 	},
 	{
@@ -471,6 +376,16 @@
 	},
 	{
 		"name": "new role",
+		"id": "763484892176318474",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484892729966612",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
 		"id": "763484894243586048",
 		"membercount": 0
 	},
@@ -481,12 +396,12 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484896467222558",
+		"id": "763484895900729374",
 		"membercount": 0
 	},
 	{
 		"name": "new role",
-		"id": "763484892176318474",
+		"id": "763484896467222558",
 		"membercount": 0
 	},
 	{
@@ -496,7 +411,7 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484908436848660",
+		"id": "763484903995211797",
 		"membercount": 0
 	},
 	{
@@ -506,7 +421,7 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484909451870299",
+		"id": "763484905887105054",
 		"membercount": 0
 	},
 	{
@@ -516,12 +431,7 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484905887105054",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484903995211797",
+		"id": "763484908436848660",
 		"membercount": 0
 	},
 	{
@@ -531,32 +441,7 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484916125663292",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484914430771241",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484913134469161",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484919447420939",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484915060572180",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484912182755358",
+		"id": "763484909451870299",
 		"membercount": 0
 	},
 	{
@@ -566,57 +451,42 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484913588109343",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
 		"id": "763484911394619392",
 		"membercount": 0
 	},
 	{
 		"name": "new role",
-		"id": "763484924505882624",
+		"id": "763484912182755358",
 		"membercount": 0
 	},
 	{
 		"name": "new role",
-		"id": "763484923310112788",
+		"id": "763484913134469161",
 		"membercount": 0
 	},
 	{
 		"name": "new role",
-		"id": "763484925717643294",
+		"id": "763484913588109343",
 		"membercount": 0
 	},
 	{
 		"name": "new role",
-		"id": "763484926627545118",
+		"id": "763484914430771241",
 		"membercount": 0
 	},
 	{
 		"name": "new role",
-		"id": "763484921334333480",
+		"id": "763484915060572180",
 		"membercount": 0
 	},
 	{
 		"name": "new role",
-		"id": "763484929035862016",
+		"id": "763484916125663292",
 		"membercount": 0
 	},
 	{
 		"name": "new role",
-		"id": "763484927038586950",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484921640779779",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484928054394923",
+		"id": "763484919447420939",
 		"membercount": 0
 	},
 	{
@@ -626,12 +496,27 @@
 	},
 	{
 		"name": "new role",
+		"id": "763484920592465921",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484921334333480",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484921640779779",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
 		"id": "763484922572439602",
 		"membercount": 0
 	},
 	{
 		"name": "new role",
-		"id": "763484927773376544",
+		"id": "763484923310112788",
 		"membercount": 0
 	},
 	{
@@ -641,7 +526,42 @@
 	},
 	{
 		"name": "new role",
+		"id": "763484924505882624",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484925717643294",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
 		"id": "763484926276272179",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484926627545118",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484927038586950",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484927773376544",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484928054394923",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484929035862016",
 		"membercount": 0
 	},
 	{
@@ -651,27 +571,7 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484920592465921",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484931300524102",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484937302048818",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484939504451584",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484935406354543",
+		"id": "763484930159935498",
 		"membercount": 0
 	},
 	{
@@ -681,32 +581,7 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484934421348394",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484937529065502",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484932432592897",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484935855538177",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484930159935498",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484939160125501",
+		"id": "763484931300524102",
 		"membercount": 0
 	},
 	{
@@ -716,7 +591,37 @@
 	},
 	{
 		"name": "new role",
+		"id": "763484932432592897",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
 		"id": "763484933061738557",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484934421348394",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484935406354543",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484935855538177",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484937302048818",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484937529065502",
 		"membercount": 0
 	},
 	{
@@ -726,12 +631,12 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484943703605318",
+		"id": "763484939160125501",
 		"membercount": 0
 	},
 	{
 		"name": "new role",
-		"id": "763484947516227614",
+		"id": "763484939504451584",
 		"membercount": 0
 	},
 	{
@@ -746,7 +651,12 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484948031209483",
+		"id": "763484941861781544",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484942574944287",
 		"membercount": 0
 	},
 	{
@@ -756,7 +666,7 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484945455775764",
+		"id": "763484943703605318",
 		"membercount": 0
 	},
 	{
@@ -771,12 +681,22 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484941861781544",
+		"id": "763484945455775764",
 		"membercount": 0
 	},
 	{
 		"name": "new role",
-		"id": "763484942574944287",
+		"id": "763484946195021884",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484947516227614",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484948031209483",
 		"membercount": 0
 	},
 	{
@@ -791,47 +711,7 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484946195021884",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484959217942578",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484956118089758",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484952922292275",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484957930553354",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484957032972299",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484958244208641",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484951445635143",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484954646544394",
+		"id": "763484950073835540",
 		"membercount": 0
 	},
 	{
@@ -841,17 +721,7 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484953765740608",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484950073835540",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484956676456468",
+		"id": "763484951445635143",
 		"membercount": 0
 	},
 	{
@@ -861,12 +731,62 @@
 	},
 	{
 		"name": "new role",
+		"id": "763484952922292275",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484953765740608",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484954646544394",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
 		"id": "763484954784694302",
 		"membercount": 0
 	},
 	{
 		"name": "new role",
+		"id": "763484956118089758",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484956676456468",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484957032972299",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484957930553354",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484958244208641",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484959217942578",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
 		"id": "763484960300466207",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484960853196871",
 		"membercount": 0
 	},
 	{
@@ -881,12 +801,12 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484964615487545",
+		"id": "763484964163289138",
 		"membercount": 0
 	},
 	{
 		"name": "new role",
-		"id": "763484966423101450",
+		"id": "763484964615487545",
 		"membercount": 0
 	},
 	{
@@ -896,22 +816,7 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484967735918602",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484963538206760",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484968348549171",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484960853196871",
+		"id": "763484966423101450",
 		"membercount": 0
 	},
 	{
@@ -921,17 +826,12 @@
 	},
 	{
 		"name": "new role",
-		"id": "763484964163289138",
+		"id": "763484967735918602",
 		"membercount": 0
 	},
 	{
 		"name": "new role",
-		"id": "763484969069969418",
-		"membercount": 0
-	},
-	{
-		"name": "new role",
-		"id": "763484962875637830",
+		"id": "763484968348549171",
 		"membercount": 0
 	},
 	{
@@ -940,8 +840,18 @@
 		"membercount": 0
 	},
 	{
+		"name": "new role",
+		"id": "763484969069969418",
+		"membercount": 0
+	},
+	{
+		"name": "Namara",
+		"id": "765976313537626153",
+		"membercount": 1
+	},
+	{
 		"name": "@everyone",
 		"id": "573578573554909195",
-		"membercount": 2
+		"membercount": 17
 	}
 ]
