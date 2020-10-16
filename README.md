@@ -135,6 +135,8 @@ Navigate in the folder with the bot (cd ./....)
 and daemonize it with pm2
 ```pm2 start index.js```
 
+Finally check the status of the process with ```pm2 status```.
+
 
 # BROKEN -> DON'T USE IT
 -----------------------------------------
