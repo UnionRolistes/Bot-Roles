@@ -1,0 +1,857 @@
+[
+	{
+		"name": "Upper Management",
+		"id": "575376291168124947",
+		"membercount": 7
+	},
+	{
+		"name": "Admin",
+		"id": "575375814187548673",
+		"membercount": 3
+	},
+	{
+		"name": "Guardian",
+		"id": "575375817765421058",
+		"membercount": 2
+	},
+	{
+		"name": "Azure",
+		"id": "582165704678178826",
+		"membercount": 1
+	},
+	{
+		"name": "Storm",
+		"id": "626039274608787467",
+		"membercount": 1
+	},
+	{
+		"name": "tesy",
+		"id": "647545121012842497",
+		"membercount": 0
+	},
+	{
+		"name": "Dustie",
+		"id": "660926772900003840",
+		"membercount": 1
+	},
+	{
+		"name": "MemberCounter",
+		"id": "721825789200564354",
+		"membercount": 1
+	},
+	{
+		"name": "__________staff__________",
+		"id": "575375815236386826",
+		"membercount": 0
+	},
+	{
+		"name": "Kingsley",
+		"id": "716987087970107422",
+		"membercount": 1
+	},
+	{
+		"name": "Developer",
+		"id": "626047647953846273",
+		"membercount": 1
+	},
+	{
+		"name": "Staff",
+		"id": "575375818709270538",
+		"membercount": 1
+	},
+	{
+		"name": "__________colors__________",
+		"id": "575375828326809600",
+		"membercount": 0
+	},
+	{
+		"name": "dark red",
+		"id": "575375829027127307",
+		"membercount": 0
+	},
+	{
+		"name": "blue",
+		"id": "575375829635170308",
+		"membercount": 0
+	},
+	{
+		"name": "orange",
+		"id": "575375830243606528",
+		"membercount": 2
+	},
+	{
+		"name": "yellow",
+		"id": "575375830826352657",
+		"membercount": 0
+	},
+	{
+		"name": "green",
+		"id": "575375831392714777",
+		"membercount": 0
+	},
+	{
+		"name": "pink",
+		"id": "575375831820402704",
+		"membercount": 0
+	},
+	{
+		"name": "purple",
+		"id": "575375832751538245",
+		"membercount": 1
+	},
+	{
+		"name": "gray",
+		"id": "575375833355780127",
+		"membercount": 0
+	},
+	{
+		"name": "black",
+		"id": "575375833905233936",
+		"membercount": 0
+	},
+	{
+		"name": "__________filler__________",
+		"id": "575375840528039967",
+		"membercount": 0
+	},
+	{
+		"name": "Member",
+		"id": "647120331466866748",
+		"membercount": 1
+	},
+	{
+		"name": "Bots",
+		"id": "575375816842674176",
+		"membercount": 5
+	},
+	{
+		"name": "Logger",
+		"id": "660914292580810840",
+		"membercount": 1
+	},
+	{
+		"name": "muted",
+		"id": "686158063908159490",
+		"membercount": 0
+	},
+	{
+		"name": "ModCord",
+		"id": "700067600524247132",
+		"membercount": 1
+	},
+	{
+		"name": "Verified",
+		"id": "704677154415312956",
+		"membercount": 1
+	},
+	{
+		"name": "Unverified",
+		"id": "704677195951505519",
+		"membercount": 0
+	},
+	{
+		"name": "Server Companion",
+		"id": "707972675850469387",
+		"membercount": 1
+	},
+	{
+		"name": "Server Captcha Bot",
+		"id": "714841286208651335",
+		"membercount": 1
+	},
+	{
+		"name": "Wumpi",
+		"id": "722711393190674472",
+		"membercount": 1
+	},
+	{
+		"name": "COVID-BOT",
+		"id": "730024813405536276",
+		"membercount": 1
+	},
+	{
+		"name": "Dustie Voice",
+		"id": "737237750616424469",
+		"membercount": 1
+	},
+	{
+		"name": "Mara",
+		"id": "750775235460071465",
+		"membercount": 1
+	},
+	{
+		"name": "Modo",
+		"id": "762657040686120982",
+		"membercount": 0
+	},
+	{
+		"name": "User",
+		"id": "762657069891321876",
+		"membercount": 0
+	},
+	{
+		"name": "PC",
+		"id": "762657090413395968",
+		"membercount": 0
+	},
+	{
+		"name": "Xbox",
+		"id": "762657110617096232",
+		"membercount": 1
+	},
+	{
+		"name": "new role",
+		"id": "763484764534603796",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484766162386965",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484769493188700",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484770000306177",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484770877308929",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484772004659270",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484772718477322",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484773217206283",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484774127501343",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484774559645708",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484775431667723",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484776391901214",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484777385820172",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484777969090591",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484778745167872",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484779168923700",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484780410830848",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484781346029579",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484781799014412",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484782825963580",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484783484338208",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484784352952390",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484785015259217",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484785946394704",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484786613944340",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484787658194964",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484788207386654",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484788992245840",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484789680373800",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484790522642442",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484791186128896",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484889089048646",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484890728628234",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484890732691488",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484891240333322",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484892176318474",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484892729966612",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484894243586048",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484895061737503",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484895900729374",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484896467222558",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484902204243969",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484903995211797",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484904150663205",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484905887105054",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484906680221726",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484908436848660",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484908995608627",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484909451870299",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484910484717648",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484911394619392",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484912182755358",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484913134469161",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484913588109343",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484914430771241",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484915060572180",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484916125663292",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484919447420939",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484920160452658",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484920592465921",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484921334333480",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484921640779779",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484922572439602",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484923310112788",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484923775549440",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484924505882624",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484925717643294",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484926276272179",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484926627545118",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484927038586950",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484927773376544",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484928054394923",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484929035862016",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484929090388010",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484930159935498",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484930319187990",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484931300524102",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484931761373215",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484932432592897",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484933061738557",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484934421348394",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484935406354543",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484935855538177",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484937302048818",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484937529065502",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484938477371434",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484939160125501",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484939504451584",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484940322209843",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484941228048395",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484941861781544",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484942574944287",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484943031992360",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484943703605318",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484944256466980",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484944957702194",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484945455775764",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484946195021884",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484947516227614",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484948031209483",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484948677394433",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484949893480518",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484950073835540",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484951165009971",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484951445635143",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484952078975027",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484952922292275",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484953765740608",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484954646544394",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484954784694302",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484956118089758",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484956676456468",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484957032972299",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484957930553354",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484958244208641",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484959217942578",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484960300466207",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484960853196871",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484961612759120",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484962014887937",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484964163289138",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484964615487545",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484965228511315",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484966423101450",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484966956171264",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484967735918602",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484968348549171",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484968998928424",
+		"membercount": 0
+	},
+	{
+		"name": "new role",
+		"id": "763484969069969418",
+		"membercount": 0
+	},
+	{
+		"name": "Namara",
+		"id": "765976313537626153",
+		"membercount": 1
+	},
+	{
+		"name": "@everyone",
+		"id": "573578573554909195",
+		"membercount": 17
+	}
+]
