@@ -29,7 +29,7 @@ client.on ('message', async message => {
 
 		message.channel.send(`Commands:\n:white_small_square: \`${prefix}roles\` - Displays all roles of the server.\n:white_small_square: \`${prefix}credit\` - Informations about the bot developer.\n:white_small_square: \`${prefix}ping\` - Pong!`);
 	} else if (message.content === `${prefix}roles`) {
-
+    if(!message.guild) return; // return it in case it comes from a direct message
      /**
      * Posts input to hastebin
      * @param {(Object|string)} input   Input as object or string
