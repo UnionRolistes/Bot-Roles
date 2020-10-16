@@ -25,6 +25,8 @@ Before setting up the "real" bot you must check some things:
  Now navigate to "Bot"
  ![Obtain the token](https://github.com/Myst82015/L-Union-des-R-listes/blob/main/assets/obtain_the_token%20-%20Kopie.jpg)
  And click "Copy"
+- Since Discord restricted the access to specific user data, you need to enable the so called Privileged Gateway Intents. To so, scroll down and enable both of them
+PICTURE
 - A suitable prefix. There is no sense in choosing one which another bot already utilises. So choose a unique one.
 
 5. Execute ```sudo npm run install``` to create a configuration file **before** the first startup of the bot.
