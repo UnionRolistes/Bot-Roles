@@ -31,7 +31,7 @@ Before setting up the "real" bot you must check some things:
  And click "Copy"
 - Since Discord restricted the access to specific user data, you need to enable the so called Privileged Gateway Intents. To so, scroll down and enable both of them
 
-![Intents](https://github.com/Myst82015/L-Union-des-R-listes/blob/main/assets/PrivelegedGatewayIntents.png)
+![Intents](https://github.com/Myst82015/L-Union-des-R-listes/blob/main/assets/intents.png)
 - A suitable prefix. There is no sense in choosing one which another bot already utilises. So choose a unique one.
 
 4. Install the packages with ```sudo npm install```
