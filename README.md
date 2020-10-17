@@ -26,6 +26,7 @@ Before setting up the "real" bot you must check some things:
  - You need a so called token for your bot. You need it later.
 
  -> How to obtain the token? Create an [application](https://discord.com/developers/applications) and follow the steps below:
+ 
 Now navigate to "Bot"
 
 ![Bot](https://github.com/Myst82015/L-Union-des-R-listes/blob/main/assets/2020-10-17-165755_1920x1080_scrot.png)
