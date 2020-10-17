@@ -27,11 +27,12 @@ Before setting up the "real" bot you must check some things:
 
  -> How to obtain the token? Create an [application](https://discord.com/developers/applications) and follow the steps below:
 Now navigate to "Bot"
+
 ![Bot](https://github.com/Myst82015/L-Union-des-R-listes/blob/main/assets/2020-10-17-165755_1920x1080_scrot.png)
 
 ![Obtain the token](https://github.com/Myst82015/L-Union-des-R-listes/blob/main/assets/2020-10-17-170011_1920x1080_scrot.png)
  And click "Copy"
- 
+
 - Since Discord restricted the access to specific user data, you need to enable the so called Privileged Gateway Intents. To so, scroll down and enable both of them
 
 ![Intents](https://github.com/Myst82015/L-Union-des-R-listes/blob/main/assets/intents.png)
