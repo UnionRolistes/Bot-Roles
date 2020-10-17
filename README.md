@@ -6,17 +6,21 @@ private discord bot for L'Union des Rôlistes
 
 2. Check your node version with ```node -v``` . Node.js 12.0.0 or newer is required.
 
------------------------------------------
-### Only For Dae#5125
-Delete the previous rolelist folder completly. Then go to /usr/local/src/ and clone the project. Otherwise you need to modify the path for the code below.
------------------------------------------
+3. Cloning the project via git. 
+```cd /usr/local/src/```
 
-3. Clone the project with git. 
-```git clone https://github.com/Myst82015/L-Union-des-R-listes BotRolesList```
+-> Default Directory
 
-Go into the folder where you cloned the project. (cd....)
+```sudo rm -rfv ./rolelistbot```
 
-4. Install the packages with ```sudo npm install```
+-> Create a new folder
+
+```sudo git clone https://github.com/Myst82015/L-Union-des-R-listes BotRolesList```
+
+-> Clone the project in the folder you just created.
+
+Go into the folder where you cloned the project. 
+```cd ./BotRolesList```
 
 Before setting up the "real" bot you must check some things:
  - You need a so called token for your bot. You need it later.
@@ -30,13 +34,14 @@ Before setting up the "real" bot you must check some things:
 ![Intents](https://github.com/Myst82015/L-Union-des-R-listes/blob/main/assets/PrivelegedGatewayIntents.png)
 - A suitable prefix. There is no sense in choosing one which another bot already utilises. So choose a unique one.
 
+4. Install the packages with ```sudo npm install```
+
 5. Execute ```sudo npm run install``` to create a configuration file **before** the first startup of the bot.
 - prefix : This will be the prefix for which the bot will listen(I suggest $).
 - token : Token which you obtained earlier.
 - intents : **Don't touch the next options!** If you're interested why check out this [discord post](https://blog.discord.com/the-future-of-bots-on-discord-4e6e050ab52e).
  
 6. Run the bot ```node index.js```.
-
 
 
 -----------------------------------------
