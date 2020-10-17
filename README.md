@@ -12,7 +12,7 @@ Delete the previous rolelist folder completly. Then go to /usr/local/src/ and cl
 -----------------------------------------
 
 3. Clone the project with git. 
-```git clone https://github.com/Myst82015/L-Union-des-R-listes rolelistbot```
+```git clone https://github.com/Myst82015/L-Union-des-R-listes BotRolesList```
 
 Go into the folder where you cloned the project. (cd....)
 
