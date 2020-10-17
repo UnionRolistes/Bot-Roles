@@ -26,7 +26,7 @@ Before setting up the "real" bot you must check some things:
  - You need a so called token for your bot. You need it later.
 
  -> How to obtain the token? Create an [application](https://discord.com/developers/applications) and follow the steps below:
- 
+
 Now navigate to "Bot"
 
 ![Bot](https://github.com/Myst82015/L-Union-des-R-listes/blob/main/assets/2020-10-17-165755_1920x1080_scrot.png)
@@ -58,7 +58,7 @@ PM2 is an advanced, production process manager for Node.JS.
 
 Install it globally: 
 ```js
-sudo npm install pm2@latest -g
+sudo npm install pm2 -g
 ```
 Now navigate to the folder with the bot. ( cd /.....)
 ```js
@@ -137,7 +137,7 @@ Now update the code in the respective folder via Git.
 go into the folder: cd....
 ```git clone https://github.com/Myst82015/L-Union-des-R-listes.git```
 
-Then ```npm run install```
+Then ```npm run install``` (just in case I added another npm module)
 
 -----------------------------------------
 Update on 16.10.2020: IMPORTANT: To fix the problems with the incorrect membercounts go to setup guide above and check the intents (below point 4). Then regenerate the config ```npm run install```( in the folder where the code is in), don't change anything at the preselected intents!
@@ -151,88 +151,4 @@ and daemonize it with pm2
 
 Finally check the status of the process with ```pm2 status```.
 
-
-# BROKEN -> DON'T USE IT
------------------------------------------
-## Keeping it online with systemd and systemctrl
------------------------------------------
-
-
-```js
-sudo nano /lib/systemd/system/rolelist.service
-```
-(rolelist will be the name of the service)
-
-and copy that inside this new file
-
-```[Unit]
-Description=rolelist discord bot for unionrolistes.fr
-Requires=network-online.target
-After=network-online.target
-
-[Service]
-Type=simple
-ExecStart=/usr/local/src/BotRoles/index.js start
-ExecStop=/usr/local/src/BotRoles/index.stop stop
-Restart=always
-RestartSec=5s
-
-[Install]
-WantedBy=multi-user.target
-```
-
-
-Next step: ```sudo systemctl daemon-reload```
-
-Then: ```sudo systemctl start rolelist```
-
-Done.
-
-### Useful commands
-```sudo systemctl status rolelist```
-
-Now, if you want to stop your app, the command is simply
-
-```sudo systemctl stop rolelist```
-
-and unsurprisingly, the following will restart things for us
-
-```sudo systemctl restart rolelist```
-
-If you want to make the application start up when the machine boots, you accomplish that by enabling it
-
-```sudo systemtl enable rolelist```
-
-and finally, if you previously enabled the app, but you change your mind and want to stop it from coming up when the machine starts, you correspondingly disable it
-
-```sudo systemctl disable rolelist```
-
-Reference: https://nodesource.com/blog/running-your-node-js-app-with-systemd-part-1
-
-
-
------------------------------------------
-## Keeping it online with PM2
------------------------------------------
-Advanced, production process manager for Node.JS
-This is another daemon to keep the project running.
-[Documentation](https://pm2.keymetrics.io/)
-
-#OLD don't USE
-```
-[Unit]
-Description=rolelist discord bot
-Documentation=https://example.com
-After=network.target
-
-[Service]
-Environment=NODE_PORT=3001
-Type=simple
-User=ubuntu
-ExecStart=/usr/local/node /home/ubuntu/hello_env.js
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target
-```
 
