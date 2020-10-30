@@ -1,3 +1,9 @@
+process.on('unhandledRejection', err => {
+  if (err.code === 50006) return; // DiscordAPIError: Cannot send an empty message
+  console.log(err.code)
+    console.error('ERROR', `Uncaught Promise Error: \n${err.stack}`);
+});
+
 const Discord = require('discord.js');
 const wait = require('util').promisify(setTimeout);
 const { prefix, token , intents} = require('./config.json');
@@ -28,8 +34,44 @@ client.on ('message', async message => {
   } else if (message.content === `${prefix}help`) {
 
 		message.channel.send(`Commands:\n:white_small_square: \`${prefix}roles\` - Displays all roles of the server.\n:white_small_square: \`${prefix}credit\` - Informations about the bot developer.\n:white_small_square: \`${prefix}ping\` - Pong!`);
-	} else if (message.content === `${prefix}roles`) {
-    if(!message.guild) return; // return it in case it comes from a direct message
+	} else if (message.content.startsWith(prefix + 'roles')) {
+    
+     if(!message.guild) return; // return it in case it comes from a direct message
+     // We need the arguments for the sub command
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    // Search the channel in the guild, accepts channel mention, ID or the name of the channel
+    const channel = message.mentions.channels.first() || message.guild.channels.cache.find(ch => ch.name === args[1]) || message.guild.channels.cache.find(ch => ch.id === args[1]);
+    if(channel){
+      let rolesmsg = [];
+      let index = 0;
+      rolesmsg[index] = "";
+
+      message.guild.roles.cache.sort(
+        (h,l) => l.position - h.position
+        ).forEach(role => {
+          if(!channel.permissionsFor(role).toArray().includes('VIEW_CHANNEL')) return;
+          //rolesmsg[index] += `${role.name} (${role.id})`;
+          rolesmsg[index] += `${role.name}`;
+          for (let i = role.name.length; i < 25; i++) {
+          rolesmsg[index] += " ";
+          }
+          rolesmsg[index] += "::  " + role.members.size + "\n";
+
+          if (rolesmsg[index].length > 1800) {
+              index++;
+              rolesmsg[index] = "";
+          }
+      });
+      message.channel.send(`▫️ Roles which have access to ${channel}.\n\`Name :: Members with role\``)
+      message.channel.send()
+      for (let i = 0; i < rolesmsg.length; i++) {
+        await wait(3000); // Wait 3 seonds between each message due to specific ratelimits on the server
+          message.channel.send(rolesmsg[i], { code: "asciidoc" });    
+      }
+      return;
+    }
+
+
      /**
      * Posts input to hastebin
      * @param {(Object|string)} input   Input as object or string
