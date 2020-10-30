@@ -30,7 +30,9 @@ client.on ('message', async message => {
 		message.channel.send('Ping?').then(m => m.edit(`Pong!\n:white_small_square: Latency is \`${m.createdTimestamp - message.createdTimestamp}\`ms. \n:white_small_square:API Latency is \`${Math.round(client.ws.ping)}\`ms`));
 	} else if (message.content === `${prefix}credit`) {
 
-    message.channel.send(`${client.user.tag} - Version \`${version}\`\nThis bot was created by \`◢◤Myst◢◤#4217\` (Discord ID: 263022860551847936) for \`Dae#5125\` (Discord ID: 209065408857243648)\nThanks to \`dryas#5722\` and \`Tonitch#2192\` for helping with the formulaire-jdr.`);
+    message.channel.send(`${client.user.tag} - Version ${version}\n==============================\n[Owner]\n Dae#5125 (Discord ID: 209065408857243648) \n==============================\n[Developer]\n ◢◤Myst◢◤#4217 (Discord ID: 263022860551847936) \n==============================\n[Other contributors]\n * dryas#5722 \n * Tonitch#2192\n -> Thanks for helping with the formulaire-jdr. `, { code: "asciidoc" });
+    
+    // message.channel.send(`${client.user.tag} - Version \`${version}\`\nThis bot was created by \`◢◤Myst◢◤#4217\` (Discord ID: 263022860551847936) for \`Dae#5125\` (Discord ID: 209065408857243648)\nThanks to \`dryas#5722\` and \`Tonitch#2192\` for helping with the formulaire-jdr.`);
   } else if (message.content === `${prefix}help`) {
 
 		message.channel.send(`Commands:\n:white_small_square: \`${prefix}roles (channel)\` - Displays all roles of the server. If a channel is given the bot returns a list of roles with access to the channel.\n:white_small_square: \`${prefix}credit\` - Informations about the bot developer(s).\n:white_small_square: \`${prefix}ping\` - Pong!`);
