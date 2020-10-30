@@ -11,7 +11,6 @@ private discord bot for L'Union des Rôlistes
 -----------------------------------------
 ```
 cd /usr/local/src/
-sudo rm -rfv ./rolelistbot
 sudo git clone https://github.com/Myst82015/L-Union-des-R-listes BotRolesList
 cd ./BotRolesList
 sudo npm install
