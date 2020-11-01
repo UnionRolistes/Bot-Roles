@@ -7,6 +7,7 @@ Fonctionnalité du Bot Discord De UnionRolistes.fr, opensources
 2. Check your node version with ```node -v``` . Node.js 12.0.0 or newer is required.
 
 3. Cloning the project via git. OneLine Update
+
 ```cd /usr/local/src/```
 
 ```sudo git clone https://github.com/UnionRolistes/Bot-Roles BotRolesList && cd ./BotRolesList/ && sudo npm install && sudo npm run install```
