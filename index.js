@@ -73,13 +73,13 @@ client.on ('message', async message => {
       return;
     }
 
-
      /**
      * Posts input to hastebin
      * @param {(Object|string)} input   Input as object or string
      * @param {string} extension        File type e.g. js, txt
      * @returns Hastebin Url
      */
+
     function hastebin(input, extension) {
       return new Promise(function(res, rej) {
         if (!input) rej('[Error] Missing Input');
@@ -114,7 +114,6 @@ client.on ('message', async message => {
         mm='0'+mm;
     } 
     today = mm+'-'+dd+'-'+yyyy;
-    // console.log(today);
     const roles = message.guild.roles.cache.sort((h,l) => h.position - l.position).map(role => role = {name: role.name, id: role.id, membercount: role.members.size}).reverse()
 
     fs.writeFileSync(`./logs/rolelist_${today}.txt`, JSON.stringify(roles, null, '\t')); // Indented with tab);
@@ -130,7 +129,6 @@ client.on ('message', async message => {
         message.guild.roles.cache.sort(
           (h,l) => l.position - h.position
           ).forEach(role => {
-            //rolesmsg[index] += `${role.name} (${role.id})`;
             rolesmsg[index] += `${role.name}`;
             for (let i = role.name.length; i < 25; i++) {
             rolesmsg[index] += " ";

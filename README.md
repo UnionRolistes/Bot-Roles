@@ -1,12 +1,8 @@
 # UnionRolistes.fr
 Fonctionnalité du Bot Discord De UnionRolistes.fr, opensources
 
-# Installation
-1. You need node installed on your system, detailled instructions for different operating systems can be found [here](https://nodejs.org/en/download/).
 
-2. Check your node version with ```node -v``` . Node.js 12.0.0 or newer is required.
-
-3. Cloning the project via git. OneLine Update
+# OneLine Update / Install
 
 ```cd /usr/local/src/```
 
@@ -15,11 +11,34 @@ Fonctionnalité du Bot Discord De UnionRolistes.fr, opensources
 ```pm2 status && pm2 delete 0 && pm2 start index.js```
 
 -> Default Directory
+
 -> Create a new folder
+
 -> Clone the project in the folder you just created.
+
 -> Go into the folder where you cloned the project. 
 
--
+-> Install all node_modules again ( in case something changed/updated).
+
+-> Execute setup.js in case something in the config has changed.
+
+-> Stop the daemon(pm2) and restart it again (to keep the bot online).
+
+
+# Detailled Installation
+1. You need node installed on your system, detailled instructions for different operating systems can be found [here](https://nodejs.org/en/download/).
+
+2. Check your node version with ```node -v``` . Node.js 12.0.0 or newer is required.
+
+3. Cloning the project via git.
+
+-> Navigate in the folder where it should cloned in: 
+```cd /usr/local/src/```
+
+Clone it:
+
+```sudo git clone https://github.com/UnionRolistes/Bot-Roles BotRolesList```
+
 
 Before setting up the "real" bot you must check some things:
  - You need a so called token for your bot. You need it later.
@@ -35,7 +54,14 @@ Now navigate to "Bot"
 
 - A suitable prefix. There is no sense in choosing one which another bot already utilises. So choose a unique one.
 
-4. Install the packages with ```sudo npm install```
+4. Now navigate into the folder with the cloned project:
+
+```cd /usr/local/src/BotRolesList/```
+
+Install the npm packages:
+
+```sudo npm install```
+
 
 5. Execute ```sudo npm run install``` to create a configuration file **before** the first startup of the bot.
 - prefix : This will be the prefix for which the bot will listen(I suggest $).
