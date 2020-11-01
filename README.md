@@ -8,7 +8,9 @@ Fonctionnalité du Bot Discord De UnionRolistes.fr, opensources
 
 3. Cloning the project via git. OneLine Update
 ```cd /usr/local/src/```
+
 ```sudo git clone https://github.com/UnionRolistes/Bot-Roles BotRolesList && cd ./BotRolesList/ && sudo npm install && sudo npm run install```
+
 ```pm2 status && pm2 delete 0 && pm2 start index.js```
 
 -> Default Directory
