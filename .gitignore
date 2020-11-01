@@ -1,5 +1,0 @@
-config.json
-.jshintrc
-node_modules/*
-package-lock.json
-logs/*
