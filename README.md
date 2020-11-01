@@ -28,9 +28,9 @@ Before setting up the "real" bot you must check some things:
 
 Now navigate to "Bot"
 
-![Bot](https://raw.githubusercontent.com/UnionRolistes/Bot-Roles/main/2020-10-17-165755_1920x1080_scrot.png)
+![Bot](https://raw.githubusercontent.com/UnionRolistes/Bot-Roles/assets/2020-10-17-165755_1920x1080_scrot.png)
 
-![Obtain the token](https://raw.githubusercontent.com/UnionRolistes/Bot-Roles/main/2020-10-17-170011_1920x1080_scrot.png)
+![Obtain the token](https://raw.githubusercontent.com/UnionRolistes/Bot-Roles/assets/2020-10-17-170011_1920x1080_scrot.png)
 - Since Discord restricted the access to specific user data, you need to enable the so called Privileged Gateway Intents. To so, scroll down and enable both of them And click "Copy"
 
 - A suitable prefix. There is no sense in choosing one which another bot already utilises. So choose a unique one.
