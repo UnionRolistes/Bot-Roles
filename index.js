@@ -1,5 +1,5 @@
 process.on('unhandledRejection', err => {
-  // if (err.code === 50006) return; // DiscordAPIError: Cannot send an empty message
+  if (err.code === 50035) return; // DiscordAPIError: Invalid Form Body content: Must be 2000 or fewer in length.
   console.log(err.code)
   console.error('ERROR', `Uncaught Promise Error: \n${err.stack}`);
 });
@@ -48,10 +48,10 @@ client.on ('message', async message => {
     function hastebin(input, extension) {
       return new Promise(function(res, rej) {
         if (!input) rej('[Error] Missing Input');
-        fetch('https://hasteb.in/documents', { method: 'POST', body: input })
+        fetch('https://hastebin.com/documents', { method: 'POST', body: input })
           .then(res => res.json())
           .then(body => {
-            res('https://hasteb.in/' + body.key + ((extension) ? '.' + extension : ''));
+            res('https://hastebin.com/' + body.key + ((extension) ? '.' + extension : ''));
           }).catch(e => rej(e));
       });
     }
@@ -80,14 +80,16 @@ client.on ('message', async message => {
           }
           rolesmsg[index] += "::  " + role.members.size + "\n";
 
-          if (rolesmsg[index].length > 1800) {
+          if (rolesmsg[index].length > 1800)  return;
+          /*{
+            
               index++;
               rolesmsg[index] = "";
-          }
+          } */
       });
       let rolelist = await message.guild.roles.cache.filter(role => channel.permissionsFor(role).toArray().includes('VIEW_CHANNEL')).sort((h,l) => h.position - l.position).map(role => `▫️ ${role.name} - ${role.members.size} Member(s)`).reverse().join("\n")
       let url = await hastebin(`Role list for ${message.guild.name}\n\n${message.guild.roles.cache.size} roles in total with ${message.guild.memberCount} members in total.\n\nFormat: Role name(Type: String) - Members with role(Type: Number)\n\n${rolelist}`, 'txt').catch(err => console.log(err.stack));
-      embed.setDescription(`✅Uploaded the list to hasteb.in\n[Click here](${url})`)
+      embed.setDescription(`✅Uploaded the list to hastebin.com\n[Click here](${url})`)
       message.channel.send(embed)
 
       message.channel.send(`▫️ Roles which have access to ${channel}.\n\`Name :: Members with role\``)
@@ -104,7 +106,7 @@ client.on ('message', async message => {
     let rolelist = await message.guild.roles.cache.sort((h,l) => h.position - l.position).map(role => `▫️ ${role.name} - ${role.members.size} Member(s)`).reverse().join("\n")
     let url = await hastebin(`Role list for ${message.guild.name}\n\n${message.guild.roles.cache.size} roles in total with ${message.guild.memberCount} members in total.\n\nFormat: Role name(Type: String) - Members with role(Type: Number)\n\n${rolelist}`, 'txt').catch(err => console.log(err.stack));
     
-    embed.setDescription(`✅Uploaded the list to hasteb.in\n[Click here](${url})`)
+    embed.setDescription(`✅Uploaded the list to hastebin.com\n[Click here](${url})`)
     message.channel.send(embed)
     
     // Format new Date() to something readable
@@ -144,10 +146,12 @@ client.on ('message', async message => {
             }
             rolesmsg[index] += "::  " + role.members.size + "\n";
 
-            if (rolesmsg[index].length > 1800) {
+            if (rolesmsg[index].length > 1800) return;
+            /*{
+              
                 index++;
                 rolesmsg[index] = "";
-            }
+            } */
         });
 
         for (let i = 0; i < rolesmsg.length; i++) {
