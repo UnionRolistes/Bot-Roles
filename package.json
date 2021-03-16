@@ -1,8 +1,8 @@
 {
   "name": "private-bot-for-l-union-des-rolistes",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Private discord bot for L'Union des Rôlistes. Created by ◢◤Myst◢◤#4217 (Discord ID: 263022860551847936)",
-  "main": "index.js",
+  "main": "Start_Bot_Roles.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
