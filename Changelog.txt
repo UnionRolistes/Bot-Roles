@@ -1,5 +1,10 @@
+- Changelog for v0.1.2 (2021-03-16)
+    Commit: Not pushed yet
+    * Changed the name of the files in ./logs
+    * Pushed the version in package.json to 0.1.2 (Only a small update)
+
 - Changelog for v0.1.1 (2021-03-16)
-    Commit: not pushed so far (Will be updated in a future update)
+    Commit: 074730d414829508a702e8abf22f822eba5734d5
     * Created Changelog.txt
     * Renamed start.js to Start_Bot_Roles.js
     * Updated package.json with the new version

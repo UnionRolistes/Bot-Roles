@@ -126,9 +126,9 @@ client.on ('message', async message => {
 		// Another format so I need to fetch all the roles again
 		const roles = message.guild.roles.cache.sort((h, l) => h.position - l.position).map(role => role = { name: role.name, id: role.id, membercount: role.members.size }).reverse();
 
-		fs.writeFileSync(`./logs/Bot_RolesList_${today}.txt`, JSON.stringify(roles, null, '\t'));
+		fs.writeFileSync(`./logs/Bot_RolesList_${today}_${message.guild.name}.txt`, JSON.stringify(roles, null, '\t'));
 		// Attach it to the message
-		const attachment = new Discord.MessageAttachment(`./logs/Bot_RolesList_${today}.txt`);
+		const attachment = new Discord.MessageAttachment(`./logs/Bot_RolesList_${today}_${message.guild.name}.txt`);
 		// Send the attachment in the message channel with a content
 		return message.channel.send(`${message.author} Here is the raw list.`, attachment);
 	}

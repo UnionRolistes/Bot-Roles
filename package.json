@@ -1,6 +1,6 @@
 {
   "name": "private-bot-for-l-union-des-rolistes",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Private discord bot for L'Union des Rôlistes. Created by ◢◤Myst◢◤#4217 (Discord ID: 263022860551847936)",
   "main": "Start_Bot_Roles.js",
   "scripts": {
