@@ -6,9 +6,9 @@ Fonctionnalité du Bot Discord De UnionRolistes.fr, opensources
 
 ```cd /usr/local/src/```
 
-```sudo git clone https://github.com/UnionRolistes/Bot-Roles BotRolesList && cd ./BotRolesList/ && sudo npm install && sudo npm run install```
+```sudo git clone https://github.com/UnionRolistes/Bot-Roles Bot_Roles && cd ./Bot_Roles/ && sudo npm install && sudo npm run install```
 
-```pm2 status && pm2 delete 0 && pm2 start index.js```
+```sudo pm2 status && sudo pm2 delete 0 && sudo pm2 start Start_Bot_Roles.js```
 
 -> Default Directory
 
@@ -37,7 +37,7 @@ Fonctionnalité du Bot Discord De UnionRolistes.fr, opensources
 
 Clone it:
 
-```sudo git clone https://github.com/UnionRolistes/Bot-Roles BotRolesList```
+```sudo git clone https://github.com/UnionRolistes/Bot-Roles Bot_Roles```
 
 
 Before setting up the "real" bot you must check some things:
@@ -56,7 +56,7 @@ Now navigate to "Bot"
 
 4. Now navigate into the folder with the cloned project:
 
-```cd /usr/local/src/BotRolesList/```
+```cd /usr/local/src/Bot_Roles```
 
 Install the npm packages:
 

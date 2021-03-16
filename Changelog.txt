@@ -1,5 +1,10 @@
-- Changelog for v0.1.2 (2021-03-16)
+- Changelog for v0.1.3 (2021-03-16)
     Commit: Not pushed yet
+    * updated README.md for installation guide (name change)
+    * Updated package.json with the new version
+    
+- Changelog for v0.1.2 (2021-03-16)
+    Commit: f763c7accf9409f8a5aa31e69bad01f2f1fa7da6
     * Changed the name of the files in ./logs
     * Pushed the version in package.json to 0.1.2 (Only a small update)
 
