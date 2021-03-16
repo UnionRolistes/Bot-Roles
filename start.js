@@ -1,6 +1,5 @@
 process.on('unhandledRejection', err => {
-	console.log(err.code);
-	console.error('ERROR', `Uncaught Promise Error: \n${err.stack}`);
+	console.error('ERROR', `Uncaught Promise Error: \n Error code: ${err.code}\nError Stack:\n${err.stack}`);
 });
 
 const Discord = require('discord.js');
@@ -30,11 +29,11 @@ client.on ('message', async message => {
 	}
 
 	else if (message.content === `${prefix}credit`) {
-		message.channel.send(`${client.user.tag} - Version ${version}\n==============================\n[Owner]\n Dae#5125 (Discord ID: 209065408857243648) \n==============================\n[Developer]\n ◢◤Myst◢◤#4217 (Discord ID: 263022860551847936) \n==============================\n[Other contributors]\n * dryas#5722 \n * Tonitch#2192\n -> Thanks for helping with the formulaire-jdr. `, { code: 'asciidoc' });
+		message.channel.send(`Bot_Roles - Version ${version}\n==============================\n[Owner]\n Dae#5125 (Discord ID: 209065408857243648) \n==============================\n[Developer]\n ◢◤Myst◢◤#4217 (Discord ID: 263022860551847936) \n==============================\n[Other contributors]\n * dryas#5722 \n * Tonitch#2192\n -> Thanks for helping with the formulaire-jdr. `, { code: 'asciidoc' });
 	}
 
 	else if (message.content === `${prefix}version`) {
-		message.channel.send(`${client.user.tag} - Version ${version}\n=================================`, { code: 'asciidoc' });
+		message.channel.send(`Bot_Roles - Version ${version}\n=================================`, { code: 'asciidoc' });
 	}
 
 	else if (message.content === `${prefix}help`) {
@@ -49,9 +48,9 @@ client.on ('message', async message => {
 		// Template for the MessageEmbed
 		const embed = new Discord.MessageEmbed()
 			.setColor('GREEN')
-			.setAuthor(`${client.user.username}`, client.user.displayAvatarURL())
+			.setAuthor('Bot_Roles', client.user.displayAvatarURL())
 			.setThumbnail(client.user.displayAvatarURL())
-			.setFooter(`${client.user.tag}`, client.user.displayAvatarURL())
+			.setFooter('Bot_Roles', client.user.displayAvatarURL())
 			.setTimestamp();
 
 		// We need the arguments for the sub command
@@ -127,9 +126,9 @@ client.on ('message', async message => {
 		// Another format so I need to fetch all the roles again
 		const roles = message.guild.roles.cache.sort((h, l) => h.position - l.position).map(role => role = { name: role.name, id: role.id, membercount: role.members.size }).reverse();
 
-		fs.writeFileSync(`./logs/rolelist_${today}.txt`, JSON.stringify(roles, null, '\t'));
+		fs.writeFileSync(`./logs/Bot_RolesList_${today}.txt`, JSON.stringify(roles, null, '\t'));
 		// Attach it to the message
-		const attachment = new Discord.MessageAttachment(`./logs/rolelist_${today}.txt`);
+		const attachment = new Discord.MessageAttachment(`./logs/Bot_RolesList_${today}.txt`);
 		// Send the attachment in the message channel with a content
 		return message.channel.send(`${message.author} Here is the raw list.`, attachment);
 	}
