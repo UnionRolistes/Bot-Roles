@@ -1,5 +1,12 @@
-- Changelog for v0.1.3 (2021-03-16)
+- Changelog for v0.1.4 (2021-03-16)
     Commit: Not pushed yet
+    * Updated package.json
+    * Added the cron job for automatic logs
+    * Added the logic behind calculating the differences between the roles
+    * New Naming convention for the logfiles
+
+- Changelog for v0.1.3 (2021-03-16)
+    Commit: e5564d4b6777bd7ada7125ced7473b34b93d8a20
     * updated README.md for installation guide (name change)
     * Updated package.json with the new version
     
