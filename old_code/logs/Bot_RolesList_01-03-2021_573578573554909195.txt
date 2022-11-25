@@ -1,0 +1,32 @@
+[
+	{
+		"name": "Admin",
+		"id": "REMOVED DUE TO SECURITY REASONS",
+		"membercount": 4
+	},
+	{
+		"name": "Staff",
+		"id": "REMOVED DUE TO SECURITY REASONS",
+		"membercount": 2
+	},
+	{
+		"name": "Member",
+		"id": "REMOVED DUE TO SECURITY REASONS",
+		"membercount": 2
+	},
+	{
+		"name": "Bots",
+		"id": "REMOVED DUE TO SECURITY REASONS",
+		"membercount": 7
+	},
+	{
+		"name": "muted",
+		"id": "REMOVED DUE TO SECURITY REASONS",
+		"membercount": 0
+	},
+	{
+		"name": "@everyone",
+		"id": "REMOVED DUE TO SECURITY REASONS",
+		"membercount": 22
+	}
+]
