@@ -1,0 +1,199 @@
+- Changelog for v0.1.4 (2021-03-16)
+    Commit: Not pushed yet
+    * Updated package.json
+    * Added the cron job for automatic logs
+    * Added the logic behind calculating the differences between the roles
+    * New Naming convention for the logfiles
+
+- Changelog for v0.1.3 (2021-03-16)
+    Commit: e5564d4b6777bd7ada7125ced7473b34b93d8a20
+    * updated README.md for installation guide (name change)
+    * Updated package.json with the new version
+    
+- Changelog for v0.1.2 (2021-03-16)
+    Commit: f763c7accf9409f8a5aa31e69bad01f2f1fa7da6
+    * Changed the name of the files in ./logs
+    * Pushed the version in package.json to 0.1.2 (Only a small update)
+
+- Changelog for v0.1.1 (2021-03-16)
+    Commit: 074730d414829508a702e8abf22f822eba5734d5
+    * Created Changelog.txt
+    * Renamed start.js to Start_Bot_Roles.js
+    * Updated package.json with the new version
+
+- Changelog for v0.1.0 (2021-03-16)
+    Commit: 22a11edb7beb48e4b9060308a1b1b1a0108193b4
+    * Renamed the following files: 
+                                - index.js -> now start.js
+                                - setup.js -> now install.js
+    * Project name change to Bot_Roles for MessageEmbeds and logs
+    * .gitignore: Removed an unnecessary blanc line
+
+- Changelog for v0.0.9 (2021-03-16)
+    Commit: 76024b6a4f683c4be0fcb7e9561b00176ce1a8e5
+    Commit: f9658864c77a8a2514d4afdef8ee68c9cd0f6870
+    * Created logs directory
+    * .gitignore: Removed an unnecessary line
+
+- Changelog for v0.0.8 (2021-03-14)
+    Commit: b759adae96c5ae296def77d2991a1a5b448582c6
+    * Switched to sourcb.in instead of hastebin (not reliable and down all the times)
+    * Improved code quality:   - eslint integration
+                               - deletion of old + unused code
+                               - more comments in the source code
+
+- Changelog for v0.0.7 (2021-01-14)
+    Commit: 23997a05ddb9015545d362611a8098e3d622eff2
+    Commit: 61e9909d62a335a153c89468693bd4994ea932e6
+    * New Command: $version
+    * General Code Clean-Up
+
+- Emergency fix (2021-01-13)
+    * Hasteb.in stopped working -> switched to hastebin.com
+
+- Changelog for v0.0.7 (2020-11-03)
+    Commit: 74b1ace629518c80dc4235e23d0153ca27828d8f
+    Commit: 88397a00c53042f17c4486f22cd0d60b2a846cac
+    * Added hasteb.in url when a channel is specified
+    * Changed the filter of the roles
+        -> now the role needs the permission Send_Messages in the specified channel instead of simply View_Channel
+    * Code structure slightly reworked: 
+                                        - hastebin function at the top 
+                                        - MessageEmbed constructor also at the top
+
+- Changelog for v0.0.6 (2020-11-01)
+    Commit: fc01a8130712b6900dceefc5206f5f72c0b91fbd
+    Commit: e82ddcd17686e108c7345fd8502ea82b72a4b1c6
+    Commit: 16bdc96bf967253f6bfabee6517dc56d9d85442d
+    * Updated README.md (documentation)
+    * Removed 2 useless pictures (they were already in ./assets
+    * rolelist.service is not needed anymore, PM is used
+    * index.js: Code cleaned
+    * Create .gitignore 
+    * Deleted some test of Dae (empty file)
+
+- Commits from the 2020-11-01 by Dae
+    No official version from Myst82015
+    Everything was reworked in v0.0.6
+
+- Commits from the 2020-11-01 by Myst8015
+    Great Wipe to finally clean up the mess with the forked repositories
+
+- Commits from the 2020-10-30 by Myst8015
+    Commit: 306ae2851be3cec46b9826505a725726c2670327
+    * README.md : updated install instructions
+
+- Commits from the 2020-10-17 by Dae
+    No official version from Myst82015
+    * Updated the README.md
+    Everything was reworked in v0.0.6
+
+- Changelog for v0.0.5(2020-10-16)
+    Commit: 447cdacb734aabb35423de955f1319379c3ee8f1
+    Commit: 97aba4867024f7a0d37c5f2f3eb3abf45f47e7c5
+    Commit: 38f109fa8caa9a6d746c8da9c7b801fef1a1a21d
+    Commit: 89d40d5e39c7d7103f728f51d4a8de4dc8b80fc5
+    Commit: a903898e039987dfaa8b24453a5d616dc0488f72
+    Commit: 89f473fe2beef5ff691b9da0f00f53a68e7fa833
+    Commit: 97e589e8a6a46145ff697b2acd867e9ec9c26ffe
+    Commit: 2063f9406dd119d2b7aba200ebf1e07bec468c64
+    Commit: 7c45279b6b1f52d1c8daaf16f26fb00b5fde1b01
+    Commit: 086b3cee8a6f780f4cdb95f2c6cfc9919d5eadb0
+    Commit: 160852333bbd21929681f29f3497f83783cbdee9
+    Commit: 123a9b94276bee27c1e6ecdd1d20f8bd7b23391a
+    Commit: 0df5059509bd93168541095fa9abbb52b8a7ab2a
+    Commit: e6b3457bc3352577b34638735afa72c7c02a4ff5
+    Commit: d1e113c23598a5855d307e16d7426490154c890c
+    Commit: 854e5950ce4ca8dcf3a706ba98cff25cf5e803c5
+    Commit: 8725673c75535201224c4cc2d879859b6c99eed0
+    Commit: 7e2909ec932f6f50a88c3f2c2b28513af430efcb
+
+
+    * Emergency hotfix for the intents
+    * Included intents in documentation
+    * Accidently exluded the logs directory with .gitignore
+    * Some production testing
+    
+
+
+- Changelog for v0.0.4(2020-10-15)
+    Commit: 2984c2f6d213b7909b9ec1cbacd3b4ed55cc000a
+    Commit: eb0205500aa6f8263a93dfcc324716fe21a4b7f0
+    Commit: 56daf42700bf6a5d73045f881f154fb0f470adc4
+    * Creating logs
+    * Updated index.js to generate the logs
+
+- Commits from the 2020-10-14 by Myst8015
+    Commit: f20d0227fcf6efbbd5838a5e1b2552d66b4a757b
+    Commit: ff62757633635983551ae6c2e588d8ffc778f181
+    * Pull request to fix the installation guide for Dae
+
+- Changelog for v0.0.3 (2020-10-13)
+    Commit: a28dcd0891cd89cc412d0c7637b8b6d932633516
+    Commit: afd05c812f974ae765a79ed105344b0a7e3c6901
+    Commit: 0d21d7777fdea3fc3c412f39da3583c14e0c40eb
+    Commit: b4db7ae4ef859ec343fe8706635e7a38a3095661
+    Commit: 1b9189b35021e97f01318c1d30a0ff258934fb12
+    Commit: 19ff813ff20efdfac4323b22f1d7bb3af0dcd587
+    Commit: 4b761f6e902c4b14ed833d8831ddf2bc99b8bed8
+    Commit: 63a75dc6999bfd6050f2a73fc3f6138e84be7fb8 
+    Commit: 8181370e95fbd185bd1f9961f6eeed6a0d1859e1
+    Commit: 847eeda67dc50bca81455c90a69fea3c043fc84a
+    Commit: f83a3f97e004ca8e3927692c3fa6070e7a0e6176
+    Commit: 649c234f4009c6f0f6e1dbbb5f5eece3491e762d
+    Commit: 31408c3ed4568627b3fcc5c3e72df48d59cd6c3a
+    Commit: cf0be9e3e313661fe0124e83d7c27294dd524dd0
+    * Renamed the images in ./assets
+    * Updated README.md with detailled documentation
+
+
+- Changelog for v0.0.2 (2020-10-08)
+    Commit: 0e716a9dd5ad2cf8895f8f38dc06039fe4beb8fd
+    Commit: f9bbdf91f9550fb3206e402eaf5652e9ac110af9
+    Commit: fd1b5852b85797d56704a93094675a1f1be05220
+    Commit: fc769f290d63e9b84c07b5ba719339b62a51fceb
+    Commit: 60f79457f35b68c77f194ff630a4d6909c352ac4
+    Commit: a15886929517b3a3e0edcac7d6f641b02c1e513e
+    Commit: b6827628b0bddae6cbeb478d54cf2ccf959aa7a6
+    * Pulled multiple pull request from old base repository
+    * Updated setup.js
+    * Updated config_base.txt
+
+- Changelog for v0.0.1 (2020-10-08)
+    Commit: 100950a1f18b7d2f9babd7cec00010360df18289
+    Commit: b229e477132f077d5bb53355259d7c370f9723a2
+    Commit: bbb1da5b40679a6b59bb38852317a69825470fc0
+    Commit: 4e879921203392b27c610c2c7a76455ef3c0fb4e
+    Commit: 5fd1e17f10140ecdd0c022665c6cd8cf5f06e809
+    Commit: 6c4d192c74b926975af62f8b5bd7780671115b0e
+    Commit: 6fd3791ba71bba98388b1e7b081e4fef62bf7dfe
+    Commit: e19caaed7ea27b486caf5ffdad17a143a4ce159b
+    Commit: 252b7fe4e136416f8d3674b771e512ef01f1350d
+    Commit: 52329971a82a2294739d1c5a36daef89be48a57c
+    Commit: a7164347678be71740e124a606cd686319803fd1
+    Commit: f71c83867c7090d3b73851939544399c83227029
+    Commit: eade3d68dce0dc0b7dbff70ec0314e27c6427f74
+    * Create setup.js
+    * Create config_base.txt
+    * Code wipe for fresh files(index.js, package.json, README.md)
+
+- Changelog for v0.0.0 (2020-10-07)
+    Inital commit
+    Commit: 154dd832c41243d1274d711625c1caee7ec5f7ac
+    Commit: 3fe0792863698734d13dcc193065d12e3174202e
+    Commit: 4306a6f211d4b26304cbb8d03df77b791f7bce85
+    Commit: 9395c19831bf0ddc3fe61fd18e4d8d764ca6e7a5
+    Commit: 888cc7414e1401994faab39bf4ae4a3a45a5d9a3
+    Commit: 651b2321af0e9e623ff6ca82fa0f6b1bf5a50eba
+    Commit: 4f0ce1c3b292def821b1e7511217ab2af8279c03
+    Commit: 85acef6b15f857225bffcc26d7cc18cc4ad314db
+    Commit: 98290a0c3f648116e31512bb85e68586ebd5665e
+    Commit: 5d81a55d0a5ee2a8500a716eb51895219d0703ec
+    Commit: b872a974df03b6fc27c82089ce99d1293962e46d
+    Commit: 0ad7cd3ee725c4f9700f7039e48eb7e8720df19c
+    Commit: b9738e53582a5d0d991d5e020b6d2eb7b71598ba
+    * Create package.json
+    * Create index.js
+    * Create README.md
+    
+    
