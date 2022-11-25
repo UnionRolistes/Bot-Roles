@@ -1,0 +1,26 @@
+{
+  "name": "bot-roles",
+  "version": "0.0.1",
+  "description": "",
+  "main": "install.js",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "node-cron": "^3.0.0",
+    "sourcebin": "^4.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UnionRolistes/Bot-Roles.git"
+  },
+  "author": "Myst82015 (Github) / Myst#4217 (Discord)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UnionRolistes/Bot-Roles/issues"
+  },
+  "homepage": "https://github.com/UnionRolistes/Bot-Roles#readme"
+}
