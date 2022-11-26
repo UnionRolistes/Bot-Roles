@@ -3,22 +3,21 @@ String.prototype.toProperCase = function() {
 };
 
 const Client = require('./src/structures/Client');
-const { Intents } = require('discord.js');
 require('dotenv').config();
 
-const client = module.exports = new Client({ 
+const client = module.exports = new Client({
 	devs: ['263022860551847936'],
 	config: './config',
-	clientOptions: { 
-			intents: [
-				"Guilds",
-				"GuildMessages",
-				"GuildPresences",
-				"GuildMessageReactions",
-				"DirectMessages",
-				"MessageContent",
-				"GuildVoiceStates"
-			]}
+	clientOptions: {
+		intents: [
+			'Guilds',
+			'GuildMessages',
+			'GuildPresences',
+			'GuildMessageReactions',
+			'DirectMessages',
+			'MessageContent',
+			'GuildVoiceStates',
+		] },
 });
 client.run();
 
@@ -31,7 +30,5 @@ RoleUpdater(client);
 const { Events } = require('./src/structures/EventHandler');
 const directory = `${__dirname}/src/events/`;
 new Events(client, directory);
-
-// const gRPCClient = require('./src/microservices/passwordTest/client')
 
 client.login(process.env.discord_bot_token);
