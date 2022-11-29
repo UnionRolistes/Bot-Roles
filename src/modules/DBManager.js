@@ -77,20 +77,6 @@ async function updateGuild(guildID, query, change, isEvents = false) {
 	return Guild;
 }
 
-async function disableAllEvents(userId) {
-
-	await mongoose.models.User.findOneAndUpdate({ id: userId }, { $set: { 'events.specialOperation.enabled': false } });
-	await mongoose.models.User.findOneAndUpdate({ id: userId }, { $set: { 'events.brawl.enabled': false } });
-	await mongoose.models.User.findOneAndUpdate({ id: userId }, { $set: { 'events.sectorConquest.enabled': false } });
-	await mongoose.models.User.findOneAndUpdate({ id: userId }, { $set: { 'events.portals.enabled': false } });
-
-	await mongoose.models.User.findOneAndUpdate({ id: userId }, { $set: { 'events.specialOperation.excludedHours': [] } });
-	await mongoose.models.User.findOneAndUpdate({ id: userId }, { $set: { 'events.brawl.excludedHours': [] } });
-	await mongoose.models.User.findOneAndUpdate({ id: userId }, { $set: { 'events.sectorConquest.excludedHours': [] } });
-	await mongoose.models.User.findOneAndUpdate({ id: userId }, { $set: { 'events.portals.excludedHours': [] } });
-}
-
-
 // USER
 
 /**
@@ -142,96 +128,4 @@ async function fetchUser(userID, createIfNotExist = false) {
 	return userToFetch;
 }
 
-/**
- * Updates a user. DEPRECATED
- * @param {*} userID Valid discord user id
- * @param {*} query	Query to update
- * @param {*} change Changes
- * @param {*} isEvents Set to true if it is event related for prefixing it
- * @returns Updated user document
- */
-async function updateUser(userID, query, change, isEvents = false) {
-	if(!userID) return 'No user id provided.';
-	if(typeof userID !== 'string') return 'The provided user id isnt a string.';
-
-	if(!query) return 'no query provided';
-	if(!change) return 'no change provided';
-	if(change == '--reset') {
-		const User = await mongoose.models.User.findOneAndUpdate({ id: userID }, { $set: { [query]: null } });
-
-		return User;
-
-	}
-	if(isEvents) {
-		const eventQuery = `events.${query}`;
-		return await mongoose.models.User.findOneAndUpdate({ id: userID }, { $set: { [eventQuery]: change } });
-	}
-
-	const User = await mongoose.models.User.findOneAndUpdate({ id: userID }, { $set: { [query]: change } });
-
-	return User;
-}
-
-
-/**
- * Create a new uid document, if one exists it returns it.
- * @param {String} UId UId to create the entry for
- * @param {String} nickname Nickname to create it
- * @returns {Object} createdUId The created uid
- */
-async function createUId(UId, nickname) {
-	const UIdSchema = require('../Schema/uid');
-	const existingUId = await UIdSchema.findOne({ uid: UId });
-
-	if(existingUId) return existingUId;
-	if(!existingUId) {
-		const createdUId = new mongoose.models.UId({
-			uid: UId,
-			gameNick: nickname,
-			lastUpdated: new Date(),
-		}).save();
-		return createdUId;
-	}
-}
-
-/**
- * Fetch an uid from the database, works with uid / nickname
- * @param {String} UId UId to fetch
- * @param {String} nickname Nickname to fetch
- * @param {Boolean} createIfNoExist Choose to create a new uid document
- * @param {Boolean} updateNickname Choose to update the nickname in the database entry if it was changed
- * @returns {Object} existingUId returns the db entry
- */
-async function fetchUId(UId, nickname, createIfNoExist = false, updateNickname = false) {
-	const UIdSchema = require('../Schema/uid');
-	// const existingUId = await UIdSchema.findOne({ uid: UId });
-	const existingUId = await UIdSchema.findOne({ $or: [ { uid: UId }, { gameNick: nickname } ] });
-
-	if(!existingUId && createIfNoExist) {
-		const createdUId = await createUId(UId, nickname, true);
-		return createdUId;
-	}
-	if(existingUId && updateNickname && existingUId.gameNick !== nickname) {
-		await mongoose.models.UId.findOneAndUpdate({ uid: UId }, { $set: { gameNick:  nickname, lastUpdated: new Date() } });
-		return existingUId;
-	}
-	if(existingUId && !updateNickname) {
-		return existingUId;
-	}
-}
-
-/**
- * Deletes an UId entry from the database, works with either uid or nickname
- * @todo add nickname
- * @param  {String} UId The UId to delete
- * @param  {String} nickname The nickname to delete
- * @return {Object}      The deleted entry
- */
-async function deleteUId(UId, nickname) {
-
-	if(!UId && !nickname) throw new TypeError('[deleteUID] -> No UId / nickname provided.');
-	const uidToDelete = await mongoose.models.UId.findOneAndDelete({ uid: UId });
-
-	return uidToDelete;
-}
-module.exports = { createGuild, deleteGuild, fetchGuild, updateGuild, disableAllEvents, createUser, deleteUser, fetchUser, updateUser, fetchUId, deleteUId };
+module.exports = { createGuild, deleteGuild, fetchGuild, updateGuild, createUser, deleteUser, fetchUser };
