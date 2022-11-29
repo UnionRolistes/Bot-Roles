@@ -29,7 +29,6 @@ module.exports = {
 	},
 	success(message) {
 		return console.log(green('[+] ') + message);
-		// return console.log(green('[✓] ') + message);
 	},
 	warn2(message) {
 		return console.log(yellow('[!] ') + message);
@@ -40,7 +39,6 @@ function getPath(module) {
 	return `${module}`.replace(path.resolve('./'), '');
 }
 function getCurrentDate() {
-	// Format: 15.05.2022 13:41:17
 	return df(new Date(), 'dd.mm.yyyy HH:MM:ss');
 }
 
