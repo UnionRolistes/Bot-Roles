@@ -1,6 +1,11 @@
 # UnionRolistes.fr
 Fonctionnalité du Bot Discord De UnionRolistes.fr, opensources
 
+This code appears to be a JavaScript file for a Discord bot named "Bot_Roles". 
+The bot has several commands, including ping, credit, version, and help, which provide information about the bot, its version, and available commands. 
+The bot also has a roles command that displays information about roles in a Discord server. 
+When this command is run with a specific channel mentioned, it returns a list of roles that have access to that channel.
+
 
 # OneLine Update / Install
 
