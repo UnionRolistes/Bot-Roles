@@ -23,7 +23,7 @@ class Roles extends Command {
 		this.client = client;
 	}
 
-	async execute(client, interaction, language) {
+	async execute(client, interaction) {
 		interaction.guild.fetch();
 		const rolelist = await interaction.guild.roles.cache.sort((h, l) => h.position - l.position).map(role => `▫️ ${role.name} - ${role.members.size} Member(s)`).reverse().join('\n');
 		const embed = new EmbedBuilder()
@@ -34,6 +34,7 @@ class Roles extends Command {
 			.setFooter({ text: 'Bot_Roles', iconURL: client.user.displayAvatarURL() })
 			.setTimestamp();
 
+		// Send the txt file with all roles
 		const test = new AttachmentBuilder(Buffer.from(rolelist, 'utf-8'), { name: 'rolelist.txt' });
 		interaction.reply({ embeds: [embed] }).then(() => {
 			interaction.channel.send({
@@ -72,7 +73,6 @@ class Roles extends Command {
 			}
 
 			await Schema.findOneAndUpdate({ id: role.id }, { $set: { history: existingRoleEntry.history } });
-
 
 			await updateRoleCount(role);
 
