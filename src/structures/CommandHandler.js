@@ -6,11 +6,9 @@ const { REST, Routes, PermissionsBitField } = require('discord.js');
 const fs = require('fs');
 const slashCommandsToPush = [];
 
-
 class CommandHandler {
 	constructor(client) {
 		this.client = client;
-
 	}
 
 	async load2() {
@@ -31,7 +29,6 @@ class CommandHandler {
 				default_permission: command.default_permission ? command.default_permission : null,
 				default_member_permissions: command.default_member_permissions ? PermissionsBitField.resolve(command.default_member_permissions).toString() : null,
 			});
-
 
 			next();
 		});
