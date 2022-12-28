@@ -25,7 +25,7 @@ class JDR extends Command {
 		this.client = client;
 	}
 
-	async execute(client, interaction, language) {
+	async execute(client, interaction) {
 		await interaction.reply({ content: 'Crée une partie [here]( http://planning.unionrolistes.fr/?webhook=https://discord.com/api/webhooks/873043760307642408/IM1VX44JlYfElbBOlVrYhUKM47uzW7Bp5jm7tp3xVxKYnE3wuzbbMZ8nGfhTT_uLEfLw).', ephemeral: true });
 	}
 
