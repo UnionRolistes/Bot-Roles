@@ -37,7 +37,7 @@ class History extends Command {
 		this.client = client;
 	}
 
-	async execute(client, interaction, language) {
+	async execute(client, interaction) {
 
 		const option = interaction.options.get('role');
 		console.log(option.value);
