@@ -77,6 +77,7 @@ class CommandHandler {
 		})();
 		(async () => {
 			try {
+				// eslint-disable-next-line no-unused-vars
 				const data = await rest.put(
 					Routes.applicationGuildCommands(process.env.clientId, process.env.guildId),
 					{ body: slashCommandsToPush },
