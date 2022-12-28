@@ -25,7 +25,7 @@ class Calendrier extends Command {
 		this.client = client;
 	}
 
-	async execute(client, interaction, language) {
+	async execute(client, interaction) {
 		await interaction.reply({ content: 'The calender can be found [here](http://planning.unionrolistes.fr/Calendar).', ephemeral: true });
 	}
 
