@@ -46,8 +46,7 @@ class Roles extends Command {
 		await interaction.guild.roles.cache.reduce(async (a, role) => {
 			// Wait for the previous item to finish processing
 			await a;
-			// Process this item
-			// Fetch the user if it's not in the cache
+			// Fetch the role if it's not in the cache
 			await interaction.guild.roles.cache.get(role.id);
 
 			// Sear for existing role
