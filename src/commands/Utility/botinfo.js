@@ -1,8 +1,7 @@
 /* eslint-disable no-useless-escape */
 const Command = require('../../structures/Command');
-const {ApplicationCommandType } = require('discord.js');
+const { ApplicationCommandType } = require('discord.js');
 const { version } = require('../../../package.json');
-
 
 
 class Botinfo extends Command {
