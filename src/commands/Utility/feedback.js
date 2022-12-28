@@ -24,7 +24,7 @@ class Feedback extends Command {
 		this.client = client;
 	}
 
-	async execute(client, interaction, language) {
+	async execute(client, interaction) {
 
 		// Create the modal
 		const modal = new ModalBuilder()
