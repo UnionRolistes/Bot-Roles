@@ -13,7 +13,7 @@ class Event {
 
 		// Setting the status
 		this.bot.user.setActivity('Coding', { type: ActivityType.Competing });
-		
+
 		setInterval(() => {
 			this.bot.user.setActivity('Coding', { type: ActivityType.Competing });
 		}, 300000);
