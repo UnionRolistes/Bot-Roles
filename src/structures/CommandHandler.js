@@ -55,7 +55,6 @@ class CommandHandler {
 					default_member_permissions: command.default_member_permissions ? PermissionsBitField.resolve(command.default_member_permissions).toString() : null,
 				});
 			}
-
 		});
 	}
 	async register() {
