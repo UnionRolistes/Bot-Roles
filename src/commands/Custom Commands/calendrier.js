@@ -8,7 +8,7 @@ class Calendrier extends Command {
 			name: 'calendrier',
 			description: 'Envoie un lien pour accéder au calendrier.',
 			usage: '',
-			category: 'Conception',
+			category: 'Custom Commands',
 			aliases: [],
 			cooldown: 3,
 			requiredPerms: 'READ_MESSAGES',
