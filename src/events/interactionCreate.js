@@ -7,6 +7,7 @@ class Event {
 		this.enabled = true;
 	}
 	async run(interaction) {
+		console.log(interaction);
 
 		if (interaction.isModalSubmit()) {
 			if(interaction.customId === 'feedbackModal') {
