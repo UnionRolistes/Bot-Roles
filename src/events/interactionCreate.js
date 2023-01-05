@@ -50,7 +50,7 @@ class Event {
 		}
 
 		try {
-			const User = await DB.fetchUser(interaction.user.id);
+			const User = await DB.fetchUser(interaction.user.id, true);
 
 			if(!User.tosAccepted) {
 				const embed = new EmbedBuilder()
