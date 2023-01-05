@@ -10,9 +10,9 @@
     
     },
     "botinfo": {
-        "project": "Project",
-        "developer": "Developer",
-        "contributors": "Contributors",
+        "project": "Projet",
+        "developer": "Développeur",
+        "contributors": "Contributeurs",
         "version": "Version"
     }
 

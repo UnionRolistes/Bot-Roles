@@ -10,11 +10,12 @@ class Botinfo extends Command {
 			name: 'botinfo',
 			description: 'Pong!',
 			name_localizations: {
-				'de': 'info',
-				'en': 'botinfo',
+				'de': 'botinfo',
+				'en-GB': 'botinfo',
 			},
 			description_localizations: {
-				'de': 'bot pin lmao',
+				'de': 'Allgemeine Informationen zum Projekt.',
+				'en-GB': 'General informations.',
 			},
 			category: 'Utility',
 			cooldown: 3,
@@ -31,9 +32,23 @@ class Botinfo extends Command {
 		this.client = client;
 	}
 
-	async execute(client, interaction) {
+	async execute(client, interaction, language) {
 
 		interaction.reply({ content:
+		`\`\`\`asciidoc
+       = Soutenez le JDR =
+= Soutenez L'Union des Rôlistes =
+
+> ${language.botinfo.project} :: Bot_Roles
+> ${language.botinfo.version} :: ${version}
+> ${language.botinfo.developer} :: Myst#4217
+> ${language.botinfo.contributors} :: 
+	- Dae#5125
+	- dryas#5722 
+	- Tonitch#2192\`\`\`` });
+
+	}
+	/* interaction.reply({ content:
 		`\`\`\`asciidoc
        = Soutenez le JDR =
 = Soutenez L'Union des Rôlistes =
@@ -41,12 +56,12 @@ class Botinfo extends Command {
 > Projet :: Bot_Roles
 > Version :: ${version}
 > Developer :: Myst#4217
-> Contributors :: 
-- Dae#5125
-- dryas#5722 
-- Tonitch#2192\`\`\`` });
+> Contributors ::
+	- Dae#5125
+	- dryas#5722
+	- Tonitch#2192\`\`\`` });
 
-	}
+	}*/
 
 	/*
 			embed.setDescription(`\`\`\`asciidoc
