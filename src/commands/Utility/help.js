@@ -15,23 +15,16 @@ class Help extends Command {
 			enabled: true,
 			ownerOnly: false,
 			guildOnly: true,
+			usage: '/help (commandToSarch)',
 
 			type: ApplicationCommandType.ChatInput,
 			defaultMemberPermissions: 'SendMessages',
 			slashOptions: [{
 				name: 'command',
-				description: 'Command to look up.',
-				type: 1,
+				// type: 3
+				type: ApplicationCommandOptionType.String,
+				description: 'A valid command argument.',
 				required: false,
-				options:[
-					{
-						name: 'command',
-						type: ApplicationCommandOptionType.String,
-						description: 'A valid command argument.',
-						required: true,
-
-					},
-				],
 			}],
 
 		});
@@ -41,52 +34,53 @@ class Help extends Command {
 
 	async execute(client, interaction) {
 
-
+		const commandToSearch = interaction.options.getString('command');
 		const embed = new EmbedBuilder()
-			.setImage('https://forum.star-conflict.com/uploads/monthly_2021_01/500-250-logo.png.f24a71acb2fc8e2b85a18c485a1af565.png')
-			.setTitle(`${this.client.user.username}`)
-
+			.setTitle(`${this.client.user.username} - Commands`)
 			.setColor('#4051b4')
 			// .setFooter(`${this.client.user.tag}`, this.client.user.displayAvatarURL())
 			.setTimestamp();
 
-		/* if (args[0]) {
-			let command = args[0];
+		if (commandToSearch) {
+			let command = commandToSearch;
 			let cmd;
-			if (this.client.commands.has(command)) {
-				cmd = this.client.commands.get(command);
-			}
-			else if (this.client.aliases.has(command)) {
-				cmd = this.client.commands.get(this.client.aliases.get(command));
+			if (this.client.container.slashCommands.has(command)) {
+				cmd = this.client.container.slashCommands.get(command);
 			}
 
 			// invalid command or ownerOnly
 			if(!cmd || cmd.ownerOnly) {
-
-				embed.setColor('RED')
-				// .addField(`<:xmark:836696809773727745> I could not find the command: ${args[0]}`, `\n\nHelp Command Usage: \n\`${prefix}help\` -  lists all commands\n\`${prefix}help [command]\` - provides help for a command`)
-					.setDescription(`<:xmark:836696809773727745> **I could not find the command: ${args[0]}**\n\nHelp Command Usage: \n\`${prefix}help\` -  lists all commands\n\`${prefix}help [command]\` - provides help for a command`);
-
-				// .addField('Help Command Usage', `\`${prefix}help\` -  lists all commands\n\`${prefix}help [command]\` - provides help for a command or lists all commands`);
-				return message.channel.send(embed);
-
-				// return message.channel.send(`<:xmark:836696809773727745> I could not find the command: ${args[0]}\n\`${prefix}help\` -  lists all commands\n\`${prefix}help [command]\` - provides help for a command or lists all commands`);
+				embed.setColor('Red')
+					.setDescription(`✘ **I could not find the command: ${commandToSearch}**\n\nHelp Command Usage: \n\`/help\` -  lists all commands\n\`/help [command]\` - provides help for a command`);
+				return interaction.reply({ embeds: [embed] });
 			}
 			command = cmd;
 
-			embed.setTitle(`Command : ${cmd.name.slice(0, 1).toUpperCase() + command.name.slice(1)}`);
-			embed.setDescription([
+			// embed.setTitle(`Command : ${cmd.name.slice(0, 1).toUpperCase() + command.name.slice(1)}`);
+			/* embed.setDescription([
 				`:white_small_square: **Description:** \`${command.description || 'No Description provided.'}\``,
-				`:white_small_square: **Usage:** \`${command.usage ? `\`${prefix}${command.name} ${command.usage}\`` : `${prefix}${command.name}`}\` `,
-				`:white_small_square: **Aliases:** \`${command.aliases.join(', ') || 'None'}\``,
+				`:white_small_square: **Usage:** \`${command.usage ? `\`/${command.name} ${command.usage}\`` : `/}${command.name}`}\` `,
 				`:white_small_square: **Cooldown:** \`${command.cooldown || '3'} second(s).\``,
 				`:white_small_square: **Category:** \`${command.category ? command.category : 'General' || 'Misc'}\``,
-			].join('\n'));
-			return message.channel.send(embed);
-		}*/
+			].join('\n')); */
+
+			embed.setDescription(`\`\`\`asciidoc
+> Command :: ${cmd.name.slice(0, 1).toUpperCase() + command.name.slice(1)}
+	- Description :: ${command.description || 'No Description provided.'}
+	- Cooldown :: ${command.cooldown || '3'} second(s).
+	- Category :: ${command.category ? command.category : 'General' || 'Misc'}
+	- Usage :: ${command.usage ? `${command.usage}` : `/${command.name}`}
+
+\`\`\``);
+
+			return interaction.reply({ embeds: [embed] });
+		}
 
 		const categories = readdirSync('./src/commands/');
-
+		let descriptionString = `\`\`\`asciidoc
+Projet :: Bot_Roles
+Version :: ${version}
+Developer :: Myst#4217\`\`\``;
 		embed.setDescription([
 			'This is a bot specificaly for L\'Union des Rôlistes. ',
 			'Use `/help <command>` for more info about a specific command.',
@@ -106,12 +100,33 @@ class Help extends Command {
 
 			console.log(capitalise);
 			console.log(dir);
+
 			try {
 				if (dir.size === 0) return;
-				embed.addFields(
+				/* embed.addFields(
 					{ name: `:white_small_square: ${capitalise}`, value: dir.map(c => `\`${c.name}\``).join(', ') },
 				);
 
+				embed.addFields(
+					{ name: `\`\`\`asciidoc
+> ${capitalise} :: \`\`\``, value: dir.map(c => `\`${c.name}\``).join(', ') },
+				);*/
+				descriptionString += `\`\`\`asciidoc
+> ${capitalise} ::
+- ${dir.map(c => `/${c.name} - ${c.description}`).join('\n- ')}
+\`\`\``;
+
+			/*
+
+
+				descriptionString += `\`\`\`asciidoc
+Category:: **${capitalise}**
+Commands:: ${dir.map(c => `/${c.name}`).join(', ')}
+					> test
+
+> ${capitalise} ::
+${dir.map(c => `- /${c.name}`).join('\n- ')}
+\`\`\``;*/
 			}
 			catch (error) {
 				// disable [12:04:51]  error  [RangeError: RichEmbed field values may not be empty.]: undefined for being annoying in console
@@ -120,6 +135,7 @@ class Help extends Command {
 
 			}
 		});
+		embed.setDescription(descriptionString);
 		interaction.reply({ embeds: [embed] });
 
 
