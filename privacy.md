@@ -29,7 +29,7 @@ We collect data with different scenarios, each scenario covered by this Policy w
 
 The following data may be collected and temporarily stored when intentionally provided by a User via usage of a function of a Bot, hence this data is not collected automatically. Should a User provide data in this manner, they forego any rights pertaining to the content of the data provided.
 
--   User specific configuration settings
+-   User data (e.g ID and username)
 -   Data and content for the task called
 -   Analytical data
     -   Command arguments (e.g. search terms)
