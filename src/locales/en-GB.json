@@ -7,6 +7,7 @@
         "button_decline": "Decline",
         "accept": "**✓** ToS accepted. Enjoy our service.\n\n<https://gist.github.com/Myst82015/d5ec04643c4e3af3513e07310b74e64f>",
         "denied": "ToS denied. Sorry to see that. If you have any concerns or feedback please join out support server and open a ticket."
+    
     },
     "botinfo": {
         "project": "Project",
