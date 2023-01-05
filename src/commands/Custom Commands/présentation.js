@@ -8,7 +8,7 @@ class Présentation extends Command {
 			name: 'presentation',
 			description: 'Envoie un lien pour se présenter.',
 			usage: '',
-			category: 'Conception',
+			category: 'Custom Commands',
 			aliases: [],
 			cooldown: 3,
 			requiredPerms: 'READ_MESSAGES',
