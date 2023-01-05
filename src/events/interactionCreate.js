@@ -33,6 +33,9 @@ class Event {
 		const timestamps = this.bot.cooldowns.get(command.name);
 		const cooldownAmount = (command.cooldown || 3) * 1000;
 
+		const language = interaction.locale;
+		// console.log(language)
+
 		if (!timestamps.has(interaction.user.id)) {
 			timestamps.set(interaction.user.id, now);
 			setTimeout(() => timestamps.delete(interaction.user.id), cooldownAmount);
@@ -91,7 +94,7 @@ class Event {
 				return;
 			}
 
-			await command.execute(this.bot, interaction);
+			await command.execute(this.bot, interaction, language);
 			this.bot.logger.info(__filename, `${interaction.user.tag} in #${interaction.channel.name} triggered an interaction. Command: (${command.name})`);
 		}
 		catch (error) {
