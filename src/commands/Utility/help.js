@@ -32,7 +32,7 @@ class Help extends Command {
 		this.client = client;
 	}
 
-	async execute(client, interaction) {
+	async execute(client, interaction, language) {
 
 		const commandToSearch = interaction.options.getString('command');
 		const embed = new EmbedBuilder()
