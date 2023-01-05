@@ -17,10 +17,7 @@ class Event {
 
 				return this.bot.channels.cache.get('1034223481388269568').send({ content: `Feedback from \`${interaction.user.username}#${interaction.user.discriminator}\`: \n${feedbackMessage}` });
 			}
-
-
 		}
-
 
 		if (!interaction.isCommand()) return;
 
