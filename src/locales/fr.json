@@ -1,12 +1,12 @@
 {
-    "command_cooldown": "Please wait for `{{time}}` more second(s) before reusing the `{{command}}` command.",
+    "command_cooldown": "Veuillez attendre `{{time}}` plus de seconde(s) avant de réutiliser la commande `{{command}}`.",
     "tos": {
-        "title": "Tos not accepted.",
-        "description": "✘ You must accept our Terms of Service to continue.\n\n<https://gist.github.com/Myst82015/d5ec04643c4e3af3513e07310b74e64f>\n\nClicking the button below means that you acknowledge that you have read, understood, and accepted the terms of service.",
-        "button_accept": "Accept ToS",
-        "button_decline": "Decline",
-        "accept": "**✓** ToS accepted. Enjoy our service.\n\n<https://gist.github.com/Myst82015/d5ec04643c4e3af3513e07310b74e64f>",
-        "denied": "ToS denied. Sorry to see that. If you have any concerns or feedback please join out support server and open a ticket."
+        "title": "Conditions de service non acceptées.",
+        "description": "✘ Vous devez accepter nos conditions de service pour continuer.\n\n<https://gist.github.com/Myst82015/d5ec04643c4e3af3513e07310b74e64f>\n\nEn cliquant sur le bouton ci-dessous, vous reconnaissez avoir lu, compris et accepté les conditions de service.",
+        "button_accept": "Accepter les ToS",
+        "button_decline": "Rejeter",
+        "accept": "**✓** ToS accepté. Profitez de notre service.\n\n<https://gist.github.com/Myst82015/d5ec04643c4e3af3513e07310b74e64f>",
+        "denied": "ToS refusé. Désolé de voir cela. Si vous avez des questions ou des commentaires, veuillez rejoindre notre serveur de support et ouvrir un ticket."
     
     },
     "botinfo": {
