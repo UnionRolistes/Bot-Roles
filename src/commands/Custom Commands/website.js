@@ -26,7 +26,7 @@ class Website extends Command {
 	}
 
 	async execute(client, interaction) {
-		await interaction.reply({ content: '\`The essence of a role playing game is that it is a group, cooperative experience. (Gary Gygax)\`\n[Take a look at our website.](http://site.unionrolistes.fr/)', ephemeral: true });
+		await interaction.reply({ content: '`The essence of a role playing game is that it is a group, cooperative experience. (Gary Gygax)`\n[Take a look at our website.](http://site.unionrolistes.fr/)', ephemeral: true });
 	}
 
 }
