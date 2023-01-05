@@ -9,6 +9,13 @@ class Botinfo extends Command {
 		super({
 			name: 'botinfo',
 			description: 'Pong!',
+			name_localizations: {
+				'de': 'info',
+				'en': 'botinfo',
+			},
+			description_localizations: {
+				'de': 'bot pin lmao',
+			},
 			category: 'Utility',
 			cooldown: 3,
 			enabled: true,
@@ -28,17 +35,30 @@ class Botinfo extends Command {
 
 		interaction.reply({ content:
 		`\`\`\`asciidoc
-Hello, World!
-==============================
-Projet:: Bot_Roles
-Version:: ${version}
-Developer:: Myst#4217
-Contributors:: 
-* Dae#5125
-* dryas#5722 
-* Tonitch#2192\`\`\`` });
+       = Soutenez le JDR =
+= Soutenez L'Union des Rôlistes =
+
+> Projet :: Bot_Roles
+> Version :: ${version}
+> Developer :: Myst#4217
+> Contributors :: 
+- Dae#5125
+- dryas#5722 
+- Tonitch#2192\`\`\`` });
 
 	}
+
+	/*
+			embed.setDescription(`\`\`\`asciidoc
+> Command :: ${cmd.name.slice(0, 1).toUpperCase() + command.name.slice(1)}
+	- Description :: ${command.description || 'No Description provided.'}
+	- Cooldown :: ${command.cooldown || '3'} second(s).
+	- Category :: ${command.category ? command.category : 'General' || 'Misc'}
+	- Usage :: ${command.usage ? `${command.usage}` : `/${command.name}`}
+
+\`\`\``);
+
+	*/
 }
 
 module.exports = Botinfo;

@@ -28,6 +28,8 @@ class CommandHandler {
 				options: command.options ? command.options : null,
 				default_permission: command.default_permission ? command.default_permission : null,
 				default_member_permissions: command.default_member_permissions ? PermissionsBitField.resolve(command.default_member_permissions).toString() : null,
+				description_localizations: command.description_localizations ? command.description_localizations : null,
+				name_localizations: command.name_localizations ? command.name_localizations : null,
 			});
 
 			next();
