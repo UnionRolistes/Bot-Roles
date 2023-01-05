@@ -8,7 +8,7 @@ class JDR extends Command {
 			name: 'jdr',
 			description: 'Envoie un lien pour créer une partie.',
 			usage: '',
-			category: 'Conception',
+			category: 'Custom Commands',
 			aliases: [],
 			cooldown: 3,
 			requiredPerms: 'READ_MESSAGES',
