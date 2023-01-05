@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.4] - 2023-01-05
+
+### Added 
+
+- Added help.js command
+
+### Changed
+
+- displayRoles.js, botinfo.js, history.js, calendrier.js, jdr.js, présentation.js, interaction.js
+- https://github.com/UnionRolistes/Bot-Roles/compare/9f18d0ab6a4f...a1e84d6ae84b
+
+## [0.0.3] - 2022-12-29
+
+### Added 
+
+- Added commands
+- Added interactionCreate.js
+
+### Removed
+
+- Language system
+
+### Changed
+
+- displayRoles.js, botinfo.js, history.js, calendrier.js, jdr.js, présentation.js
+
 ## [0.0.2] - 2022-11-26
 
 ### Added 
