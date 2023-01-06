@@ -70,14 +70,14 @@ class Event {
 					.setTitle(language.tos.title)
 					.setDescription(language.tos.description)
 					// .setTitle('Tos not accepted.')
-					// .setDescription('✘ You must accept our Terms of Service to continue.\n\n<https://gist.github.com/Myst82015/d5ec04643c4e3af3513e07310b74e64f>\n\nClicking the button below means that you acknowledge that you have read, understood, and accepted the terms of service.')
-				// .setDescription('✘ You don\'t have an account yet. Use `/register` to create one and select your languageuage.\n**Please read this [privacy policy](<https://gist.github.com/Myst82015/d5ec04643c4e3af3513e07310b74e64f>) before doing so**.')
+					// .setDescription('✘ You must accept our Terms of Service to continue.\n\n<https://github.com/UnionRolistes/Bot-Roles/blob/discord-v14/privacy.md>\n\nClicking the button below means that you acknowledge that you have read, understood, and accepted the terms of service.')
+				// .setDescription('✘ You don\'t have an account yet. Use `/register` to create one and select your languageuage.\n**Please read this [privacy policy](<https://github.com/UnionRolistes/Bot-Roles/blob/discord-v14/privacy.md>) before doing so**.')
 					.setColor('d00218');
 
 				const embed2 = new EmbedBuilder()
 					.setColor('Green')
 					.setDescription(`${language.tos.accepted}`);
-					// .setDescription('**✓** ToS accepted. Enjoy our service.\n\n<https://gist.github.com/Myst82015/d5ec04643c4e3af3513e07310b74e64f>');
+					// .setDescription('**✓** ToS accepted. Enjoy our service.\n\n<https://github.com/UnionRolistes/Bot-Roles/blob/discord-v14/privacy.md>');
 				const row = new ActionRowBuilder()
 					.addComponents(
 						await new ButtonBuilder()
