@@ -2,10 +2,10 @@
     "command_cooldown": "Veuillez attendre `{{time}}` plus de seconde(s) avant de réutiliser la commande `{{command}}`.",
     "tos": {
         "title": "Conditions de service non acceptées.",
-        "description": "✘ Vous devez accepter nos conditions de service pour continuer.\n\n<https://gist.github.com/Myst82015/d5ec04643c4e3af3513e07310b74e64f>\n\nEn cliquant sur le bouton ci-dessous, vous reconnaissez avoir lu, compris et accepté les conditions de service.",
+        "description": "✘ Vous devez accepter nos conditions de service pour continuer.\n\n<https://github.com/UnionRolistes/Bot-Roles/blob/discord-v14/privacy.md>\n\nEn cliquant sur le bouton ci-dessous, vous reconnaissez avoir lu, compris et accepté les conditions de service.",
         "button_accept": "Accepter les ToS",
         "button_decline": "Rejeter",
-        "accept": "**✓** ToS accepté. Profitez de notre service.\n\n<https://gist.github.com/Myst82015/d5ec04643c4e3af3513e07310b74e64f>",
+        "accept": "**✓** ToS accepté. Profitez de notre service.\n\n<https://github.com/UnionRolistes/Bot-Roles/blob/discord-v14/privacy.md>",
         "denied": "ToS refusé. Désolé de voir cela. Si vous avez des questions ou des commentaires, veuillez rejoindre notre serveur de support et ouvrir un ticket."
     },
     "botinfo": {
