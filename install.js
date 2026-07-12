@@ -17,7 +17,7 @@ async function main() {
         const dbName = await input({
         message: "Enter the database name:"
     });
-    const clientId = await input({
+    const applicationId = await input({
         message: "Enter the Client ID of the bot application:"
     });
     const guildId = await input({
@@ -33,7 +33,7 @@ async function main() {
     dbName=${dbName}
 
 # Development Parameters
-    clientId=${clientId}
+    applicationId=${applicationId}
     guildId=${guildId}
     `;
 

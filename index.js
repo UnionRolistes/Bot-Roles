@@ -7,7 +7,7 @@ require('dotenv').config();
 
 const client = module.exports = new Client({
 	devs: ['263022860551847936'],
-	config: './config',
+	// config: './config',
 	clientOptions: {
 		intents: [
 			'Guilds',
