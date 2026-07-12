@@ -10,8 +10,8 @@ class CommandHandler {
 	constructor(client) {
 		this.client = client;
 	}
-
-	async load2() {
+	// old code, uses the walk module. Will be removed soon to reduce dependencies
+	/*async load2() {
 
 		const walker = walk.walk('./src/commands');
 		walker.on('file', (root, stats, next) => {
@@ -34,7 +34,7 @@ class CommandHandler {
 
 			next();
 		});
-	}
+	}*/
 	async load() {
 
 		fs.readdirSync('./src/commands').forEach(dir => {
@@ -62,17 +62,16 @@ class CommandHandler {
 	async register() {
 		const rest = new REST({ version: '10' }).setToken(process.env.discord_bot_token);
 
-
 		(async () => {
 			try {
-				this.client.logger.warn2(`Started refreshing ${slashCommandsToPush.length} application (/) commands.`);
+				this.client.logger.warn(__filename, `Started refreshing ${slashCommandsToPush.length} application (/) commands.`);
 
 				const data = await rest.put(
-					Routes.applicationCommands(process.env.clientId),
+					Routes.applicationCommands(process.env.applicationId),
 					{ body: slashCommandsToPush },
 				);
 
-				this.client.logger.success(`Successfully reloaded ${data.length} application (/) commands.`);
+				this.client.logger.success(__filename, `Successfully refreshed ${data.length} application (/) commands.`);
 			}
 			catch (error) {
 				console.error(error);
@@ -83,14 +82,15 @@ class CommandHandler {
 			try {
 				// eslint-disable-next-line no-unused-vars
 				const data = await rest.put(
-					Routes.applicationGuildCommands(process.env.clientId, process.env.guildId),
+					Routes.applicationGuildCommands(process.env.applicationId, process.env.guildId),
 					{ body: slashCommandsToPush },
 				);
 				// console.log(slashCommandsToPush);
-				// console.log(`Successfully reloaded ${data.length} application (/) commands for developer guild.`);
+				// this.client.logger.success(__filename, `Successfully refreshed ${data.length} application (/) commands for developer guild.`);
 			}
 			catch (error) {
 				console.error(error);
+				this.client.logger.error(__filename, error);
 			}
 		})();
 

@@ -1,13 +1,18 @@
 const Discord = require('discord.js');
 const mongoose = require('mongoose');
+const logger = require('../modules/Logger');
 
 require('./../Schema/User');
 require('dotenv').config();
 
 // mongoose.connect(`mongodb://${config.database_ip}:${config.database_port}/${config.database_name}`, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
+// mongoose.connection.on('error', console.error.bind(console, '[34m[DATABASE] Connection Error:'));
+//mongoose.connection.once('open', () => console.log('[DATABASE] Connected Successfully'));
+
 mongoose.connect(process.env.mongo_url, { dbName: process.env.dbName });
 mongoose.connection.on('error', console.error.bind(console, '[34m[DATABASE] Connection Error:'));
-mongoose.connection.once('open', () => console.log('[DATABASE] Connected Successfully'));
+mongoose.connection.once('open', () => logger.success(__filename, '[DATABASE] Connected Successfully'));
+
 
 class Base extends Discord.Client {
 	constructor(options) {

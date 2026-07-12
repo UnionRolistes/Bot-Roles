@@ -7,23 +7,24 @@ class Event {
 		this.enabled = true;
 	}
 	async run() {
-		this.bot.logger.success(`A total of ${this.bot.container.slashCommands.size} (/) commands were loaded.`);
+		this.bot.logger.success(__filename, `A total of ${this.bot.container.slashCommands.size} (/) commands were loaded.`);
 
-		this.bot.logger.success(`Logged in as ${this.bot.user.tag} (${this.bot.user.id})`);
+		this.bot.logger.info(__filename, `Logged in as ${this.bot.user.tag} (${this.bot.user.id})`);
 
 		// Setting the status
-		this.bot.user.setActivity('Coding', { type: ActivityType.Competing });
+		this.bot.user.setActivity('Jeu de Rôle', { type: ActivityType.Playing });
 
-		// Check for uncached users and guilds without a document in the database
 		setInterval(() => {
+			this.bot.user.setActivity('Jeu de Rôle', { type: ActivityType.Playing });
+		}, 300000);
+
+		// OLD CODE
+		// Check for uncached users and guilds without a document in the database
+		/*setInterval(() => {
 			this.bot.guilds.cache.forEach(async guild => {
 				// await DB.fetchGuild(guild.id);
 			});
-		}, 300000);
-
-		setInterval(() => {
-			this.bot.user.setActivity('Coding', { type: ActivityType.Competing });
-		}, 300000);
+		}, 300000); */
 
 	}
 }

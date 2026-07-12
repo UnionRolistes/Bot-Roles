@@ -5,12 +5,12 @@ const Logger = require('../modules/Logger');
 
 
 module.exports = async (client) => {
-	Logger.success('RoleUpdater.js active. Time cycle limit: 1 hour');
+	Logger.warn(__filename, 'RoleUpdater.js active. Time cycle limit: 1 hour');
 	const testRULE2 = new schedule.RecurrenceRule();
 	testRULE2.minute = 0;
 
 	const JOBRCOURRING2 = schedule.scheduleJob(testRULE2, async function(y) {
-		Logger.warn2('RoleUpdater.js Task executing...');
+		Logger.warn(__filename, 'RoleUpdater.js Task executing...');
 
 		await client.guilds.cache.reduce(async (a, guild) => {
 
