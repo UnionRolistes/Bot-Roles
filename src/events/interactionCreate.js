@@ -11,7 +11,7 @@ class Event {
 
 		if (interaction.isModalSubmit()) {
 			if(interaction.customId === 'feedbackModal') {
-				await interaction.reply({ content: '**✓** Your submission was received successfully.' });
+				await interaction.reply({ content: '**✓** Your feedback was received.' });
 
 				const feedbackMessage = interaction.fields.getTextInputValue('feedbackMessage');
 
