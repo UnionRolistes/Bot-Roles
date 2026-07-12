@@ -1,0 +1,9 @@
+services:
+  bot:
+    build: .
+    image: rolelist-bot
+    container_name: rolelist-bot
+    restart: unless-stopped
+    volumes:
+      - ./config.json:/app/config.json
+      - ./logs:/app/logs
