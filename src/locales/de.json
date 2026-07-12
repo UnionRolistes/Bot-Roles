@@ -5,8 +5,8 @@
         "description": "✘ Du musst unsere Servicebedingungen, auch Terms of Service (ToS) genannt, akzeptieren um fortzufahren.\n\n<https://github.com/UnionRolistes/Bot-Roles/blob/discord-v14/privacy.md>\n\nMit deiner Zustimmung bestätigst du, dass du die Servicebedingungen gelesen, verstanden und akzeptiert hast.",
         "button_accept": "Ja",
         "button_decline": "Nein",
-        "accepted": "**✓** ToS akzeptiert. Vielen Dank für deine Unterstützung.\n\n<https://github.com/UnionRolistes/Bot-Roles/blob/discord-v14/privacy.md>",
-        "denied": "ToS nicht akzeptiert. Wir fruen uns über jegliches Feedback und Anregungen. Schicke uns eine Nachricht!"
+        "accepted": "**✓** ToS akzeptiert. Vielen Dank fürs Durchlesen.\n\n<https://github.com/UnionRolistes/Bot-Roles/blob/discord-v14/privacy.md>",
+        "denied": "ToS nicht akzeptiert. Wir freuen uns über jegliches Feedback und Anregungen. Schick uns eine Nachricht!"
     },
     "botinfo": {
         "project": "Projekt",
