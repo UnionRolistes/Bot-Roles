@@ -69,43 +69,43 @@ class History extends Command {
 
 		// Check if the day exists
 		let db9 = DBEntry.history.findIndex(object => object.date === day9);
-		if(!DBEntry.history[db9]) {db9 = { date: day9, count: 'No data avaiable.' };}
+		if(!DBEntry.history[db9]) {db9 = { date: day9, count: 'No data available.' };}
 		else {db9 = { date: day9, count: DBEntry.history[db9].count + ' Member(s)' };}
 
 		let db8 = DBEntry.history.findIndex(object => object.date === day8);
-		if(!DBEntry.history[db8]) {db8 = { date: day8, count: 'No data avaiable.' };}
+		if(!DBEntry.history[db8]) {db8 = { date: day8, count: 'No data available.' };}
 		else {db8 = { date: day8, count: DBEntry.history[db8].count + ' Member(s)' };}
 
 		let db7 = DBEntry.history.findIndex(object => object.date === day7);
-		if(!DBEntry.history[db7]) {db7 = { date: day7, count: 'No data avaiable.' };}
+		if(!DBEntry.history[db7]) {db7 = { date: day7, count: 'No data available.' };}
 		else {db7 = { date: day7, count: DBEntry.history[db7].count + ' Member(s)' };}
 
 		let db6 = DBEntry.history.findIndex(object => object.date === day6);
-		if(!DBEntry.history[db6]) {db6 = { date: day6, count: 'No data avaiable.' };}
+		if(!DBEntry.history[db6]) {db6 = { date: day6, count: 'No data available.' };}
 		else {db6 = { date: day6, count: DBEntry.history[db6].count + ' Member(s)' };}
 
 		let db5 = DBEntry.history.findIndex(object => object.date === day5);
-		if(!DBEntry.history[db5]) {db5 = { date: day5, count: 'No data avaiable.' };}
+		if(!DBEntry.history[db5]) {db5 = { date: day5, count: 'No data available.' };}
 		else {db5 = { date: day5, count: DBEntry.history[db5].count + ' Member(s)' };}
 
 		let db4 = DBEntry.history.findIndex(object => object.date === day4);
-		if(!DBEntry.history[db4]) {db4 = { date: day4, count: 'No data avaiable.' };}
+		if(!DBEntry.history[db4]) {db4 = { date: day4, count: 'No data available.' };}
 		else {db4 = { date: day4, count: DBEntry.history[db4].count + ' Member(s)' };}
 
 		let db3 = DBEntry.history.findIndex(object => object.date === day3);
-		if(!DBEntry.history[db3]) {db3 = { date: day3, count: 'No data avaiable.' };}
+		if(!DBEntry.history[db3]) {db3 = { date: day3, count: 'No data available.' };}
 		else {db3 = { date: day3, count: DBEntry.history[db3].count + ' Member(s)' };}
 
 		let db2 = DBEntry.history.findIndex(object => object.date === day2);
-		if(!DBEntry.history[db2]) {db2 = { date: day2, count: 'No data avaiable.' };}
+		if(!DBEntry.history[db2]) {db2 = { date: day2, count: 'No data available.' };}
 		else {db2 = { date: day2, count: DBEntry.history[db2].count + ' Member(s)' };}
 
 		let db1 = DBEntry.history.findIndex(object => object.date === day1);
-		if(!DBEntry.history[db1]) {db1 = { date: day1, count: 'No data avaiable.' };}
+		if(!DBEntry.history[db1]) {db1 = { date: day1, count: 'No data available.' };}
 		else {db1 = { date: day1, count: DBEntry.history[db1].count + ' Member(s)' };}
 
 		let db0 = DBEntry.history.findIndex(object => object.date === day0);
-		if(!DBEntry.history[db0]) {db0 = { date: day0, count: 'No data avaiable.' };}
+		if(!DBEntry.history[db0]) {db0 = { date: day0, count: 'No data available.' };}
 		else {db0 = { date: day0, count: DBEntry.history[db0].count + ' Member(s)' };}
 
 		embed.addFields(
