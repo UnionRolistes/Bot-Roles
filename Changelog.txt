@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.5] - 2026-07-12
+
+### Fixed 
+
+- Bot is starting again, all major packages are deprecated
+- mongoose updated, discord.js updated to latest version 14 available
+- Made changes to the registering process for the slash commands, just a temporary solution!
+
+### Changed
+
+- https://github.com/UnionRolistes/Bot-Roles/commit/40020402f828760e2d1f5c7c71cc75622f96d320
+- https://github.com/UnionRolistes/Bot-Roles/commit/394457eacd26096d1ca6764bd04af9722dde127e
+- https://github.com/UnionRolistes/Bot-Roles/commit/11bb5cf6eca971f96f54c321b23cd99647395ba0
+- https://github.com/UnionRolistes/Bot-Roles/commit/f51def5c045632194807d988696a6097ea2cb900
+- https://github.com/UnionRolistes/Bot-Roles/commit/7c5c23afdf124a31f0a3e99f9bdd23feb0e74be5
+
+
 ## [0.0.5] - 2023-01-05
 
 ### Added 
