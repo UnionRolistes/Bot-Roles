@@ -12,8 +12,8 @@ class Command {
 		this.enabled = options.enabled || false;
 		this.guildOnly = options.guildOnly || false;
 		this.options = options.slashOptions || [];
-		this.name_localizations = options.name_localizations || [];
-		this.description_localizations = options.description_localizations || [];
+		// this.name_localizations = options.name_localizations || [];
+		// this.description_localizations = options.description_localizations || [];
 	}
 }
 

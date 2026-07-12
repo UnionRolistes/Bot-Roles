@@ -5,7 +5,7 @@
         "description": "✘ You must accept our Terms of Service to continue.\n\n<https://github.com/UnionRolistes/Bot-Roles/blob/discord-v14/privacy.md>\n\nClicking the button below means that you acknowledge that you have read, understood, and accepted the terms of service.",
         "button_accept": "Accept ToS",
         "button_decline": "Decline",
-        "accept": "**✓** ToS accepted. Enjoy our service.\n\n<https://github.com/UnionRolistes/Bot-Roles/blob/discord-v14/privacy.md>",
+        "accepted": "**✓** ToS accepted. Enjoy our service.\n\n<https://github.com/UnionRolistes/Bot-Roles/blob/discord-v14/privacy.md>",
         "denied": "ToS denied. Sorry to see that. If you have any concerns or feedback please join out support server and open a ticket."
     },
     "botinfo": {

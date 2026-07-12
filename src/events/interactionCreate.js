@@ -82,8 +82,8 @@ class Event {
 					.addComponents(
 						await new ButtonBuilder()
 							.setCustomId('tos_accepted')
-							.setLabel(language.tos.button_accept)
-							// .setLabel('Accept ToS')
+							// .setLabel(language.tos.button_accept)
+							.setLabel('Accept ToS')
 							.setStyle(ButtonStyle.Success),
 						new ButtonBuilder()
 							.setCustomId('tos_declined')
