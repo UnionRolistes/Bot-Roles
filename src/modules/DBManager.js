@@ -1,10 +1,13 @@
 const mongoose = require('mongoose');
 
+// ALL methods related to Guilds will be removed in a future update since they are not required anymore.
+/*
 /**
  * Creates a new guild document in the database from the guilds collection
  * @param guildID A valid discord guild id
  * @returns {Object} Guild Return the newly created Guild object
  */
+/*
 async function createGuild(guildID) {
 	if(!guildID) return 'no guild id provided';
 	if(typeof guildID !== 'string') return 'provided guild id isnt a string';
@@ -24,6 +27,7 @@ async function createGuild(guildID) {
  * @param guildID A valid discord guild id
  * @returns Guild Return the deleted Guild object
  */
+/*
 async function deleteGuild(guildID) {
 	if(!guildID) return 'no guild id provided';
 	if(typeof guildID !== 'string') return 'provided guild id isnt a string';
@@ -39,6 +43,7 @@ async function deleteGuild(guildID) {
  * @param guildID A valid discord guild id
  * @returns Guild Return the fetched Guild object
  */
+/*
 async function fetchGuild(guildID) {
 	if(!guildID) return 'no guild id provided';
 	if(typeof guildID !== 'string') return 'provided guild id isnt a string';
@@ -56,6 +61,7 @@ async function fetchGuild(guildID) {
  * @param {Boolean} isEvents If the events are updated
  * @returns {Object} User
  */
+/*
 async function updateGuild(guildID, query, change, isEvents = false) {
 	if(!guildID) return 'no guild id provided';
 	if(typeof guildID !== 'string') return 'provided user id isnt a string';
@@ -76,7 +82,7 @@ async function updateGuild(guildID, query, change, isEvents = false) {
 
 	return Guild;
 }
-
+*/
 // USER
 
 /**
@@ -105,7 +111,7 @@ async function deleteUser(userID) {
 	if(!userID) return 'no user id provided';
 	if(typeof userID !== 'string') return 'provided user id isnt a string';
 
-	const userToDelete = await mongoose.models.Guild.findOneAndDelete({ id: userID });
+	const userToDelete = await mongoose.models.User.findOneAndDelete({ id: userID });
 
 	return userToDelete;
 }
@@ -116,16 +122,16 @@ async function deleteUser(userID) {
  * @returns {Object} userToFetch User document
  */
 
-async function fetchUser(userID, createIfNotExist = false) {
+async function fetchUser(userID, apcreateIfNotPresent = false) {
 	if(!userID) return 'no user id provided';
 	if(typeof userID !== 'string') return 'provided user id isnt a string';
 	const UserSchema = require('../Schema/User');
 	const userToFetch = await UserSchema.findOne({ id: userID });
 	// const userToFetch = await mongoose.models.User.findOne({ id: userID });
-	if(!userToFetch && createIfNotExist) return await createUser(userID);
-	if(!userToFetch && !createIfNotExist) return false;
+	if(!userToFetch && apcreateIfNotPresent) return await createUser(userID);
+	if(!userToFetch && !apcreateIfNotPresent) return false;
 
 	return userToFetch;
 }
 
-module.exports = { createGuild, deleteGuild, fetchGuild, updateGuild, createUser, deleteUser, fetchUser };
+module.exports = { createUser, deleteUser, fetchUser };
