@@ -43,9 +43,6 @@ class Event {
 			// Fallback if the language doesn't exist.
 			language = require('../locales/en-GB.json');
 		}
-		// console.log(language);
-		console.log(language.tos.button_accept);
-		// console.log(languageuage)
 
 		if (!timestamps.has(interaction.user.id)) {
 			timestamps.set(interaction.user.id, now);
