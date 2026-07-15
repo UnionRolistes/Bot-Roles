@@ -7,13 +7,12 @@ class Roles extends Command {
 	constructor(client) {
 		super({
 			name: 'roles',
-			description: 'Pong!',
+			description: 'List all roles',
 			category: 'Utility',
 			cooldown: 3,
 			enabled: true,
 			ownerOnly: false,
 			guildOnly: true,
-
 			type: ApplicationCommandType.ChatInput,
 			defaultMemberPermissions: 'SendMessages',
 			slashOptions: [],
