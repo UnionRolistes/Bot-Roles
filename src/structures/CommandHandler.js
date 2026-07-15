@@ -1,7 +1,6 @@
 'use strict';
 
 const { resolve } = require('path');
-const walk = require('walk');
 const { REST, Routes, PermissionsBitField } = require('discord.js');
 const fs = require('fs');
 const slashCommandsToPush = [];
@@ -10,31 +9,7 @@ class CommandHandler {
 	constructor(client) {
 		this.client = client;
 	}
-	// old code, uses the walk module. Will be removed soon to reduce dependencies
-	/*async load2() {
 
-		const walker = walk.walk('./src/commands');
-		walker.on('file', (root, stats, next) => {
-
-			if (!stats.name.endsWith('.js')) return;
-			const Command = require(`${resolve(root)}/${stats.name}`);
-			const command = new Command(this.client);
-
-			this.client.container.slashCommands.set(command.name, command);
-			slashCommandsToPush.push({
-				name: command.name,
-				description: command.description,
-				type: command.type,
-				options: command.options ? command.options : null,
-				default_permission: command.default_permission ? command.default_permission : null,
-				default_member_permissions: command.default_member_permissions ? PermissionsBitField.resolve(command.default_member_permissions).toString() : null,
-				// description_localizations: command.description_localizations ? command.description_localizations : null,
-				// name_localizations: command.name_localizations ? command.name_localizations : null,
-			});
-
-			next();
-		});
-	}*/
 	async load() {
 
 		fs.readdirSync('./src/commands').forEach(dir => {
@@ -80,7 +55,7 @@ class CommandHandler {
 		// Update test guild commands
 		(async () => {
 			try {
-				// eslint-disable-next-line no-unused-vars
+
 				const data = await rest.put(
 					Routes.applicationGuildCommands(process.env.applicationId, process.env.guildId),
 					{ body: slashCommandsToPush },
