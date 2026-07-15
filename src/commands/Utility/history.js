@@ -40,7 +40,8 @@ class History extends Command {
 	async execute(client, interaction) {
 
 		const option = interaction.options.get('role');
-		console.log(option.value);
+		// this.client.logger.debug(__filename, 'ID of role' + option.value)
+
 		interaction.guild.fetch();
 		const embed = new EmbedBuilder()
 			.setColor('#36393F')
@@ -141,8 +142,8 @@ class History extends Command {
 		db9 = await DBEntry.history.findIndex(object => object.date === day9);
 		if(!DBEntry.history[db9]) count9 = 0;
 		else count9 = DBEntry.history[db9].count;
-		console.log(count9);
-		console.log(typeof count9);
+		// console.log(count9);
+		// console.log(typeof count9);
 
 		let count8;
 		db8 = await DBEntry.history.findIndex(object => object.date === day8);
@@ -197,8 +198,8 @@ class History extends Command {
 				'datasets': [
 					{
 						'label': `${interaction.guild.roles.cache.get(option.value).name}`,
-						'borderColor': 'rgb(255,+99,+132)',
-						'backgroundColor': 'rgba(255,+99,+132,+.5)',
+						'borderColor': 'rgb(118, 120, 237)',
+						'backgroundColor': 'rgba(36, 123, 160, 0.4)',
 						'data': [
 							`${count0}`,
 							`${count1}`,
@@ -218,7 +219,7 @@ class History extends Command {
 			'options': {
 				'title': {
 					'display': true,
-					'text': 'Line Chart For ' + interaction.guild.name,
+					'text': 'Chart For @' + interaction.guild.roles.cache.get(option.value).name,
 				},
 				'scales': {
 					'xAxes': [
