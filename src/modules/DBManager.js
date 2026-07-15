@@ -94,7 +94,7 @@ async function createUser(userID) {
 	if(!userID) return 'no user id provided';
 	if(typeof userID !== 'string') return 'provided user id isnt a string';
 	const existingUser = await mongoose.models.User.findOne({ id: userID });
-	console.log(existingUser);
+	// console.log(existingUser);
 	if(existingUser) return;
 	const User = new mongoose.models.User({
 		id: userID,
