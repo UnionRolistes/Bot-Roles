@@ -1,9 +1,9 @@
 const DB = require('../modules/DBManager');
-const { ActivityType } = require('discord.js');
+const { ActivityType, Events } = require('discord.js');
 
 class Event {
 	constructor() {
-		this.event = 'ready';
+		this.event = Events.ClientReady;
 		this.enabled = true;
 	}
 	async run() {

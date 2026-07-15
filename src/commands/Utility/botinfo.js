@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-escape */
 const Command = require('../../structures/Command');
-const { ApplicationCommandType } = require('discord.js');
+const { ApplicationCommandType, MessageFlags } = require('discord.js');
 const { version } = require('../../../package.json');
 
 
@@ -34,7 +34,7 @@ class Botinfo extends Command {
 
 	async execute(client, interaction, language) {
 
-		interaction.reply({ content:
+		await interaction.reply({ content:
 		`\`\`\`asciidoc
        = Soutenez le JDR =
 = Soutenez L'Union des Rôlistes =
@@ -45,7 +45,9 @@ class Botinfo extends Command {
 > ${language.botinfo.contributors} :: 
 	- Dae#5125
 	- dryas#5722 
-	- Tonitch#2192\`\`\`` });
+	- Tonitch#2192\`\`\``,
+
+    flags: MessageFlags.Ephemeral });
 
 	}
 	/* interaction.reply({ content:

@@ -1,5 +1,5 @@
 const Command = require('../../structures/Command');
-const { ApplicationCommandType } = require('discord.js');
+const { ApplicationCommandType, MessageFlags } = require('discord.js');
 
 
 class Calendrier extends Command {
@@ -26,7 +26,7 @@ class Calendrier extends Command {
 	}
 
 	async execute(client, interaction) {
-		await interaction.reply({ content: 'The calender can be found [here](http://planning.unionrolistes.fr/Calendar).', ephemeral: true });
+		await interaction.reply({ content: 'The calender can be found [here](http://planning.unionrolistes.fr/Calendar).', flags: MessageFlags.Ephemeral });
 	}
 
 }
