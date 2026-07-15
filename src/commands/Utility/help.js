@@ -9,7 +9,7 @@ class Help extends Command {
 	constructor(client) {
 		super({
 			name: 'help',
-			description: 'Pong!',
+			description: 'Get all commands',
 			category: 'Utility',
 			cooldown: 3,
 			enabled: true,
@@ -87,7 +87,7 @@ Developer :: Myst#4217\`\`\``;
 		].join('\n'));
 		categories.forEach(category => {
 			const dirEnabled = this.client.container.slashCommands.filter(c => c.enabled);
-			console.log(dirEnabled);
+			// console.log(dirEnabled);
 			const testdir = dirEnabled.filter(c => !c.ownerOnly);
 
 			// let dir;
@@ -98,8 +98,8 @@ Developer :: Myst#4217\`\`\``;
 
 			const capitalise = category.slice(0, 1).toUpperCase() + category.slice(1);
 
-			console.log(capitalise);
-			console.log(dir);
+			//console.log(capitalise);
+			// console.log(dir);
 
 			try {
 				if (dir.size === 0) return;
@@ -131,7 +131,7 @@ ${dir.map(c => `- /${c.name}`).join('\n- ')}
 			catch (error) {
 				// disable [12:04:51]  error  [RangeError: RichEmbed field values may not be empty.]: undefined for being annoying in console
 				if(error == 'RangeError: RichEmbed field values may not be empty.') return;
-				this.client.logger.error('help.js', error);
+				this.client.logger.error(__filename, error);
 
 			}
 		});
@@ -153,5 +153,6 @@ Contributors::
 
 	}
 }
+
 
 module.exports = Help;
