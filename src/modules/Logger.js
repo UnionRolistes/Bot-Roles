@@ -1,4 +1,4 @@
-const df = require('dateformat');
+const dateFormat = require('dateformat').default;
 const path = require('path');
 const { blue, yellow, red, green, magenta } = require('colorette');
 
@@ -29,8 +29,8 @@ module.exports = {
 
 	debug(module, message) {
 		if (message === undefined) {message = module; module = null; }
-		if(!module) return console.log(getCurrentDate() + magenta('  debug ') + '  [' + red('No Module') + ']' + '  : ' + message);
-		return console.log(getCurrentDate() + magenta('  debug ') + '  [' + magenta(getPath(module)) + ']' + ': ' + message);
+		if(!module) return console.log(getCurrentDate() + magenta('  debug	') + '  [' + red('No Module') + ']' + '  : ' + message);
+		return console.log(getCurrentDate() + magenta('  debug	') + '  [' + magenta(getPath(module)) + ']' + ': ' + message);
 	},
 	/* success(message) {
 		return console.log(getCurrentDate() + green(' [+] ') + message);
@@ -44,5 +44,5 @@ function getPath(module) {
 	return `${module}`.replace(path.resolve('./'), '');
 }
 function getCurrentDate() {
-	return df(new Date(), '[dd.mm.yyyy HH:MM:ss]');
+	return dateFormat(new Date(), '[dd.mm.yyyy HH:MM:ss]');
 }
