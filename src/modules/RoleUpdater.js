@@ -4,7 +4,7 @@ const Schema = require('../Schema/Role');
 const Logger = require('../modules/Logger');
 
 module.exports = async (client) => {
-	Logger.warn(__filename, 'RoleUpdater.js active. Time cycle limit: 1 hour');
+	Logger.warn(__filename, 'RoleUpdater.js active. Time schedule: 1 hour');
 
 	const roleSyncJob = cron.schedule('0 * * * *', async function() {
 		Logger.debug(__filename, 'RoleUpdater.js Job executing...');
@@ -57,7 +57,6 @@ async function updateRoleCount(role) {
 		);
 	}
 }
-
 
 
 /* OLD CODE
