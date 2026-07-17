@@ -48,7 +48,7 @@ class History extends Command {
 			.setAuthor({ name: 'UR-Role-Stat', iconURL: client.user.displayAvatarURL(), url: 'https://github.com/UnionRolistes' })
 			.setThumbnail(client.user.displayAvatarURL())
 			.setDescription('**Task:** \`Generate graph.\`\n**Progress:**\n**✓** \`Fetching database...\`\n**✓** \`Sorting...\`\n**✓** \`Generating output...\`')
-			.setFooter({ text: 'UR-Role-Stat', iconURL: client.user.displayAvatarURL() })
+			// .setFooter({ text: 'UR-Role-Stat', iconURL: client.user.displayAvatarURL() })
 			.setTimestamp();
 
 		// Days 0-9; 9 is today, 0 ist today -9

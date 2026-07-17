@@ -30,7 +30,7 @@ class Roles extends Command {
 			.setAuthor({ name: 'UR-Role-Stat', iconURL: client.user.displayAvatarURL(), url: 'https://github.com/UnionRolistes' })
 			.setThumbnail('https://avatars.githubusercontent.com/u/62179928?s=200&v=4')
 			.setDescription('**Task:** \`Generate role list.\`\n**Progress:**\n**✓** \`Fetching roles...\`\n**✓** \`Generating txt file...\`\n**✓** \`Sending txt file...\`')
-			.setFooter({ text: 'UR-Role-Stat', iconURL: client.user.displayAvatarURL() })
+			// .setFooter({ text: 'UR-Role-Stat', iconURL: client.user.displayAvatarURL() })
 			.setTimestamp();
 
 		// Send the txt file with all roles
