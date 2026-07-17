@@ -27,17 +27,17 @@ class Roles extends Command {
 		const rolelist = await interaction.guild.roles.cache.sort((h, l) => h.position - l.position).map(role => `▫️ ${role.name} - ${role.members.size} Member(s)`).reverse().join('\n');
 		const embed = new EmbedBuilder()
 			.setColor('#36393F')
-			.setAuthor({ name: 'UR-Role-Stat', iconURL: client.user.displayAvatarURL(), url: 'https://github.com/Myst82015' })
-			.setThumbnail(client.user.displayAvatarURL())
+			.setAuthor({ name: 'UR-Role-Stat', iconURL: client.user.displayAvatarURL(), url: 'https://github.com/UnionRolistes' })
+			.setThumbnail('https://avatars.githubusercontent.com/u/62179928?s=200&v=4')
 			.setDescription('**Task:** \`Generate role list.\`\n**Progress:**\n**✓** \`Fetching roles...\`\n**✓** \`Generating txt file...\`\n**✓** \`Sending txt file...\`')
 			.setFooter({ text: 'UR-Role-Stat', iconURL: client.user.displayAvatarURL() })
 			.setTimestamp();
 
 		// Send the txt file with all roles
-		const test = new AttachmentBuilder(Buffer.from(rolelist, 'utf-8'), { name: 'rolelist.txt' });
-		interaction.reply({ embeds: [embed] }).then(() => {
+		const roleListTxt = new AttachmentBuilder(Buffer.from(rolelist, 'utf-8'), { name: 'rolelist.txt' });
+		interaction.reply({ embeds: [embed] }).then(() => { // necessary to send embed first, then the rolelist
 			interaction.channel.send({
-				files: [test],
+				files: [roleListTxt],
 			});
 		});
 
@@ -65,35 +65,40 @@ class Roles extends Command {
 
 			// Check if the day exists
 			const index = existingRoleEntry.history.findIndex(object => object.date === value2.date);
-
 			if (index === -1) {
 				existingRoleEntry.history.push(value2);
 			}
 
 			await Schema.findOneAndUpdate({ id: role.id }, { $set: { history: existingRoleEntry.history } });
-
 			await updateRoleCount(role);
 
 		}, Promise.resolve());
-
 	}
-
 }
 function getUTCDate() {
 	const date = new Date();
 	return(`${date.getUTCFullYear()}-${date.getUTCMonth()}-${date.getUTCDate()}`);
 }
-async function updateRoleCount(roleToUpdate) {
-	const existingRoleEntry = await Schema.findOne({ id: roleToUpdate.id });
+async function updateRoleCount(role) {
+	const today = getUTCDate();
 
-	for (const obj of existingRoleEntry.history) {
-		if (obj.date === getUTCDate()) {
-			obj.count = roleToUpdate.members.size;
-			break;
-		}
+	// Trying to update the count for today
+	const result = await Schema.updateOne(
+		{ id: role.id, 'history.date': today }, // search for id and date entry for today
+		{ $set: { 'history.$.count': role.members.size, lastUpdated: new Date() } },
+	);
+
+	if (result.matchedCount === 0) {
+		await Schema.updateOne(
+			{ id: role.id },
+			{
+				$push: { history: { date: today, count: role.members.size } },
+				$set: { lastUpdated: new Date() },
+				$setOnInsert: { guildId: role.guild.id },
+			},
+			{ upsert: true },
+		);
 	}
-	await Schema.findOneAndUpdate({ id: roleToUpdate.id }, { $set: { history: existingRoleEntry.history } });
-
 }
 
 module.exports = Roles;

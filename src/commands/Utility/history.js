@@ -45,7 +45,7 @@ class History extends Command {
 		interaction.guild.fetch();
 		const embed = new EmbedBuilder()
 			.setColor('#36393F')
-			.setAuthor({ name: 'UR-Role-Stat', iconURL: client.user.displayAvatarURL(), url: 'https://github.com/Myst82015' })
+			.setAuthor({ name: 'UR-Role-Stat', iconURL: client.user.displayAvatarURL(), url: 'https://github.com/UnionRolistes' })
 			.setThumbnail(client.user.displayAvatarURL())
 			.setDescription('**Task:** \`Generate graph.\`\n**Progress:**\n**✓** \`Fetching database...\`\n**✓** \`Sorting...\`\n**✓** \`Generating output...\`')
 			.setFooter({ text: 'UR-Role-Stat', iconURL: client.user.displayAvatarURL() })
@@ -246,10 +246,10 @@ class History extends Command {
 			.width(500) // 500px
 			.height(300); // 300px
 
-		const test = new AttachmentBuilder(Buffer.from(await line_chart.toBuffer(), 'utf-8'), { name: 'image.png' });
+		const roleListTxt = new AttachmentBuilder(Buffer.from(await line_chart.toBuffer(), 'utf-8'), { name: 'image.png' });
 		interaction.reply({ embeds: [embed] }).then(() => {
 			interaction.channel.send({
-				files: [test],
+				files: [roleListTxt],
 			});
 		});
 	}
