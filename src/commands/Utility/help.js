@@ -78,7 +78,7 @@ class Help extends Command {
 
 		const categories = readdirSync('./src/commands/');
 		let descriptionString = `\`\`\`asciidoc
-Projet :: Bot_Roles
+Projet :: UR-Role-Stat
 Version :: ${version}
 Developer :: Myst#4217\`\`\``;
 		embed.setDescription([

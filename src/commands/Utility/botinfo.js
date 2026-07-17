@@ -39,7 +39,7 @@ class Botinfo extends Command {
        = Soutenez le JDR =
 = Soutenez L'Union des Rôlistes =
 
-> ${language.botinfo.project} :: Bot_Roles
+> ${language.botinfo.project} :: UR-Role-Stat
 > ${language.botinfo.version} :: ${version}
 > ${language.botinfo.developer} :: Myst#4217
 > ${language.botinfo.contributors} :: 

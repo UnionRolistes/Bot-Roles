@@ -45,10 +45,10 @@ class History extends Command {
 		interaction.guild.fetch();
 		const embed = new EmbedBuilder()
 			.setColor('#36393F')
-			.setAuthor({ name: 'Bot_Roles', iconURL: client.user.displayAvatarURL(), url: 'https://github.com/Myst82015' })
+			.setAuthor({ name: 'UR-Role-Stat', iconURL: client.user.displayAvatarURL(), url: 'https://github.com/Myst82015' })
 			.setThumbnail(client.user.displayAvatarURL())
 			.setDescription('**Task:** \`Generate graph.\`\n**Progress:**\n**✓** \`Fetching database...\`\n**✓** \`Sorting...\`\n**✓** \`Generating output...\`')
-			.setFooter({ text: 'Bot_Roles', iconURL: client.user.displayAvatarURL() })
+			.setFooter({ text: 'UR-Role-Stat', iconURL: client.user.displayAvatarURL() })
 			.setTimestamp();
 
 		// Days 0-9; 9 is today, 0 ist today -9

@@ -27,10 +27,10 @@ class Roles extends Command {
 		const rolelist = await interaction.guild.roles.cache.sort((h, l) => h.position - l.position).map(role => `▫️ ${role.name} - ${role.members.size} Member(s)`).reverse().join('\n');
 		const embed = new EmbedBuilder()
 			.setColor('#36393F')
-			.setAuthor({ name: 'Bot_Roles', iconURL: client.user.displayAvatarURL(), url: 'https://github.com/Myst82015' })
+			.setAuthor({ name: 'UR-Role-Stat', iconURL: client.user.displayAvatarURL(), url: 'https://github.com/Myst82015' })
 			.setThumbnail(client.user.displayAvatarURL())
 			.setDescription('**Task:** \`Generate role list.\`\n**Progress:**\n**✓** \`Fetching roles...\`\n**✓** \`Generating txt file...\`\n**✓** \`Sending txt file...\`')
-			.setFooter({ text: 'Bot_Roles', iconURL: client.user.displayAvatarURL() })
+			.setFooter({ text: 'UR-Role-Stat', iconURL: client.user.displayAvatarURL() })
 			.setTimestamp();
 
 		// Send the txt file with all roles
