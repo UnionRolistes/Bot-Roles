@@ -6,7 +6,7 @@ const Logger = require('../modules/Logger');
 module.exports = async (client) => {
 	Logger.warn(__filename, 'RoleUpdater.js active. Time cycle limit: 1 hour');
 
-	const roleSyncJob = cron.schedule('* * * * *', async function() {
+	const roleSyncJob = cron.schedule('0 * * * *', async function() {
 		Logger.debug(__filename, 'RoleUpdater.js Job executing...');
 
 		await client.guilds.cache.reduce(async (a, guild) => {
