@@ -36,7 +36,7 @@ class Feedback extends Command {
 		const feedbackInput = new TextInputBuilder()
 			.setCustomId('feedbackMessage')
 		// The label is the prompt the user sees for this input
-			.setLabel('Your feedback for Trackit!')
+			.setLabel('Your feedback for UR-Role-Stat!')
 		// Short means only a single line of text
 			.setStyle(TextInputStyle.Paragraph);
 
