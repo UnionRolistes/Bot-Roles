@@ -9,10 +9,11 @@
         "denied": "ToS denied. Sorry to see that. If you have any concerns or feedback please join out support server and open a ticket."
     },
     "botinfo": {
-        "project": "Project",
+        "projectDescription": "The discord bot de L'union des Rolistes for statistics.",
         "developer": "Developer",
         "contributors": "Contributors",
-        "version": "Version"
+        "version": "Version",
+        "website": "Website"
     }
 
 

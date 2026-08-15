@@ -9,10 +9,11 @@
         "denied": "ToS refusé. Désolé de voir cela. Si vous avez des questions ou des commentaires, veuillez rejoindre notre serveur de support et ouvrir un ticket."
     },
     "botinfo": {
-        "project": "Projet",
-        "developer": "Développeur",
+        "projectDescription": "Le bot statistique de L'Union des Rolistes.",
+        "developer": "Dévelopeur",
         "contributors": "Contributeurs",
-        "version": "Version"
+        "version": "Version",
+        "website": "Site"        
     }
 
 

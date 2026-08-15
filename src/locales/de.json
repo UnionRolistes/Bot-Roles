@@ -9,9 +9,10 @@
         "denied": "ToS nicht akzeptiert. Wir freuen uns über jegliches Feedback und Anregungen. Schick uns eine Nachricht!"
     },
     "botinfo": {
-        "project": "Projekt",
+        "projectDescription": "Der Statistik-Bot von L'union des Rolistes.",
         "developer": "Entwickler",
         "contributors": "Mitwirkende",
-        "version": "Version"
+        "version": "Version",
+        "website": "Webseite"
     }
 }
