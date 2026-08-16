@@ -3,6 +3,12 @@ const Command = require('../../structures/Command');
 const { EmbedBuilder, ApplicationCommandType, ApplicationCommandOptionType } = require('discord.js');
 const { version } = require('../../../package.json');
 const { readdirSync } = require('fs');
+// ANSI Color Code
+const orange = '\u001b[33m'; // orange
+const white  = '\u001b[37m'; // white
+const red = '\u001b[31m'; // red
+const blue = '\u001b[34m'; // red
+const reset  = '\u001b[0m'; //escape
 
 
 class Help extends Command {
@@ -23,7 +29,7 @@ class Help extends Command {
 				name: 'command',
 				// type: 3
 				type: ApplicationCommandOptionType.String,
-				description: 'A valid command argument.',
+				description: 'Command to search',
 				required: false,
 			}],
 
@@ -36,10 +42,10 @@ class Help extends Command {
 
 		const commandToSearch = interaction.options.getString('command');
 		const embed = new EmbedBuilder()
-			.setTitle(`${this.client.user.username} - Commands`)
-			.setColor('#4051b4')
-			// .setFooter(`${this.client.user.tag}`, this.client.user.displayAvatarURL())
-			.setTimestamp();
+			.setThumbnail(this.client.user.displayAvatarURL())
+			// .setColor('#4051b4')
+			.setColor('#3A3A40')
+
 
 		if (commandToSearch) {
 			let command = commandToSearch;
@@ -50,11 +56,29 @@ class Help extends Command {
 
 			// invalid command or ownerOnly
 			if(!cmd || cmd.ownerOnly) {
-				embed.setColor('Red')
-					.setDescription(`✘ **I could not find the command: ${commandToSearch}**\n\nHelp Command Usage: \n\`/help\` -  lists all commands\n\`/help [command]\` - provides help for a command`);
-				return interaction.reply({ embeds: [embed] });
+				const description = `\`\`\`ansi
+${orange}UR-Role-Stat:${reset}
+${language.botinfo.projectDescription}
+\`\`\`\`\`\`ansi
+${red}✘${reset}: ${language.help.invalidCommand.replace('{{commandToSearch}}', `${red}${commandToSearch}${reset}`)}
+\`\`\``;
+
+				// embed.setColor('Red')
+					// .setDescription(`✘ **I could not find the command: ${commandToSearch}**\n\nHelp Command Usage: \n\`/help\` -  lists all commands\n\`/help [command]\` - provides help for a command`);
+					embed.setDescription(description)
+					return interaction.reply({ embeds: [embed] });
 			}
 			command = cmd;
+			embed.setDescription(`\`\`\`ansi
+> Command :: ${cmd.name.slice(0, 1).toUpperCase() + command.name.slice(1)}
+	- Description :: ${command.description || 'No Description provided.'}
+	- Cooldown :: ${command.cooldown || '3'} second(s).
+	- Category :: ${command.category ? command.category : 'General' || 'Misc'}
+	- Usage :: ${command.usage ? `${command.usage}` : `/${command.name}`}
+
+\`\`\``);
+
+			//OLD CODE
 
 			// embed.setTitle(`Command : ${cmd.name.slice(0, 1).toUpperCase() + command.name.slice(1)}`);
 			/* embed.setDescription([
@@ -64,14 +88,14 @@ class Help extends Command {
 				`:white_small_square: **Category:** \`${command.category ? command.category : 'General' || 'Misc'}\``,
 			].join('\n')); */
 
-			embed.setDescription(`\`\`\`asciidoc
+		/*	embed.setDescription(`\`\`\`asciidoc
 > Command :: ${cmd.name.slice(0, 1).toUpperCase() + command.name.slice(1)}
 	- Description :: ${command.description || 'No Description provided.'}
 	- Cooldown :: ${command.cooldown || '3'} second(s).
 	- Category :: ${command.category ? command.category : 'General' || 'Misc'}
 	- Usage :: ${command.usage ? `${command.usage}` : `/${command.name}`}
 
-\`\`\``);
+\`\`\``); */
 
 			return interaction.reply({ embeds: [embed] });
 		}
@@ -137,19 +161,6 @@ ${dir.map(c => `- /${c.name}`).join('\n- ')}
 		});
 		embed.setDescription(descriptionString);
 		interaction.reply({ embeds: [embed] });
-
-
-		/* interaction.reply({ content:
-		`\`\`\`asciidoc
-Hello, World!
-==============================
-Projet:: Bot_Roles
-Version:: ${version}
-Developer:: Myst#4217
-Contributors::
-* Dae#5125
-* dryas#5722
-* Tonitch#2192\`\`\`` }); */
 
 	}
 }
