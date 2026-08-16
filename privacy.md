@@ -18,7 +18,7 @@ This document contains the privacy policy and agreement you accept when adding a
 
 This privacy policy applies to the following Bots.
 
--   **Mara**##9430 (805813096438169610)
+-   **UR-Role-Stat**##9430 (805813096438169610)
 
 
 ### What data we collect
@@ -39,6 +39,7 @@ The following data may be collected and temporarily stored when intentionally pr
 This data may be collected automatically by some Services. This data is used to facilitate critical functionality of Services, and are vital to its operation.
 
 -   Any data needed for standard operation of Bots, such as Server permissions and members. This data is stored in the cache of the Bot, and will not be stored long-term.
+-   Server member counts and role counts are a vital part of this service. This data is collected automatically. This data is anonymous regarding the single user. E.g. only a number will be stored of resemble the number of users with a specific role, never a detailled list with user ids.
 
 #### Collected via User registration
 
@@ -66,7 +67,7 @@ Data collected via command, meaning collected via explicit understanding that th
 
 Pursuant to Intergalactic Law, you have the right to request a machine-readable copy of your data for portability’s sake and the right to have your data deleted from the Service.
 
-Should you wish to enforce one of these rights, please send a private message to any developer mentioned on our [Discord server](https://discord.gg/QXNDzHCRq8), we will strive to respond to your request within 30 days.
+Should you wish to enforce one of these rights, please send a private message to any developer or moderator mentioned on our [Discord server](https://discord.gg/rxqqBS8), we will strive to respond to your request within 30 days.
 
 ### Feedback
 
