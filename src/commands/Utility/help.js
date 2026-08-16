@@ -1,27 +1,25 @@
-/* eslint-disable no-useless-escape */
+/* eslint-disable no-inline-comments */
 const Command = require('../../structures/Command');
 const { EmbedBuilder, ApplicationCommandType, ApplicationCommandOptionType } = require('discord.js');
-const { version } = require('../../../package.json');
 const { readdirSync } = require('fs');
 // ANSI Color Code
 const orange = '\u001b[33m'; // orange
-const white  = '\u001b[37m'; // white
 const red = '\u001b[31m'; // red
 const blue = '\u001b[34m'; // red
-const reset  = '\u001b[0m'; //escape
+const reset = '\u001b[0m'; // escape
 
 
 class Help extends Command {
 	constructor(client) {
 		super({
 			name: 'help',
-			description: 'Get all commands',
+			description: 'Receive a list of all commands and help resources',
 			category: 'Utility',
 			cooldown: 3,
 			enabled: true,
 			ownerOnly: false,
 			guildOnly: true,
-			usage: '/help (commandToSarch)',
+			usage: '/help (commandToSearch)',
 
 			type: ApplicationCommandType.ChatInput,
 			defaultMemberPermissions: 'SendMessages',
@@ -44,8 +42,7 @@ class Help extends Command {
 		const embed = new EmbedBuilder()
 			.setThumbnail(this.client.user.displayAvatarURL())
 			// .setColor('#4051b4')
-			.setColor('#3A3A40')
-
+			.setColor('#3A3A40');
 
 		if (commandToSearch) {
 			let command = commandToSearch;
@@ -63,52 +60,28 @@ ${language.botinfo.projectDescription}
 ${red}✘${reset}: ${language.help.invalidCommand.replace('{{commandToSearch}}', `${red}${commandToSearch}${reset}`)}
 \`\`\``;
 
-				// embed.setColor('Red')
-					// .setDescription(`✘ **I could not find the command: ${commandToSearch}**\n\nHelp Command Usage: \n\`/help\` -  lists all commands\n\`/help [command]\` - provides help for a command`);
-					embed.setDescription(description)
-					return interaction.reply({ embeds: [embed] });
+				embed.setDescription(description);
+				return interaction.reply({ embeds: [embed] });
 			}
 			command = cmd;
 			embed.setDescription(`\`\`\`ansi
-> Command :: ${cmd.name.slice(0, 1).toUpperCase() + command.name.slice(1)}
-	- Description :: ${command.description || 'No Description provided.'}
-	- Cooldown :: ${command.cooldown || '3'} second(s).
-	- Category :: ${command.category ? command.category : 'General' || 'Misc'}
-	- Usage :: ${command.usage ? `${command.usage}` : `/${command.name}`}
+> ${orange}Command :: ${red}${cmd.name.slice(0, 1).toUpperCase() + command.name.slice(1)}${reset}
+${command.description || 'No Description provided.'}
+- ${orange}Cooldown${reset} :: ${command.cooldown || '3'} second(s).
+- ${red}Category${reset} :: ${command.category ? command.category : 'General' || 'Misc'}
+- ${blue}Usage${reset} :: ${command.usage ? `${command.usage}` : `/${command.name}`}
 
 \`\`\``);
-
-			//OLD CODE
-
-			// embed.setTitle(`Command : ${cmd.name.slice(0, 1).toUpperCase() + command.name.slice(1)}`);
-			/* embed.setDescription([
-				`:white_small_square: **Description:** \`${command.description || 'No Description provided.'}\``,
-				`:white_small_square: **Usage:** \`${command.usage ? `\`/${command.name} ${command.usage}\`` : `/}${command.name}`}\` `,
-				`:white_small_square: **Cooldown:** \`${command.cooldown || '3'} second(s).\``,
-				`:white_small_square: **Category:** \`${command.category ? command.category : 'General' || 'Misc'}\``,
-			].join('\n')); */
-
-		/*	embed.setDescription(`\`\`\`asciidoc
-> Command :: ${cmd.name.slice(0, 1).toUpperCase() + command.name.slice(1)}
-	- Description :: ${command.description || 'No Description provided.'}
-	- Cooldown :: ${command.cooldown || '3'} second(s).
-	- Category :: ${command.category ? command.category : 'General' || 'Misc'}
-	- Usage :: ${command.usage ? `${command.usage}` : `/${command.name}`}
-
-\`\`\``); */
-
 			return interaction.reply({ embeds: [embed] });
 		}
 
 		const categories = readdirSync('./src/commands/');
-		let descriptionString = `\`\`\`asciidoc
-Projet :: UR-Role-Stat
-Version :: ${version}
-Developer :: Myst#4217\`\`\``;
-		embed.setDescription([
-			'This is a bot specificaly for L\'Union des Rôlistes. ',
-			'Use `/help <command>` for more info about a specific command.',
-		].join('\n'));
+
+		let descriptionString = `\`\`\`ansi
+${orange}UR-Role-Stat:${reset}
+${language.botinfo.projectDescription}
+\`\`\``;
+
 		categories.forEach(category => {
 			const dirEnabled = this.client.container.slashCommands.filter(c => c.enabled);
 			// console.log(dirEnabled);
@@ -119,14 +92,61 @@ Developer :: Myst#4217\`\`\``;
 			// const dir = this.client.commands.filter(c => c.category.toLowerCase() === category.toLowerCase());
 			// if(message.author.id !== '263022860551847936') dir = filterdir.filter(c => c.category.toLowerCase() === category.toLowerCase());
 
-
 			const capitalise = category.slice(0, 1).toUpperCase() + category.slice(1);
-
-			//console.log(capitalise);
-			// console.log(dir);
 
 			try {
 				if (dir.size === 0) return;
+
+				descriptionString += `\n\`\`\`ansi
+> ${orange}${capitalise}${reset}
+${dir.map(c => `${blue}/${c.name}${reset} :: ${c.description}`).join('\n')}
+\`\`\``;
+			}
+			catch (error) {
+				// disable [12:04:51]  error  [RangeError: RichEmbed field values may not be empty.]: undefined for being annoying in console
+				if(error == 'RangeError: RichEmbed field values may not be empty.') return;
+				this.client.logger.error(__filename, error);
+			}
+		});
+		embed.setDescription(descriptionString);
+		interaction.reply({ embeds: [embed] });
+	}
+}
+
+module.exports = Help;
+// OLD CODE
+// const { version } = require('../../../package.json');
+// embed.setTitle(`Command : ${cmd.name.slice(0, 1).toUpperCase() + command.name.slice(1)}`);
+/* embed.setDescription([
+				`:white_small_square: **Description:** \`${command.description || 'No Description provided.'}\``,
+				`:white_small_square: **Usage:** \`${command.usage ? `\`/${command.name} ${command.usage}\`` : `/}${command.name}`}\` `,
+				`:white_small_square: **Cooldown:** \`${command.cooldown || '3'} second(s).\``,
+				`:white_small_square: **Category:** \`${command.category ? command.category : 'General' || 'Misc'}\``,
+			].join('\n')); */
+
+/*	embed.setDescription(`\`\`\`asciidoc
+> Command :: ${cmd.name.slice(0, 1).toUpperCase() + command.name.slice(1)}
+	- Description :: ${command.description || 'No Description provided.'}
+	- Cooldown :: ${command.cooldown || '3'} second(s).
+	- Category :: ${command.category ? command.category : 'General' || 'Misc'}
+	- Usage :: ${command.usage ? `${command.usage}` : `/${command.name}`}
+
+\`\`\``); */
+/* let descriptionString = `\`\`\`asciidoc
+Projet :: UR-Role-Stat
+Version :: ${version}
+Developer :: Myst#4217\`\`\``; */
+/* embed.setDescription([
+			'This is a bot specificaly for L\'Union des Rôlistes. ',
+			'Use `/help <command>` for more info about a specific command.',
+		].join('\n')); */
+
+
+/* descriptionString += `\`\`\`asciidoc
+> ${capitalise} ::
+- ${dir.map(c => `/${c.name} - ${c.description}`).join('\n- ')}
+\`\`\``; */
+/*
 				/* embed.addFields(
 					{ name: `:white_small_square: ${capitalise}`, value: dir.map(c => `\`${c.name}\``).join(', ') },
 				);
@@ -134,14 +154,7 @@ Developer :: Myst#4217\`\`\``;
 				embed.addFields(
 					{ name: `\`\`\`asciidoc
 > ${capitalise} :: \`\`\``, value: dir.map(c => `\`${c.name}\``).join(', ') },
-				);*/
-				descriptionString += `\`\`\`asciidoc
-> ${capitalise} ::
-- ${dir.map(c => `/${c.name} - ${c.description}`).join('\n- ')}
-\`\`\``;
-
-			/*
-
+				);
 
 				descriptionString += `\`\`\`asciidoc
 Category:: **${capitalise}**
@@ -151,19 +164,3 @@ Commands:: ${dir.map(c => `/${c.name}`).join(', ')}
 > ${capitalise} ::
 ${dir.map(c => `- /${c.name}`).join('\n- ')}
 \`\`\``;*/
-			}
-			catch (error) {
-				// disable [12:04:51]  error  [RangeError: RichEmbed field values may not be empty.]: undefined for being annoying in console
-				if(error == 'RangeError: RichEmbed field values may not be empty.') return;
-				this.client.logger.error(__filename, error);
-
-			}
-		});
-		embed.setDescription(descriptionString);
-		interaction.reply({ embeds: [embed] });
-
-	}
-}
-
-
-module.exports = Help;
