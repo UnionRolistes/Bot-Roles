@@ -1,6 +1,6 @@
 /* eslint-disable no-inline-comments */
 const Command = require('../../structures/Command');
-const { EmbedBuilder, ApplicationCommandType, ApplicationCommandOptionType } = require('discord.js');
+const { ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder, ApplicationCommandType, ApplicationCommandOptionType } = require('discord.js');
 const { readdirSync } = require('fs');
 // ANSI Color Code
 const orange = '\u001b[33m'; // orange
@@ -109,7 +109,23 @@ ${dir.map(c => `${blue}/${c.name}${reset} :: ${c.description}`).join('\n')}
 			}
 		});
 		embed.setDescription(descriptionString);
-		interaction.reply({ embeds: [embed] });
+
+		const row = new ActionRowBuilder().addComponents(
+			new ButtonBuilder()
+				.setLabel('Discord')
+				.setStyle(ButtonStyle.Link)
+				.setURL('https://discord.gg/rxqqBS8'),
+			new ButtonBuilder()
+				.setLabel(language.botinfo.website)
+				.setStyle(ButtonStyle.Link)
+				.setURL('http://unionrolistes.fr/'),
+			new ButtonBuilder()
+				.setLabel('Github')
+				.setStyle(ButtonStyle.Link)
+				.setURL('https://github.com/UnionRolistes'),
+		);
+
+		await interaction.reply({ embeds: [embed], components: [row] });
 	}
 }
 
