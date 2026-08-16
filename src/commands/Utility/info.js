@@ -1,6 +1,6 @@
 /* eslint-disable no-inline-comments */
 const Command = require('../../structures/Command');
-const { ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder, ApplicationCommandType, MessageFlags } = require('discord.js');
+const { ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder, ApplicationCommandType } = require('discord.js');
 const { version } = require('../../../package.json');
 
 
