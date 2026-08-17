@@ -38,6 +38,7 @@ class Botinfo extends Command {
 		// ANSI Color Code
 		const orange = '\u001b[33m'; // orange
 		const white = '\u001b[37m'; // white
+		const blue = '\u001b[34m'; // red
 		const reset = '\u001b[0m'; // escape
 
 		const description = `\`\`\`ansi
