@@ -19,5 +19,4 @@
         "invalidCommand": "I could not find the command: {{commandToSearch}}\n\nUse \u001b[34m/help\u001b[0m to list all commands."
     }
 
-
 }
