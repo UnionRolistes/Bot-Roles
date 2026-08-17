@@ -1,6 +1,10 @@
+/* eslint-disable no-inline-comments */
 const Command = require('../../structures/Command');
-const { ApplicationCommandType, MessageFlags } = require('discord.js');
-
+const { ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder, ApplicationCommandType } = require('discord.js');
+// ANSI Color Code
+const orange = '\u001b[33m'; // orange
+const white = '\u001b[37m'; // white
+const reset = '\u001b[0m'; // escape
 
 class Calendrier extends Command {
 	constructor(client) {
@@ -26,7 +30,25 @@ class Calendrier extends Command {
 	}
 
 	async execute(client, interaction) {
-		await interaction.reply({ content: 'The calender can be found [here](http://planning.unionrolistes.fr/Calendar).', flags: MessageFlags.Ephemeral });
+		const description = `\`\`\`ansi
+${orange}Calendrier de L'Union des Rolistes ${reset}
+
+-------
+Le calendrier se trouve ci-dessous.
+\`\`\``;
+		const embed = new EmbedBuilder()
+			.setThumbnail(this.client.user.displayAvatarURL())
+			.setDescription(description)
+			.setColor('#36393F');
+
+		const row = new ActionRowBuilder().addComponents(
+			new ButtonBuilder()
+				.setLabel('Calendrier')
+				.setStyle(ButtonStyle.Link)
+				.setURL('http://planning.unionrolistes.fr/Calendar'));
+
+		await interaction.reply({ embeds: [embed], components: [row] });
+		// await interaction.reply({ content: 'The calender can be found [here](http://planning.unionrolistes.fr/Calendar).' });
 	}
 
 }
