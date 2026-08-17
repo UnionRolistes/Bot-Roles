@@ -1,3 +1,4 @@
+/* eslint-disable no-constant-binary-expression */
 /* eslint-disable no-inline-comments */
 const Command = require('../../structures/Command');
 const { ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder, ApplicationCommandType, ApplicationCommandOptionType } = require('discord.js');
