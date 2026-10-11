@@ -23,9 +23,7 @@ class Botinfo extends Command {
 			cooldown: 3,
 			enabled: true,
 			ownerOnly: false,
-			guildOnly: true,
 			type: ApplicationCommandType.ChatInput,
-			defaultMemberPermissions: '',
 			slashOptions: [],
 
 		});

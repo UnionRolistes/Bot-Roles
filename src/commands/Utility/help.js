@@ -19,11 +19,9 @@ class Help extends Command {
 			cooldown: 3,
 			enabled: true,
 			ownerOnly: false,
-			guildOnly: true,
 			usage: '/help (commandToSearch)',
 
 			type: ApplicationCommandType.ChatInput,
-			defaultMemberPermissions: 'SendMessages',
 			slashOptions: [{
 				name: 'command',
 				// type: 3
