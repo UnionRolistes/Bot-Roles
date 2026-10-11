@@ -1,9 +1,12 @@
 /* eslint-disable no-inline-comments */
-/* eslint-disable no-useless-escape */
 const Command = require('../../structures/Command');
-const { EmbedBuilder, ApplicationCommandType, AttachmentBuilder, InteractionContextType } = require('discord.js');
+const { EmbedBuilder, ApplicationCommandType, ApplicationCommandOptionType, AttachmentBuilder, InteractionContextType } = require('discord.js');
 const Schema = require('../../Schema/Role');
 const ChartJSImage = require('chart.js-image');
+
+// Keeps the chart readable and the chart URL short
+const MAX_CHART_POINTS = 120;
+const DEFAULT_PERIOD = 30;
 
 class History extends Command {
 	constructor(client) {
@@ -21,13 +24,26 @@ class History extends Command {
 				{
 					name: 'role',
 					description: 'Look up a role for recent changes',
-					type: 1,
+					type: ApplicationCommandOptionType.Subcommand,
 					options: [
 						{
 							name: 'role',
-							description: 'The role you want to add to the user.',
-							type: 8,
+							description: 'The role to look up.',
+							type: ApplicationCommandOptionType.Role,
 							required: true,
+						},
+						{
+							name: 'period',
+							description: 'Time frame to show (default: 30 days)',
+							type: ApplicationCommandOptionType.Integer,
+							required: false,
+							choices: [
+								{ name: '7 days', value: 7 },
+								{ name: '30 days', value: 30 },
+								{ name: '90 days', value: 90 },
+								{ name: '1 year', value: 365 },
+								{ name: 'All', value: 0 },
+							],
 						},
 					],
 				}],
@@ -36,228 +52,127 @@ class History extends Command {
 		this.client = client;
 	}
 
-	async execute(client, interaction) {
+	async execute(client, interaction, language) {
+		// Generating the chart can take a moment
+		await interaction.deferReply();
 
-		const option = interaction.options.get('role');
-		// this.client.logger.debug(__filename, 'ID of role' + option.value)
+		// ANSI Color Code
+		const orange = '\u001b[33m'; // orange
+		const white = '\u001b[37m'; // white
+		const green = '\u001b[32m'; // green
+		const red = '\u001b[31m'; // red
+		const reset = '\u001b[0m'; // escape
 
-		interaction.guild.fetch();
-		const embed = new EmbedBuilder()
-			.setColor('#36393F')
-			.setAuthor({ name: 'UR-Role-Stat', iconURL: client.user.displayAvatarURL(), url: 'https://github.com/UnionRolistes' })
-			.setThumbnail(client.user.displayAvatarURL())
-			.setDescription('**Task:** \`Generate graph.\`\n**Progress:**\n**✓** \`Fetching database...\`\n**✓** \`Sorting...\`\n**✓** \`Generating output...\`')
-			// .setFooter({ text: 'UR-Role-Stat', iconURL: client.user.displayAvatarURL() })
-			.setTimestamp();
+		const role = interaction.options.getRole('role');
+		const periodOption = interaction.options.getInteger('period');
+		const period = periodOption === null ? DEFAULT_PERIOD : periodOption; // 0 = all saved entries
+		const roleName = role.name.startsWith('@') ? role.name : `@${role.name}`;
 
-		// Days 0-9; 9 is today, 0 ist today -9
-		const dt = new Date();
-		const day9 = formatDate(dt);
-		const day8 = formatDate(dt.setDate(dt.getDate() - 1));
-		const day7 = formatDate(dt.setDate(dt.getDate() - 1));
-		const day6 = formatDate(dt.setDate(dt.getDate() - 1));
-		const day5 = formatDate(dt.setDate(dt.getDate() - 1));
-		const day4 = formatDate(dt.setDate(dt.getDate() - 1));
-		const day3 = formatDate(dt.setDate(dt.getDate() - 1));
-		const day2 = formatDate(dt.setDate(dt.getDate() - 1));
-		const day1 = formatDate(dt.setDate(dt.getDate() - 1));
-		const day0 = formatDate(dt.setDate(dt.getDate() - 1));
+		// Only use the saved entries, missing days are not filled with 0
+		const DBEntry = await Schema.findOne({ id: role.id });
+		const cutoff = period ? Date.now() - period * 24 * 60 * 60 * 1000 : 0;
+		const points = (DBEntry ? DBEntry.history : [])
+			.map(entry => ({ date: parseStoredDate(entry.date), count: entry.count }))
+			.filter(point => !isNaN(point.date) && point.date.getTime() >= cutoff)
+			.sort((a, b) => a.date - b.date);
 
+		if (points.length === 0) {
+			return interaction.editReply({ content: language.history.noData.replace('{{role}}', roleName) });
+		}
 
-		const DBEntry = await Schema.findOne({ id: option.value });
+		const counts = points.map(point => point.count);
+		const first = points[0];
+		const last = points[points.length - 1];
+		const change = last.count - first.count;
+		const changePercent = first.count ? (change / first.count) * 100 : 0;
+		const sign = change > 0 ? '+' : '';
+		const changeColor = change > 0 ? green : change < 0 ? red : white;
+		const periodText = period ? language.history.lastDays.replace('{{days}}', period) : language.history.all;
 
+		const description = `\`\`\`ansi
+${orange}UR-Role-Stat:${reset}
+-------
 
-		// Check if the day exists
-		let db9 = DBEntry.history.findIndex(object => object.date === day9);
-		if(!DBEntry.history[db9]) {db9 = { date: day9, count: 'No data available.' };}
-		else {db9 = { date: day9, count: DBEntry.history[db9].count + ' Member(s)' };}
+${orange}${language.history.role}${reset}: ${white}${roleName}${reset}
+${orange}${language.history.period}${reset}: ${white}${periodText}${reset}
+${orange}${language.history.dataPoints}${reset}: ${white}${points.length} (${formatDate(first.date)} → ${formatDate(last.date)})${reset}
+-------
 
-		let db8 = DBEntry.history.findIndex(object => object.date === day8);
-		if(!DBEntry.history[db8]) {db8 = { date: day8, count: 'No data available.' };}
-		else {db8 = { date: day8, count: DBEntry.history[db8].count + ' Member(s)' };}
+${orange}${language.history.current}${reset}: ${white}${last.count}${reset}
+${orange}${language.history.minMax}${reset}: ${white}${Math.min(...counts)} / ${Math.max(...counts)}${reset}
+${orange}${language.history.change}${reset}: ${changeColor}${sign}${change} (${sign}${changePercent.toFixed(1)}%)${reset}
+\`\`\``;
 
-		let db7 = DBEntry.history.findIndex(object => object.date === day7);
-		if(!DBEntry.history[db7]) {db7 = { date: day7, count: 'No data available.' };}
-		else {db7 = { date: day7, count: DBEntry.history[db7].count + ' Member(s)' };}
+		const chartPoints = downsample(points, MAX_CHART_POINTS);
+		const gridColor = 'rgba(255, 255, 255, 0.08)';
+		const textColor = '#b5bac1';
 
-		let db6 = DBEntry.history.findIndex(object => object.date === day6);
-		if(!DBEntry.history[db6]) {db6 = { date: day6, count: 'No data available.' };}
-		else {db6 = { date: day6, count: DBEntry.history[db6].count + ' Member(s)' };}
-
-		let db5 = DBEntry.history.findIndex(object => object.date === day5);
-		if(!DBEntry.history[db5]) {db5 = { date: day5, count: 'No data available.' };}
-		else {db5 = { date: day5, count: DBEntry.history[db5].count + ' Member(s)' };}
-
-		let db4 = DBEntry.history.findIndex(object => object.date === day4);
-		if(!DBEntry.history[db4]) {db4 = { date: day4, count: 'No data available.' };}
-		else {db4 = { date: day4, count: DBEntry.history[db4].count + ' Member(s)' };}
-
-		let db3 = DBEntry.history.findIndex(object => object.date === day3);
-		if(!DBEntry.history[db3]) {db3 = { date: day3, count: 'No data available.' };}
-		else {db3 = { date: day3, count: DBEntry.history[db3].count + ' Member(s)' };}
-
-		let db2 = DBEntry.history.findIndex(object => object.date === day2);
-		if(!DBEntry.history[db2]) {db2 = { date: day2, count: 'No data available.' };}
-		else {db2 = { date: day2, count: DBEntry.history[db2].count + ' Member(s)' };}
-
-		let db1 = DBEntry.history.findIndex(object => object.date === day1);
-		if(!DBEntry.history[db1]) {db1 = { date: day1, count: 'No data available.' };}
-		else {db1 = { date: day1, count: DBEntry.history[db1].count + ' Member(s)' };}
-
-		let db0 = DBEntry.history.findIndex(object => object.date === day0);
-		if(!DBEntry.history[db0]) {db0 = { date: day0, count: 'No data available.' };}
-		else {db0 = { date: day0, count: DBEntry.history[db0].count + ' Member(s)' };}
-
-		embed.addFields(
-			{ name: `Data for ${interaction.guild.roles.cache.get(option.value).name}`, value:`
-            ▫️ \`${db9.date}\`: \`${db9.count}\`
-            ▫️ \`${db8.date}\`: \`${db8.count}\`
-            ▫️ \`${db7.date}\`: \`${db7.count}\`
-            ▫️ \`${db6.date}\`: \`${db6.count}\`
-            ▫️ \`${db5.date}\`: \`${db5.count}\`
-            ▫️ \`${db4.date}\`: \`${db4.count}\`
-            ▫️ \`${db3.date}\`: \`${db3.count}\`
-            ▫️ \`${db2.date}\`: \`${db2.count}\`
-            ▫️ \`${db1.date}\`: \`${db1.count}\`
-            ▫️ \`${db0.date}\`: \`${db0.count}\`
-            ` },
-		);
-
-		const dayNames = [
-			db0.date,
-			db1.date,
-			db2.date,
-			db3.date,
-			db4.date,
-			db5.date,
-			db6.date,
-			db7.date,
-			db8.date,
-			db9.date,
-		];
-
-		// Check if the day exists
-		let count9;
-		db9 = await DBEntry.history.findIndex(object => object.date === day9);
-		if(!DBEntry.history[db9]) count9 = 0;
-		else count9 = DBEntry.history[db9].count;
-		// console.log(count9);
-		// console.log(typeof count9);
-
-		let count8;
-		db8 = await DBEntry.history.findIndex(object => object.date === day8);
-		if(!DBEntry.history[db8]) count8 = 0;
-		else count8 = DBEntry.history[db8].count;
-
-		let count7;
-		db7 = await DBEntry.history.findIndex(object => object.date === day7);
-		if(!DBEntry.history[db7]) count7 = 0;
-		else count7 = DBEntry.history[db7].count;
-
-		let count6;
-		db6 = await DBEntry.history.findIndex(object => object.date === day6);
-		if(!DBEntry.history[db6]) count6 = 0;
-		else count6 = DBEntry.history[db6].count;
-
-		let count5;
-		db5 = await DBEntry.history.findIndex(object => object.date === day5);
-		if(!DBEntry.history[db5]) count5 = 0;
-		else count5 = DBEntry.history[db5].count;
-
-		let count4;
-		db4 = await DBEntry.history.findIndex(object => object.date === day4);
-		if(!DBEntry.history[db4]) count4 = 0;
-		else count4 = DBEntry.history[db4].count;
-
-		let count3;
-		db3 = await DBEntry.history.findIndex(object => object.date === day3);
-		if(!DBEntry.history[db3]) count3 = 0;
-		else count3 = DBEntry.history[db3].count;
-
-		let count2;
-		db2 = await DBEntry.history.findIndex(object => object.date === day2);
-		if(!DBEntry.history[db2]) count2 = 0;
-		else count2 = DBEntry.history[db2].count;
-
-		let count1;
-		db1 = await DBEntry.history.findIndex(object => object.date === day1);
-		if(!DBEntry.history[db1]) count1 = 0;
-		else count1 = DBEntry.history[db1].count;
-
-		let count0;
-		db0 = await DBEntry.history.findIndex(object => object.date === day0);
-		if(!DBEntry.history[db0]) count0 = 0;
-		else count0 = DBEntry.history[db0].count;
-
-
-		const line_chart = ChartJSImage().chart({
+		const lineChart = ChartJSImage().chart({
 			'type': 'line',
 			'data': {
-				'labels': dayNames,
+				'labels': chartPoints.map(point => formatDate(point.date)),
 				'datasets': [
 					{
-						'label': `${interaction.guild.roles.cache.get(option.value).name}`,
+						'label': roleName,
 						'borderColor': 'rgb(118, 120, 237)',
-						'backgroundColor': 'rgba(36, 123, 160, 0.4)',
-						'data': [
-							`${count0}`,
-							`${count1}`,
-							`${count2}`,
-							`${count3}`,
-							`${count4}`,
-							`${count5}`,
-							`${count6}`,
-							`${count7}`,
-							`${count8}`,
-							`${count9}`,
-						],
+						'backgroundColor': 'rgba(118, 120, 237, 0.2)',
+						'pointRadius': chartPoints.length > 31 ? 0 : 3,
+						'lineTension': 0,
+						'data': chartPoints.map(point => point.count),
 					},
-
 				],
 			},
 			'options': {
+				'legend': { 'display': false },
 				'title': {
 					'display': true,
-					'text': 'Chart For @' + interaction.guild.roles.cache.get(option.value).name,
+					'text': roleName,
+					'fontColor': '#dbdee1',
+					'fontSize': 16,
 				},
 				'scales': {
-					'xAxes': [
-						{
-							'scaleLabel': {
-								'display': true,
-								'labelString': 'Date',
-							},
-						},
-					],
-					'yAxes': [
-						{
-							'stacked': true,
-							'scaleLabel': {
-								'display': true,
-								'labelString': 'Members',
-							},
-						},
-					],
+					'xAxes': [{
+						'ticks': { 'fontColor': textColor, 'maxTicksLimit': 10, 'maxRotation': 0 },
+						'gridLines': { 'color': gridColor },
+					}],
+					'yAxes': [{
+						'ticks': { 'fontColor': textColor, 'precision': 0, 'beginAtZero': true }, // a change of 1 member should not look like a spike
+						'gridLines': { 'color': gridColor },
+					}],
 				},
 			},
-		}) // Line chart
-			.backgroundColor('white')
-			.width(500) // 500px
-			.height(300); // 300px
+		})
+			.backgroundColor('#2b2d31') // Discord dark theme
+			.width(800)
+			.height(400);
 
-		const roleListTxt = new AttachmentBuilder(Buffer.from(await line_chart.toBuffer(), 'utf-8'), { name: 'image.png' });
-		interaction.reply({ embeds: [embed] }).then(() => {
-			interaction.channel.send({
-				files: [roleListTxt],
-			});
-		});
+		const chartImage = new AttachmentBuilder(await lineChart.toBuffer(), { name: 'history.png' });
+
+		const embed = new EmbedBuilder()
+			.setThumbnail(this.client.user.displayAvatarURL())
+			.setDescription(description)
+			.setImage('attachment://history.png')
+			.setColor('#36393F');
+
+		await interaction.editReply({ embeds: [embed], files: [chartImage] });
 	}
 }
 
-function formatDate(date) {
-	const DateToFormat = new Date(date);
-	return(`${DateToFormat.getUTCFullYear()}-${DateToFormat.getUTCMonth()}-${DateToFormat.getUTCDate()}`);
+// Stored dates use a 0-based month ("2026-9-11" is 11 October 2026), see getUTCDate() in RoleUpdater.js
+function parseStoredDate(date) {
+	const [year, month, day] = String(date).split('-').map(Number);
+	return new Date(Date.UTC(year, month, day));
 }
 
+function formatDate(date) {
+	return date.toISOString().slice(0, 10);
+}
+
+// Picks evenly spaced points, always keeping the first and the last one
+function downsample(points, max) {
+	if (points.length <= max) return points;
+	const step = (points.length - 1) / (max - 1);
+	return Array.from({ length: max }, (_, i) => points[Math.round(i * step)]);
+}
 
 module.exports = History;

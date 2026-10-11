@@ -18,6 +18,17 @@
     "help": {
         "invalidCommand": "I could not find the command: {{commandToSearch}}\n\nUse \u001b[34m/help\u001b[0m to list all commands."
     },
+    "history": {
+        "role": "Role",
+        "period": "Period",
+        "lastDays": "Last {{days}} days",
+        "all": "All time",
+        "dataPoints": "Data points",
+        "current": "Current",
+        "minMax": "Min / Max",
+        "change": "Change",
+        "noData": "✘ No data saved for {{role}} in this time frame."
+    },
     "channelroles": {
     "channel": "Channel",
     "filters": "Filters(required roles)",

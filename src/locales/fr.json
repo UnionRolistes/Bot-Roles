@@ -15,6 +15,17 @@
         "version": "Version",
         "website": "Site"        
     },
+    "history": {
+        "role": "Rôle",
+        "period": "Période",
+        "lastDays": "{{days}} derniers jours",
+        "all": "Depuis le début",
+        "dataPoints": "Points de données",
+        "current": "Actuel",
+        "minMax": "Min / Max",
+        "change": "Évolution",
+        "noData": "✘ Aucune donnée enregistrée pour {{role}} sur cette période."
+    },
     "channelroles": {
     "channel": "Salon",
     "filters": "Filtres (rôles requis)",

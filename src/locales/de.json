@@ -15,6 +15,17 @@
         "version": "Version",
         "website": "Webseite"
     },
+    "history": {
+        "role": "Rolle",
+        "period": "Zeitraum",
+        "lastDays": "Letzte {{days}} Tage",
+        "all": "Gesamter Zeitraum",
+        "dataPoints": "Datenpunkte",
+        "current": "Aktuell",
+        "minMax": "Min / Max",
+        "change": "Veränderung",
+        "noData": "✘ Für {{role}} sind in diesem Zeitraum keine Daten gespeichert."
+    },
     "channelroles": {
     "channel": "Kanal",
     "filters": "Filter (erforderliche Rollen)",
