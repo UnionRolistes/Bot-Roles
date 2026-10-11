@@ -14,5 +14,13 @@
         "contributors": "Mitwirkende",
         "version": "Version",
         "website": "Webseite"
+    },
+    "channelroles": {
+    "channel": "Kanal",
+    "filters": "Filter (erforderliche Rollen)",
+    "members": "Mitglieder",
+    "none": "Keine",
+    "more": "{{count}} weitere Rolle(n)",
+    "noMembers": "✘ Kein Mitglied passt zu diesem Kanal und diesen Rollen."
     }
 }

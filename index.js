@@ -14,6 +14,7 @@ const client = module.exports = new Client({
 			'GuildMessages',
 			'GuildPresences',
 			'GuildMessageReactions',
+			'GuildMembers',
 			'DirectMessages',
 			'MessageContent',
 			'GuildVoiceStates',
