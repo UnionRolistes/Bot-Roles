@@ -2,7 +2,7 @@
 
 UR-Role-Stat is the open-source Discord bot of [L'Union des Rôlistes](http://unionrolistes.fr/). It tracks how many members each role has over time, draws charts of those numbers, and shows which roles the members of a channel have. It also has a few shortcut commands for the community's calendar and web tools.
 
-Built with [discord.js v14](https://discord.js.org/), [MongoDB](https://www.mongodb.com/) (through Mongoose) and slash commands.
+Built with [discord.js v14](https://discord.js.org/), [MongoDB](https://www.mongodb.com/) (through Mongoose) and coffee.
 
 ---
 
@@ -11,7 +11,7 @@ Built with [discord.js v14](https://discord.js.org/), [MongoDB](https://www.mong
 - **Role member tracking.** Every hour (at minute 0), the bot saves the member count of every role on every server it is in. It keeps one entry per role per day (UTC), and later runs on the same day overwrite that day's count.
 - **Role history charts.** `/history` turns the saved counts into a line chart, with the current, minimum and maximum counts and the change over the chosen period.
 - **Channel role breakdown.** `/channelroles` shows which roles the people who can see a channel have, as percentage bars.
-- **Multiple languages.** Replies follow the user's Discord language. Supported: English (`en-GB`), French (`fr`) and German (`de`). Any other language falls back to English. Translations are in [src/locales/](src/locales/).
+- **Multiple languages.** Replies follow the user's Discord language. Supported: English (`en-GB`), French (`fr`) and German (`de`). Any other language falls back to English. Translations are located in [src/locales/](src/locales/).
 - **Terms of Service prompt.** The first time someone uses a command, the bot asks them to accept the [privacy policy](privacy.md) with a button. Nothing else runs for that user until they accept.
 - **Cooldowns.** Each command has a per-user cooldown (3 seconds unless stated otherwise below). Bot developers are exempt.
 - **Feedback form.** `/feedback` opens a form, and the bot posts what the user writes to a feedback channel.
@@ -30,16 +30,6 @@ Built with [discord.js v14](https://discord.js.org/), [MongoDB](https://www.mong
 | `/history role <role> [period]` | Draws a chart of a role's member count over time. `period` can be 7 days, 30 days (default), 90 days, 1 year, or All. Shows the current, min/max and change (absolute and %). Days with no saved count are skipped. | Servers only | 3 s |
 | `/channelroles [channel] [role1] [role2] [role3]` | Counts which roles the (non-bot) members who can see a channel have. Defaults to the current channel. With `role1`–`role3`, only members who have **all** of those roles are counted. Shows the top 25 roles; `@everyone` and bot-managed roles are ignored. | Servers only | 10 s |
 | `/feedback` | Opens a form for sending feedback to the developers. | Anywhere | 30 s |
-
-### Custom commands (Union des Rôlistes)
-
-These commands are specific to the Union des Rôlistes server and reply in French.
-
-| Command | Description |
-|---|---|
-| `/calendrier` | Sends a button linking to the community calendar ([planning.unionrolistes.fr](http://planning.unionrolistes.fr/Calendar)). |
-| `/jdr` | Sends a private link for creating a new game session. |
-| `/presentation` | Sends a private link to the form where new members introduce themselves. |
 
 ---
 
