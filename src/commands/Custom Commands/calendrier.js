@@ -18,10 +18,8 @@ class Calendrier extends Command {
 			requiredPerms: 'READ_MESSAGES',
 			enabled: true,
 			ownerOnly: false,
-			guildOnly: true,
 			args: false,
 			type: ApplicationCommandType.ChatInput,
-			defaultMemberPermissions: 'SendMessages',
 			slashOptions: [],
 
 		});
