@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-escape */
 const Command = require('../../structures/Command');
-const { EmbedBuilder, ApplicationCommandType, AttachmentBuilder } = require('discord.js');
+const { EmbedBuilder, ApplicationCommandType, AttachmentBuilder, InteractionContextType } = require('discord.js');
 const Schema = require('../../Schema/Role');
 
 class Roles extends Command {
@@ -12,9 +12,8 @@ class Roles extends Command {
 			cooldown: 3,
 			enabled: true,
 			ownerOnly: false,
-			guildOnly: true,
+			contexts: [InteractionContextType.Guild],
 			type: ApplicationCommandType.ChatInput,
-			defaultMemberPermissions: 'SendMessages',
 			slashOptions: [],
 
 		});

@@ -7,13 +7,12 @@ class Command {
 		this.type = options.type;
 		this.usage = options.usage;
 		this.cooldown = options.cooldown || 0;
-		this.default_User_Perms = options.defaultMemberPermissions || [];
 		this.required_Bot_Perms = options.requiredBotPerms || [];
 		this.enabled = options.enabled || false;
-		this.guildOnly = options.guildOnly || false;
 		this.options = options.slashOptions || [];
-		// this.name_localizations = options.name_localizations || [];
-		// this.description_localizations = options.description_localizations || [];
+		this.contexts = options.contexts || null;
+		this.name_localizations = options.name_localizations || null;
+		this.description_localizations = options.description_localizations || null;
 	}
 }
 

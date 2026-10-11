@@ -1,7 +1,7 @@
 /* eslint-disable no-inline-comments */
 /* eslint-disable no-useless-escape */
 const Command = require('../../structures/Command');
-const { EmbedBuilder, ApplicationCommandType, AttachmentBuilder } = require('discord.js');
+const { EmbedBuilder, ApplicationCommandType, AttachmentBuilder, InteractionContextType } = require('discord.js');
 const Schema = require('../../Schema/Role');
 const ChartJSImage = require('chart.js-image');
 
@@ -14,10 +14,9 @@ class History extends Command {
 			cooldown: 3,
 			enabled: true,
 			ownerOnly: false,
-			guildOnly: true,
+			contexts: [InteractionContextType.Guild],
 
 			type: ApplicationCommandType.ChatInput,
-			defaultMemberPermissions: 'SendMessages',
 			slashOptions: [
 				{
 					name: 'role',

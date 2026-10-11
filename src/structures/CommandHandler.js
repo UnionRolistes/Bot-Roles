@@ -1,7 +1,7 @@
 'use strict';
 
 const { resolve } = require('path');
-const { REST, Routes, PermissionsBitField } = require('discord.js');
+const { REST, Routes } = require('discord.js');
 const fs = require('fs');
 const slashCommandsToPush = [];
 
@@ -19,6 +19,8 @@ class CommandHandler {
 			for (const file of commandFiles) {
 				const Command = require(`../commands/${dir}/${file}`);
 				const command = new Command(this.client);
+				// Disabled commands are neither loaded nor registered
+				if (!command.enabled) continue;
 				this.client.container.slashCommands.set(command.name, command);
 
 				slashCommandsToPush.push({
@@ -26,8 +28,8 @@ class CommandHandler {
 					description: command.description,
 					type: command.type,
 					options: command.options ? command.options : null,
+					contexts: command.contexts ? command.contexts : null,
 					default_permission: command.default_permission ? command.default_permission : null,
-					default_member_permissions: command.default_member_permissions ? PermissionsBitField.resolve(command.default_member_permissions).toString() : null,
 					description_localizations: command.description_localizations ? command.description_localizations : null,
 					name_localizations: command.name_localizations ? command.name_localizations : null,
 				});

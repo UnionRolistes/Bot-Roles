@@ -1,6 +1,6 @@
 /* eslint-disable no-inline-comments */
 const Command = require('../../structures/Command');
-const { EmbedBuilder, ApplicationCommandType, ApplicationCommandOptionType, ChannelType, PermissionFlagsBits } = require('discord.js');
+const { EmbedBuilder, ApplicationCommandType, ApplicationCommandOptionType, ChannelType, PermissionFlagsBits, InteractionContextType } = require('discord.js');
 
 const MAX_ROLES_SHOWN = 25;
 const BAR_WIDTH = 10;
@@ -24,9 +24,8 @@ class ChannelRoles extends Command {
 			cooldown: 10,
 			enabled: true,
 			ownerOnly: false,
-			guildOnly: true,
+			contexts: [InteractionContextType.Guild],
 			type: ApplicationCommandType.ChatInput,
-			defaultMemberPermissions: '',
 			slashOptions: [
 				{
 					name: 'channel',

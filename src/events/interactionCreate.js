@@ -25,6 +25,10 @@ class Event {
 
 		if (!command) return;
 
+		if (command.ownerOnly && !this.bot.devs.includes(interaction.user.id)) {
+			return interaction.reply({ content: '✘ This command can only be used by the bot owner.', ephemeral: true });
+		}
+
 		if (!this.bot.cooldowns.has(command.name)) {
 			this.bot.cooldowns.set(command.name, new Collection());
 		}
@@ -91,9 +95,10 @@ class Event {
 				await interaction.deferReply({
 					ephemeral: true,
 				});
-				await interaction.editReply({ embeds: [embed], components: [row], ephemeral: true });
+				// Collect on the reply itself, interaction.channel is null in DMs
+				const tosMessage = await interaction.editReply({ embeds: [embed], components: [row], ephemeral: true });
 				const filter = i => i.user.id === interaction.user.id;
-				const collector = interaction.channel.createMessageComponentCollector({ filter, time: 15000 });
+				const collector = tosMessage.createMessageComponentCollector({ filter, time: 15000 });
 
 				collector.on('collect', async i => {
 					if(i.customId === 'tos_accepted') {
@@ -110,11 +115,15 @@ class Event {
 			}
 
 			await command.execute(this.bot, interaction, language);
-			this.bot.logger.info(__filename, `${interaction.user.tag} in #${interaction.channel.name} triggered an interaction. Command: (${command.name})`);
+			const location = interaction.inGuild() ? `#${interaction.channel.name}` : 'DMs';
+			this.bot.logger.info(__filename, `${interaction.user.tag} in ${location} triggered an interaction. Command: (${command.name})`);
 		}
 		catch (error) {
 			console.error(error);
-			return interaction.channel.send({ content: '✘ There was an error while executing this command!', ephemeral: true });
+			const errorMessage = { content: '✘ There was an error while executing this command!', ephemeral: true };
+			// Reply through the interaction, interaction.channel is null in DMs
+			if (interaction.replied || interaction.deferred) return interaction.followUp(errorMessage).catch(console.error);
+			return interaction.reply(errorMessage).catch(console.error);
 		}
 	}
 }
