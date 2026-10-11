@@ -24,7 +24,7 @@ class Présentation extends Command {
 	}
 
 	async execute(client, interaction) {
-		await interaction.reply({ content: '\nPrésentez-vous [ici](http://presentation.unionrolistes.fr/?webhook=https://discord.com/api/webhooks/875068900612665396/DJusy0eGs9Xyx2os-dodBVfWia2fbhfBzfmnDM9g-30ozoFYAuZBHVXaD9TKaC1wwBwg).', flags: MessageFlags.Ephemeral });
+		await interaction.reply({ content: `\nPrésentez-vous [ici](${process.env.presentation_url}).`, flags: MessageFlags.Ephemeral });
 	}
 
 }
